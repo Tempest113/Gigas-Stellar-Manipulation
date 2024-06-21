@@ -1,0 +1,26 @@
+ap_giga_stellar_manipulation = {
+    modifier = {
+        description = ap_stellar_manip_extra_desc
+        country_megastructure_build_cap_add = 1
+        megastructure_build_speed_mult = 0.20
+        country_resource_max_add = 25000
+    }
+    possible = {
+        custom_tooltip = { fail_text = "requires_ap_galactic_wonders"			has_galactic_wonders = yes	}
+        custom_tooltip = { fail_text = "requires_fusion_supressor"            has_technology = giga_tech_fusion_suppressor }
+        custom_tooltip = { fail_text = "requires_star_lifter"                has_technology = giga_tech_star_lifter }
+    }
+
+    potential = {
+        host_has_dlc = "Utopia"
+        is_ai = no
+        NOT = {
+            has_ascension_perk = ap_giga_stellar_manipulation
+        }
+    }
+
+    on_enabled = {
+        if = { limit = { NOT = { has_technology = tech_gigas_stellar_manip_1 } } add_research_option = tech_gigas_stellar_manip_1
+        }
+    }
+}

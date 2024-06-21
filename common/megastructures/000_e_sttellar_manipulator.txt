@@ -1,0 +1,6 @@
+# Irony this is a placeholder file please ignore it
+stellar_manipulator_0 = {
+    entity = ""
+}
+
+#The name of this file is intentionally spelt incorrectly, the order which megastructures appear in the construction list is handled by load order, so this file is named a specific way in order to have the stellar manipulator appear in its intended position

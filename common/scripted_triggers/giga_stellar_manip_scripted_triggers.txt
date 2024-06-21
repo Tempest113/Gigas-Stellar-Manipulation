@@ -1,0 +1,34 @@
+gigas_stellar_manip_is_valid_star = {
+    optimize_memory
+    OR = {
+        giga_is_o_star_for_megas = yes
+        giga_is_b_star_for_megas = yes
+        giga_is_m_giant_star_for_megas = yes
+        giga_is_a_star_for_megas = yes
+        giga_is_f_star_for_megas = yes
+        giga_is_g_star_for_megas = yes
+        giga_is_k_star_for_megas = yes
+        giga_is_m_star_for_megas = yes
+        is_planet_class = pc_gigaignited_star
+
+    }
+}
+
+gigas_stellar_manip_is_extraction_type_megastructure = {
+    #optimize_memory
+    OR = {
+        is_megastructure_type = stellar_harvester_on
+        # is_megastructure_type = stellar_harvester_off
+        is_megastructure_type = stellar_manipulator_2
+        is_megastructure_type = stellar_manipulator_o_2
+    }
+}
+
+gigas_stellar_manip_is_infusion_type_megastructure = {
+   #optimize_memory
+    OR = {
+        is_megastructure_type = stellar_manipulator_on
+        # is_megastructure_type = stellar_manipulator_off
+        is_megastructure_type = stellar_manipulator_3
+    }
+}
