@@ -1,2 +1,1 @@
-"# Gigas-Stellar-Manipulation" 
-"# Gigas-Stellar-Manipulation" 
+Not yet written
