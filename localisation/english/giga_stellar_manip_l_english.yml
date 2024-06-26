@@ -61,7 +61,7 @@
  STRING_APPROACH_STELLARM_STANDARD:0 "Standard Approach"
  STRING_STELLARM_IS_O_STAR:0 "Target is O Class Star"
  STRING_STELLARM_IS_B_STAR:0 "Target is B Star"
- STRING_HAS_PLASMA_DEFICIT:0 "Stellar Plasma Deficit"
+ #STRING_HAS_PLASMA_DEFICIT:0 "Stellar Plasma Deficit"
 
 
  # Strategic Resource

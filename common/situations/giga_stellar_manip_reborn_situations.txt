@@ -309,7 +309,7 @@ situation_stellar_infusion = {
 
 		modifier = {
 			factor = owner.value:giga_stellarm_plasma_deficit_value
-			desc = STRING_HAS_PLASMA_DEFICIT
+			desc = sr_stellar_plasma_deficit
 			owner = {
 				has_deficit = sr_stellar_plasma
 			}
