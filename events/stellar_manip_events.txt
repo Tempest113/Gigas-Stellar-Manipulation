@@ -289,7 +289,7 @@ planet_event = {
 		}
 		save_event_target_as = star_manip_planet
 		from.owner = {
-			giga_stellar_manip_set_if_not_set = {
+			stellar_manip_set_if_not_set = {
 				variable = stellarm_star_resource_value
 				value = 1
 				CHANGE = yes
@@ -315,8 +315,8 @@ planet_event = {
 						id = stellar_manip.2002
 					}
 				}
-				giga_stellar_manip_remove_applicable_harvester_mega = yes
-				# giga_stellar_manip_unset_if_set = {
+				stellar_manip_remove_applicable_harvester_mega = yes
+				# stellar_manip_unset_if_set = {
 				# 	variable = stellarm_harvester_progress
 				# }
 				destroy_situation = from
@@ -338,7 +338,7 @@ planet_event = {
 						}
 						set_country_flag = auto_harvester
 					}
-					giga_stellar_manip_remove_applicable_harvester_mega = yes
+					stellar_manip_remove_applicable_harvester_mega = yes
 					solar_system = {
 						spawn_megastructure = {
 							type = stellar_manipulator_2
@@ -373,13 +373,13 @@ planet_event = {
 					# else = {
 					# 	log = "Situation still exists"
 					# }
-					# giga_stellar_manip_unset_if_set = {
+					# stellar_manip_unset_if_set = {
 					# 	variable = stellarm_harvester_progress
 					# }
 				}
 				else = {
 					#no energy
-					giga_stellar_manip_remove_applicable_harvester_mega = yes
+					stellar_manip_remove_applicable_harvester_mega = yes
 					solar_system = {
 						save_event_target_as = star_being_harvested
 						set_star_flag = stellarm_tempt_dont_abort
@@ -410,7 +410,7 @@ planet_event = {
 					id = stellar_manip.2001
 				}
 			}
-			giga_stellar_manip_remove_applicable_harvester_mega = yes
+			stellar_manip_remove_applicable_harvester_mega = yes
 			destroy_situation = from
 		}
 		
@@ -435,7 +435,7 @@ planet_event = {
  				trigger = is_planet_class
  				pc_b_star = {
  					solar_system = {
-						giga_stellar_manip_create_o_star = yes
+						stellar_manip_create_o_star = yes
  					}
  				}
  				pc_m_giant_star = {
@@ -503,7 +503,8 @@ planet_event = {
  				}
  			}
  			save_event_target_as = star_manip_planet
- 			owner = { country_event = { id = stellar_manip.1002 } }
+ 			#owner = { country_event = { id = stellar_manip.1002 } }
+ 			planet_event = { id = stellar_manip.1002 }
  		}
  		if = { #automatic injection
  			limit = {
@@ -581,7 +582,7 @@ planet_event = {
 			trigger = is_planet_class
 			pc_b_star = {
 				solar_system = {
-					giga_stellar_manip_create_o_star = yes
+					stellar_manip_create_o_star = yes
 				}
 			}
 			pc_m_giant_star = {
@@ -685,7 +686,7 @@ planet_event = {
 						id = stellar_manip.2005
 					}
 				}
-				stellarm_remove_applicable_injecter_mega = yes
+				stellar_manip_remove_applicable_injector_mega = yes
 			}
 			else = {
 				if = {
@@ -704,7 +705,7 @@ planet_event = {
 						}
 						set_country_flag = auto_injector
 					}
-					stellarm_remove_applicable_injecter_mega = yes
+					stellar_manip_remove_applicable_injector_mega = yes
 					solar_system = {
 						spawn_megastructure = {
 							type = stellar_manipulator_3
@@ -722,7 +723,7 @@ planet_event = {
 				}
 				else = {
 					#no energy
-					stellarm_remove_applicable_injecter_mega = yes
+					stellar_manip_remove_applicable_injector_mega = yes
 					solar_system = {
 						save_event_target_as = star_being_injected
 						
@@ -755,7 +756,7 @@ planet_event = {
 					id = stellar_manip.2004
 				}
 			}
-			stellarm_remove_applicable_injecter_mega = yes
+			stellar_manip_remove_applicable_injector_mega = yes
 		}
 		destroy_situation = from
 	}
@@ -814,7 +815,7 @@ planet_event = {
 					}
 					set_country_flag = auto_harvester
 				}
-				giga_stellar_manip_remove_applicable_harvester_mega = yes
+				stellar_manip_remove_applicable_harvester_mega = yes
 				solar_system = {
 					spawn_megastructure = {
 						type = stellar_manipulator_2
@@ -825,7 +826,7 @@ planet_event = {
 			}
 			else = {
 				#no energy
-				giga_stellar_manip_remove_applicable_harvester_mega = yes
+				stellar_manip_remove_applicable_harvester_mega = yes
 				solar_system = {
 					save_event_target_as = star_being_harvested
 					spawn_megastructure = {
@@ -851,7 +852,7 @@ planet_event = {
 					id = stellar_manip.2001
 				}
 			}
-			giga_stellar_manip_remove_applicable_harvester_mega = yes
+			stellar_manip_remove_applicable_harvester_mega = yes
 		}
 	}
 }
@@ -1111,10 +1112,10 @@ situation_event = {
 	immediate = {
 		add_situation_progress = target.value:stellarm_harvester_progress_initializer
 		target = {
-			giga_stellar_manip_unset_if_set = {
+			stellar_manip_unset_if_set = {
 				variable = stellarm_harvester_progress
 			}
-			giga_stellar_manip_unset_if_set = {
+			stellar_manip_unset_if_set = {
 				variable = stellarm_injecter_progress
 			}
 		}
@@ -1136,10 +1137,10 @@ situation_event = {
 	immediate = {
 		add_situation_progress = target.value:stellarm_injecter_progress_initializer
 		target = {
-			giga_stellar_manip_unset_if_set = {
+			stellar_manip_unset_if_set = {
 				variable = stellarm_harvester_progress
 			}
-			giga_stellar_manip_unset_if_set = {
+			stellar_manip_unset_if_set = {
 				variable = stellarm_injecter_progress
 			}
 		}
@@ -1152,41 +1153,41 @@ situation_event = {
 	hide_window = yes
 	trigger = {
 		or = {
-			current_situation_approach = approach_stellarm_faster_extraction
-			current_situation_approach = approach_stellarm_more_efficient_extraction
+			#current_situation_approach = approach_stellarm_faster_extraction
+			#current_situation_approach = approach_stellarm_more_efficient_extraction
 			current_situation_approach = approach_stellarm_standard
 		}
 	}
 	immediate = {
-		if = {
-			limit = {
-				current_situation_approach = approach_stellarm_faster_extraction
-			}
+		# if = {
+		# 	limit = {
+		# 		current_situation_approach = approach_stellarm_faster_extraction
+		# 	}
+		# 	target = {
+		# 		stellar_manip_set_if_not_set = {
+		# 			variable = stellarm_harvest_yield_multiplier
+		# 			value = 0.045
+		# 			CHANGE = yes
+		# 			change_value = 0.045
+		# 		}
+		# 	}
+		# }
+		# else_if = {
+		# 	limit = {
+		# 		current_situation_approach = approach_stellarm_more_efficient_extraction
+		# 	}
+		# 	target = {
+		# 		stellar_manip_set_if_not_set = {
+		# 			variable = stellarm_harvest_yield_multiplier
+		# 			value = 0.025
+		# 			CHANGE = yes
+		# 			change_value = 0.025
+		# 		}
+		# 	}
+		# }
+		#else = {
 			target = {
-				giga_stellar_manip_set_if_not_set = {
-					variable = stellarm_harvest_yield_multiplier
-					value = 0.045
-					CHANGE = yes
-					change_value = 0.045
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				current_situation_approach = approach_stellarm_more_efficient_extraction
-			}
-			target = {
-				giga_stellar_manip_set_if_not_set = {
-					variable = stellarm_harvest_yield_multiplier
-					value = 0.025
-					CHANGE = yes
-					change_value = 0.025
-				}
-			}
-		}
-		else = {
-			target = {
-				giga_stellar_manip_set_if_not_set = {
+				stellar_manip_set_if_not_set = {
 					variable = stellarm_harvest_yield_multiplier
 				}
 				if = {
@@ -1214,7 +1215,7 @@ situation_event = {
 					}
 				}
 			}
-		}
+		#}
 	}
 }
 
@@ -1231,7 +1232,7 @@ situation_event = {
 	}
 	immediate = {
 			target = {
-				giga_stellar_manip_set_if_not_set = {
+				stellar_manip_set_if_not_set = {
 					variable = stellarm_infusion_upkeep_multiplier
 				}
 				if = {

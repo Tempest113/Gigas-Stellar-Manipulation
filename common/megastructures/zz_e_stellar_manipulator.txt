@@ -49,7 +49,7 @@ stellar_manipulator_0 = {
 			}
 			custom_tooltip = {
 				fail_text = "requires_standard_planet_class"
-				gigas_stellar_manip_is_valid_star = yes
+				stellar_manip_is_valid_star = yes
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_habitable_planets"
@@ -234,78 +234,78 @@ stellar_manipulator_3 = {
 		upkeep = {
 			energy = 150
 		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_b_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_b_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_m_giant_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_m_giant_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_a_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_a_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_f_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_f_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_g_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_g_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_k_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_k_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_m_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_m_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
-		upkeep = {
-			trigger = {
-				this.planet = {
-					is_planet_class = pc_gigaignited_star
-				}
-			}
-			sr_stellar_plasma = @injector_plasma_ignited_star
-			multiplier = this.planet.value:stellarm_infusion_multiplier
-		}
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_b_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_b_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_m_giant_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_m_giant_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_a_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_a_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_f_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_f_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_g_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_g_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_k_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_k_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_m_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_m_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		this.planet = {
+		# 			is_planet_class = pc_gigaignited_star
+		# 		}
+		# 	}
+		# 	sr_stellar_plasma = @injector_plasma_ignited_star
+		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
+		# }
 	}
 	upgrade_from = {
 		stellar_manipulator_1

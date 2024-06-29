@@ -1,4 +1,4 @@
-giga_stellar_manip_o_system_craft = {
+stellar_manip_o_system_craft = {
     create_fleet = {
         name = "The Stellar Systemcraft"
         settings = {
@@ -17,7 +17,7 @@ giga_stellar_manip_o_system_craft = {
     }
 }
 
-giga_stellar_manip_create_o_star = {
+stellar_manip_create_o_star = {
     set_star_class = sc_giga_o_star
     set_star_flag = giga_o_star_system
     star = {
@@ -76,7 +76,7 @@ giga_stellar_manip_create_o_star = {
     }
 }
 
-giga_stellar_manip_set_if_not_set = {
+stellar_manip_set_if_not_set = {
     optimize_memory
     if = {
         limit = {
@@ -99,12 +99,12 @@ giga_stellar_manip_set_if_not_set = {
     ]
 }
 
-giga_stellar_manip_remove_applicable_harvester_mega = {
+stellar_manip_remove_applicable_harvester_mega = {
     optimize_memory
     solar_system = {
         every_system_megastructure = {
             limit = {
-                gigas_stellar_manip_is_extraction_type_megastructure = yes
+                stellar_manip_is_extraction_type_megastructure = yes
                 planet = {
                     is_same_value = prevprevprev
                 }
@@ -114,12 +114,12 @@ giga_stellar_manip_remove_applicable_harvester_mega = {
     }
 }
 
-giga_stellar_manip_remove_applicable_injector_mega = {
+stellar_manip_remove_applicable_injector_mega = {
     optimize_memory
     solar_system = {
         every_system_megastructure = {
             limit = {
-                gigas_stellar_manip_is_infusion_type_megastructure = yes
+                stellar_manip_is_infusion_type_megastructure = yes
                 planet = {
                     is_same_value = prevprevprev
                 }
@@ -129,7 +129,7 @@ giga_stellar_manip_remove_applicable_injector_mega = {
     }
 }
 
-giga_stellar_manip_unset_if_set = {
+stellar_manip_unset_if_set = {
     optimize_memory
     if = {
         limit = {
@@ -139,7 +139,7 @@ giga_stellar_manip_unset_if_set = {
     }
 }
 
-giga_stellar_manip_set_extraction_abort_variables = {
+stellar_manip_set_extraction_abort_variables = {
     optimize_memory
     target = {
         set_variable = {
@@ -149,7 +149,7 @@ giga_stellar_manip_set_extraction_abort_variables = {
     }
 }
 
-giga_stellar_manip_set_injection_abort_variables = {
+stellar_manip_set_injection_abort_variables = {
     optimize_memory
     target = {
         set_variable = {
@@ -159,7 +159,7 @@ giga_stellar_manip_set_injection_abort_variables = {
     }
 }
 
-giga_stellar_manip_clean_up_extraction_megas = {
+stellar_manip_clean_up_extraction_megas = {
     optimize_memory
     if = {
         limit = {
@@ -169,7 +169,7 @@ giga_stellar_manip_clean_up_extraction_megas = {
         }
         every_megastructure = {
             limit = {
-                gigas_stellar_manip_is_extraction_type_megastructure = yes
+                stellar_manip_is_extraction_type_megastructure = yes
                 NOT = {
                     exists = planet
                 }
@@ -179,14 +179,14 @@ giga_stellar_manip_clean_up_extraction_megas = {
     }
     else = {
         target = {
-            giga_stellar_manip_remove_applicable_harvester_mega = yes
+            stellar_manip_remove_applicable_harvester_mega = yes
             remove_planet_flag = megastructure
             remove_planet_flag = has_megastructure
         }
     }
 }
 
-giga_stellar_manip_clean_up_infusion_megas = {
+stellar_manip_clean_up_infusion_megas = {
     optimize_memory
     if = {
         limit = {
@@ -196,7 +196,7 @@ giga_stellar_manip_clean_up_infusion_megas = {
         }
         every_megastructure = {
             limit = {
-                gigas_stellar_manip_is_extraction_type_megastructure = yes
+                stellar_manip_is_extraction_type_megastructure = yes
                 NOT = {
                     exists = planet
                 }
@@ -206,7 +206,7 @@ giga_stellar_manip_clean_up_infusion_megas = {
     }
     else = {
         target = {
-            giga_stellar_manip_remove_applicable_injector_mega = yes
+            stellar_manip_remove_applicable_injector_mega = yes
             remove_planet_flag = megastructure
             remove_planet_flag = has_megastructure
         }

@@ -20,8 +20,8 @@ situation_stellar_extraction = {
 	}
 
 	on_abort = {
-		giga_stellar_manip_set_extraction_abort_variables = yes
-		giga_stellar_manip_clean_up_extraction_megas = yes
+		stellar_manip_set_extraction_abort_variables = yes
+		stellar_manip_clean_up_extraction_megas = yes
 	}
 
 	abort_trigger = {
@@ -29,7 +29,7 @@ situation_stellar_extraction = {
 			exists = owner
 			exists = target
 			target = {
-				gigas_stellar_manip_is_valid_star = yes
+				stellar_manip_is_valid_star = yes
 				exists = space_owner
 				space_owner = {
 					is_same_empire = prevprev.owner
@@ -178,8 +178,8 @@ situation_stellar_infusion = {
 	}
 
 	on_abort = {
-		giga_stellar_manip_set_injection_abort_variables = yes
-		giga_stellar_manip_clean_up_infusion_megas = yes
+		stellar_manip_set_injection_abort_variables = yes
+		stellar_manip_clean_up_infusion_megas = yes
 
 	}
 
@@ -188,7 +188,7 @@ situation_stellar_infusion = {
 			exists = owner
 			exists = target
 			target = {
-				gigas_stellar_manip_is_valid_star = yes
+				stellar_manip_is_valid_star = yes
 				exists = space_owner
 				space_owner = {
 					is_same_empire = prevprev.owner

@@ -20,7 +20,7 @@ tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod als
     #}
 
     potential = {
-        has_ascension_perk = ap_giga_stellar_manipulation
+        has_ascension_perk = ap_stellar_manipulation
     }
 
     #prereqfor_desc = {

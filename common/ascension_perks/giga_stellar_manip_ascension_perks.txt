@@ -1,4 +1,4 @@
-ap_giga_stellar_manipulation = {
+ap_stellar_manipulation = {
     modifier = {
         description = ap_stellar_manip_extra_desc
         country_megastructure_build_cap_add = 1
@@ -15,7 +15,7 @@ ap_giga_stellar_manipulation = {
         host_has_dlc = "Utopia"
         is_ai = no
         NOT = {
-            has_ascension_perk = ap_giga_stellar_manipulation
+            has_ascension_perk = ap_stellar_manipulation
         }
     }
 

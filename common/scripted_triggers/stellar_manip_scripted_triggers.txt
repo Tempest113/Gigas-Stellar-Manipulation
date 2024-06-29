@@ -1,4 +1,8 @@
-gigas_stellar_manip_is_valid_star = {
+stellar_manip_is_active = { always = yes }
+
+has_stellar_manip_ap = { has_ascension_perk = ap_stellar_manipulation }
+
+stellar_manip_is_valid_star = {
     optimize_memory
     OR = {
         giga_is_o_star_for_megas = yes
@@ -14,21 +18,21 @@ gigas_stellar_manip_is_valid_star = {
     }
 }
 
-gigas_stellar_manip_is_extraction_type_megastructure = {
+stellar_manip_is_extraction_type_megastructure = {
     #optimize_memory
     OR = {
         is_megastructure_type = stellar_harvester_on
-        # is_megastructure_type = stellar_harvester_off
+        is_megastructure_type = stellar_harvester_off
         is_megastructure_type = stellar_manipulator_2
         is_megastructure_type = stellar_manipulator_o_2
     }
 }
 
-gigas_stellar_manip_is_infusion_type_megastructure = {
+stellar_manip_is_infusion_type_megastructure = {
    #optimize_memory
     OR = {
         is_megastructure_type = stellar_manipulator_on
-        # is_megastructure_type = stellar_manipulator_off
+        is_megastructure_type = stellar_manipulator_off
         is_megastructure_type = stellar_manipulator_3
     }
 }
