@@ -231,11 +231,30 @@ situation_stellar_infusion = {
 			}
 		}
 	}
+
+	approach = {
+		name = approach_stellarm_pause
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_pause_infusion_approach_tooltip
+		}
+
+		resources = {
+			category = stellar_manip_situation
+			upkeep = { sr_stellar_plasma = 0 }
+		}
+	}
+
 	approach = {
 		name = approach_stellarm_standard_infusion
 		icon = GFX_situation_approach_this_is_fine
-		icon_background = GFX_situation_approach_bg_yellow
+		icon_background = GFX_situation_approach_bg_green
 		default = yes
+		allow = {
+			NOT = { owner = { has_actual_deficit = { RESOURCE = sr_stellar_plasma } } }
+			# custom_tooltip = sr_stellar_plasma_deficit
+		}
 		on_select = {
 			custom_tooltip = situation_standard_infusion_approach_tooltip
 		}
@@ -286,9 +305,10 @@ situation_stellar_infusion = {
 	}
 
 	on_monthly = {
-		events = {
-			stellar_manip.9001
-			stellar_manip.9010
+			events = {
+				stellar_manip.9001
+				stellar_manip.9002
+				stellar_manip.9010
 		}
 	}
 	monthly_progress = {
@@ -308,11 +328,17 @@ situation_stellar_infusion = {
 		}
 
 		modifier = {
-			factor = owner.value:giga_stellarm_plasma_deficit_value
+			multiply = 0
 			desc = sr_stellar_plasma_deficit
-			owner = {
-				has_deficit = sr_stellar_plasma
-			}
+			current_situation_approach = approach_stellarm_pause
 		}
+
+		# modifier = {
+		# 	factor = owner.value:giga_stellarm_plasma_deficit_value
+		# 	desc = sr_stellar_plasma_deficit
+		# 	owner = {
+		# 		has_deficit = sr_stellar_plasma
+		# 	}
+		# }
 	}
 }

@@ -55,12 +55,15 @@
 
  approach_stellarm_standard_infusion:0 "Standard Infusion"
  situation_standard_infusion_approach_tooltip:0 "Standard Stellar Infusion"
+ approach_stellarm_pause: "Pause Infusion"
+ situation_pause_infusion_approach_tooltip: "Infusion Paused"
 
  stellarm_manip_stage:0 "[This.Target.GetClassName] Manipulation"
+ stellar_manip_situation: "Stellar Manipulation"
  STRING_APPROACH_STELLARM_STANDARD_INFUSION:0 "Standard Approach"
  STRING_APPROACH_STELLARM_STANDARD:0 "Standard Approach"
  STRING_STELLARM_IS_O_STAR:0 "Target is O Class Star"
- STRING_STELLARM_IS_B_STAR:0 "Target is B Star"
+ STRING_STELLARM_IS_B_STAR:0 "Target is B Class Star"
  #STRING_HAS_PLASMA_DEFICIT:0 "Stellar Plasma Deficit"
 
 

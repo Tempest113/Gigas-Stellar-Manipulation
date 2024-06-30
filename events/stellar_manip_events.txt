@@ -1,4 +1,5 @@
 namespace = stellar_manip
+
 event = {
 	id = stellar_manip.1
 	is_triggered_only = yes
@@ -1260,6 +1261,17 @@ situation_event = {
 					}
 				}
 			}
+	}
+}
+situation_event = {
+	id = stellar_manip.9002
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		owner = { has_deficit = sr_stellar_plasma }
+	}
+	immediate = {
+		set_situation_approach = approach_stellarm_pause
 	}
 }
 
