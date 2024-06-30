@@ -233,7 +233,7 @@
 
  #Injector Disabled
  stellar_manip.100.title:0 "Stellar Mass Injectors Disabled"
- stellar_manip.100.desc:0 "Due to lack of £sr_stellar_plasma£ §Ystellar plasma§! our stellar plasma injectors have turned off and must be restarted to continue the process\n§YIf the option to do so is not showing save and load as it breaks sometimes."
+ stellar_manip.100.desc:0 "Due to a lack of £sr_stellar_plasma£ §Ystellar plasma§! our stellar plasma injectors have turned off and must be restarted to continue the process\n§YIf the option to do so is not showing save and load as it breaks sometimes."
  stellar_manip.100.a:0 "We must do so at once!"
 
  #Finished
