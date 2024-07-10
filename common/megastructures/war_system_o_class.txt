@@ -47,7 +47,7 @@ war_system_o_1 = {
 		#delete the star
 		set_star_class = sc_empty_space
 		remove_star_flag = giga_o_star_system
-		fromfrom.planet = {z
+		fromfrom.planet = {
 			change_pc = pc_giga_empty_space
 			remove_modifier = giga_o_star_modifier
 		}
@@ -85,8 +85,8 @@ war_system_o_2 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_2"
-			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth }	count >= 1 }
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet }		count >= 2 }
+			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth fleet = { is_leased = no } }	count >= 1 }
+			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } }		count >= 2 }
 		}
 	}
 
@@ -174,7 +174,7 @@ war_system_o_3 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_moon_2"
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet } count >= 2 }
+			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } } count >= 2 }
 		}
 	}
 
@@ -215,7 +215,8 @@ war_system_o_3 = {
 	}
 }
 
-war_system_o_4 = {
+
+ war_system_o_4 = {
 	entity = "war_system_o_phase_04_entity"
 	construction_entity = "war_system_o_phase_04_construction_entity"
 	portrait = "GFX_megastructure_moon"
@@ -244,7 +245,7 @@ war_system_o_4 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_2"
-			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth } count >= 2 }
+			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth fleet = { is_leased = no } } count >= 2 }
 		}
 	}
 
@@ -283,7 +284,8 @@ war_system_o_4 = {
 	}
 }
 
-war_system_o_5 = {
+
+ war_system_o_5 = {
 	entity = ""
 	construction_entity = "war_system_o_phase_05_construction_entity"
 	portrait = "GFX_megastructure_moon"
@@ -314,8 +316,8 @@ war_system_o_5 = {
 		custom_tooltip = { fail_text = "requires_systemcraft_crew"		from = { has_country_flag = systemcraft_crew_required } }
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_1"
-			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth }	count >= 1 }
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet }	count >= 1 }
+			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth fleet = { is_leased = no } }	count >= 1 }
+			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } }	count >= 1 }
 		}
 	}
 
@@ -384,7 +386,8 @@ war_system_o_5 = {
 		fromfrom.planet = { save_event_target_as = giga_planet }
 		from = {
 			country_event = { id = giga_dialog.2807 }	# Notification
-			stellar_manip_create_o_star = yes
+			#stellar_manip_create_o_star = yes
+			stellar_manip_o_system_craft = yes
 			if = {
 				limit = {
 					NOR = {
