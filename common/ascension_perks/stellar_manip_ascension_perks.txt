@@ -20,7 +20,6 @@ ap_stellar_manipulation = {
     }
 
     on_enabled = {
-        if = { limit = { NOT = { has_technology = tech_gigas_stellar_manip_1 } } add_research_option = tech_gigas_stellar_manip_1
-        }
+        if = { limit = { NOT = { has_technology = tech_gigas_stellar_manip_1 } } add_research_option = tech_gigas_stellar_manip_1 }
     }
 }
