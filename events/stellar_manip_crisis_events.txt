@@ -8,7 +8,12 @@ planet_event = {
 
     immediate = {
         from.owner = {
-            add_resource = { sr_stellar_plasma = 15000 }
+            if = {
+                limit = {
+                    has_technology = tech_gigas_stellar_manip_1
+                }
+                add_resource = { sr_stellar_plasma = 15000 }
+            }
         }
     }
 }

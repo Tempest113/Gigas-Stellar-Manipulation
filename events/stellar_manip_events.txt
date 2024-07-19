@@ -1160,33 +1160,6 @@ situation_event = {
 		}
 	}
 	immediate = {
-		# if = {
-		# 	limit = {
-		# 		current_situation_approach = approach_stellarm_faster_extraction
-		# 	}
-		# 	target = {
-		# 		stellar_manip_set_if_not_set = {
-		# 			variable = stellarm_harvest_yield_multiplier
-		# 			value = 0.045
-		# 			CHANGE = yes
-		# 			change_value = 0.045
-		# 		}
-		# 	}
-		# }
-		# else_if = {
-		# 	limit = {
-		# 		current_situation_approach = approach_stellarm_more_efficient_extraction
-		# 	}
-		# 	target = {
-		# 		stellar_manip_set_if_not_set = {
-		# 			variable = stellarm_harvest_yield_multiplier
-		# 			value = 0.025
-		# 			CHANGE = yes
-		# 			change_value = 0.025
-		# 		}
-		# 	}
-		# }
-		#else = {
 			target = {
 				stellar_manip_set_if_not_set = {
 					variable = stellarm_harvest_yield_multiplier

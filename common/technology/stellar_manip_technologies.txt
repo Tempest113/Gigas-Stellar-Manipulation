@@ -1,4 +1,4 @@
-tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod also makes fusion supressor explosions give plasma
+tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod also makes fusion suppressor explosions give plasma
     cost = @tier5cost1
     area = physics
     tier = 5
@@ -12,23 +12,13 @@ tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod als
             desc = "basic_stellar_manip1_desc"
         }
     }
-    #prereqfor_desc = {
-    #	custom = {
-    #		title = "basic_stellar_manip2"
-    #		desc = "basic_stellar_manip2_desc"
-    #	}
-    #}
+
+    modifier = { megastructure_build_speed_mult = 0.05 }
 
     potential = {
         has_ascension_perk = ap_stellar_manipulation
     }
 
-    #prereqfor_desc = {
-    #	custom = {
-    #		title = "basic_stellar_manip3"
-    #		desc = "basic_stellar_manip3_desc"
-    #	}
-    #}
 }
 
 tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
@@ -96,7 +86,7 @@ tech_stellar_assembler = { #systemcraft assembler
         custom = { title = "allow_star_assembly"	desc = "allow_star_assembly_desc" }
     }
 
-    #copied the weights from systemcraft, idgaf
+    #copied the weights from systemcraft
     weight_modifier = {
 
         modifier = { factor = 0 has_utopia = no }

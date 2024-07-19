@@ -18,9 +18,14 @@ country_event = {
 		}
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = {
+					has_technology = tech_gigas_stellar_manip_1
+				}
+				add_resource = { sr_stellar_plasma = 15000 }
+			}
 			add_resource = { 
 				influence = 200 
-				sr_stellar_plasma = 15000
 		}
 			event_target:giga_system = {
 
@@ -64,7 +69,7 @@ country_event = {
 						limit = {
 							OR = {
 								is_asteroid = yes
-								is_giga_habitat = yes
+								giga_is_habitat = yes
 								is_non_giga_habitat = yes
 							}
 						}
