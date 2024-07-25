@@ -403,10 +403,10 @@ stellar_manipulator_o_2 = {
 			energy = 10000
 			unity = @giga_kilo_unity_cost
 		}
-		produces = {
-			sr_stellar_plasma = @harvester_plasma_production_o_star
-			multiplier = this.planet.value:stellarm_harvest_multiplier
-		}
+		# produces = {
+		# 	sr_stellar_plasma = @harvester_plasma_production_o_star
+		# 	multiplier = this.planet.value:stellarm_harvest_multiplier
+		# }
 		upkeep = {
 			energy = 250
 		}
