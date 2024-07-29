@@ -22,7 +22,7 @@ tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod als
 }
 
 tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
-    cost = @tier5cost2
+    cost = @giga_tier6cost1
     area = engineering
     tier = 5
     category = { materials }
@@ -32,6 +32,10 @@ tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
     prerequisites = { "tech_gigas_stellar_manip_1" }
     potential = {
         has_technology = tech_gigas_stellar_manip_1
+    }
+
+    modifier = {
+        megastructures_energy_produces_mult = 0.05
     }
 
     prereqfor_desc = {
@@ -64,7 +68,7 @@ tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
 }
 
 tech_stellar_assembler = { #systemcraft assembler
-    cost = 350000
+    cost = @giga_tier8cost2
     area = engineering
     tier = 5
     category = { voidcraft }
@@ -114,7 +118,7 @@ tech_stellar_assembler = { #systemcraft assembler
 }
 
 tech_o_class_war_system = {
-    cost = 500000
+    cost = @giga_tier8cost2
     area = physics
     tier = 5
     category = { field_manipulation }
