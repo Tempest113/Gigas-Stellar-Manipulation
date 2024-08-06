@@ -1,13 +1,14 @@
 ﻿l_english:
 
-# Ascension Perk
+ # Ascension Perk
 
  ap_stellar_manipulation: "Stellar Manipulation"
  ap_stellar_manipulation_desc: "By using the same methods employed by fusion suppressors and star lifters on a much larger scale, we can shape the very stars that light our sky."
  ap_stellar_manip_extra_desc: "Allows to change the class of stars via a megastructure once the proper methods are studied"
+ ap_stellar_manipulation_add_research: "\nResearch options gained:\n £physics_research£ §Y$tech_gigas_stellar_manip_1$§!"
 
 
-# Technologies
+ # Technologies
 
  tech_gigas_stellar_manip_1: "High Energy Plasma Containment"
  tech_gigas_stellar_manip_1_desc: "Exploding stars expel a significant amount of high energy plasma that can be collected and used in various scientific endeavours."
@@ -25,14 +26,14 @@
  advanced_stellar_manip2_desc: "A megastructure capable of changing the size and structure of a star through highly advanced Stellar Plasma injection and harvesting techniques"
 
  tech_stellar_assembler: "Mass Stellar Ignition"
- tech_stellar_assembler_desc: "Now that we can ignite and build stars from scratch we may be able to incorporate the designs from the celestialcraft fabricators we might be able to build our systemcrafts in a much more efficient manner"
+ tech_stellar_assembler_desc: "Now that we can ignite and build stars from scratch we may be able to incorporate the designs from our celestial warship fabricators we might be able to build our Systemcrafts in a much more efficient manner"
 
  allow_star_assembly: "§RAllows the construction of systemcraft assemblers"
  allow_star_assembly_desc: "A gigastructure capable of building a systemcraft in one stage"
 
  tech_o_class_war_system: "Class O Systemcraft"
  tech_o_class_war_system_desc: "Class O stars have a massive power output, utilizing one for our systemcrafts can allow them to field much more heavy weaponry"
- allow_o_class_war_system: "RAllows for the construction of EO-ClassR Systemcrafts, way more powerful than our regular systemcrafts"
+ allow_o_class_war_system: "Allows for the construction of §YO-Class Systemcraft§!, significantly more powerful than our regular Systemcraft"
 
 
 # Situations
@@ -105,7 +106,7 @@
  policy_stmp_automatic_injection: "Stellar Injection Methodology"
 
 
-# Modifiers
+ # Modifiers
 
  mod_stellarm_all_situation_upkeep_mult: "Stellar Manipulation Upkeep"
  mod_stellarm_injection_situation_upkeep_mult: "Stellar Injection Upkeep"
@@ -114,10 +115,10 @@
  mod_stellarm_situation_speed_add: "Stellar Manipulation Speed"
 
 
-# Tooltips
+ # Tooltips
 
- requires_star_lifter: "£trigger_no£ Requires the £engineering£ §Y$giga_tech_star_lifter$§! technology."
- requires_fusion_supressor: "£trigger_no£ Requires the £physics£ §Y$giga_tech_fusion_suppressor$§! technology."
+ requires_star_lifter: "$TRIGGER_FAIL$Requires the £engineering£ §Y$giga_tech_star_lifter$§! technology."
+ requires_fusion_supressor: "$TRIGGER_FAIL$Requires the £physics£ §Y$giga_tech_fusion_suppressor$§! technology."
 
 
  # Megastructures
@@ -290,7 +291,7 @@
  star_printer.1000.a: "Go forth and conquer"
 
 
-# Class O Systemcraft
+ # Class O Systemcraft
 
  giga_o_systemcraft: "Class O Stellar Systemcraft"
  giga_o_systemcraft_plural: "$giga_o_systemcraft$"

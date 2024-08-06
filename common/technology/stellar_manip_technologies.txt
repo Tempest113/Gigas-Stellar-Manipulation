@@ -154,6 +154,5 @@ tech_o_class_war_system = {
 
     ai_weight = {
         factor = @giga_aiweight_multiplier
-
     }
 }

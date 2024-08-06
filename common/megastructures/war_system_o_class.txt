@@ -7,7 +7,7 @@ war_system_o_0 = {
 
 	ai_weight = { factor = 0 }
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		upkeep = { energy = 15 }
 	}
 }
@@ -20,7 +20,7 @@ war_system_o_1 = {
 
 	build_time = 10800
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		cost = { alloys = 300000 unity = @giga_tera_unity_cost }
 		upkeep = {
 			energy = 300
@@ -66,7 +66,7 @@ war_system_o_2 = {
 
 	build_time = 10800
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		cost = { alloys = 300000 unity = @giga_tera_unity_cost }
 		upkeep = {
 			energy = 750
@@ -154,7 +154,7 @@ war_system_o_3 = {
 
 	build_time = 10800
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		cost = { alloys = 300000 unity = @giga_tera_unity_cost }
 		upkeep = {
 			energy = 1500
@@ -224,7 +224,7 @@ war_system_o_3 = {
 
 	build_time = 10800
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		cost = { alloys = 300000 unity = @giga_tera_unity_cost }
 		upkeep = {
 			energy = 2250
@@ -293,7 +293,7 @@ war_system_o_3 = {
 
 	build_time = 10800
 	resources = {
-		category = megastructures
+		category = giga_gigastructures
 		cost = { alloys = 100000 unity = @giga_tera_unity_cost }
 		upkeep = {
 			energy = 2250
