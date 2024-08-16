@@ -71,6 +71,7 @@ stellar_manipulator_0 = {
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
 			set_planet_flag = megastructure
+			save_event_target_as = star_manip_planet
 		}
 		save_event_target_as = star_manip_system
 		owner = {
@@ -149,6 +150,13 @@ stellar_manipulator_2 = {
 
 		upkeep = {
 			energy = 250
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = stellar_manip_no_ignited_stars
+			event_target:star_manip_planet = { NOT = { is_planet_class = pc_gigaignited_star } }
 		}
 	}
 

@@ -169,44 +169,44 @@ planet_event = {
 					}
 				}
 			}
-		pc_o_super_star = {
-			change_pc = pc_b_star
-			remove_modifier = giga_o_star_modifier
-			clear_deposits = yes
-			solar_system = {
-				if = {
-					limit = {
-						has_star_flag = giga_o_star_system
-					}
-					set_star_class = sc_b
-					every_ambient_object = {
+			pc_o_super_star = {
+				change_pc = pc_b_star
+				remove_modifier = giga_o_star_modifier
+				clear_deposits = yes
+				solar_system = {
+					if = {
 						limit = {
-							is_ambient_object_type = giga_o_star_nebula_1
+							has_star_flag = giga_o_star_system
 						}
-						destroy_ambient_object = this
+						set_star_class = sc_b
+						every_ambient_object = {
+							limit = {
+								is_ambient_object_type = giga_o_star_nebula_1
+							}
+							destroy_ambient_object = this
+						}
 					}
 				}
 			}
-		}
-		pc_o_hyper_star = {
-			change_pc = pc_b_star
-			remove_modifier = giga_o_star_modifier
-			clear_deposits = yes
-			solar_system = {
-				if = {
-					limit = {
-						has_star_flag = giga_o_star_system
-					}
-					set_star_class = sc_b
-					every_ambient_object = {
+			pc_o_hyper_star = {
+				change_pc = pc_b_star
+				remove_modifier = giga_o_star_modifier
+				clear_deposits = yes
+				solar_system = {
+					if = {
 						limit = {
-							is_ambient_object_type = giga_o_star_nebula_1
+							has_star_flag = giga_o_star_system
 						}
-						destroy_ambient_object = this
+						set_star_class = sc_b
+						every_ambient_object = {
+							limit = {
+								is_ambient_object_type = giga_o_star_nebula_1
+							}
+							destroy_ambient_object = this
+						}
 					}
 				}
 			}
-		}
 			pc_b_star = {
 				change_pc = pc_a_star
 				solar_system = {

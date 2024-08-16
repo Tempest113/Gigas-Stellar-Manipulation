@@ -14,7 +14,6 @@ stellar_manip_is_valid_star = {
         giga_is_k_star_for_megas = yes
         giga_is_m_star_for_megas = yes
         is_planet_class = pc_gigaignited_star
-
     }
 }
 

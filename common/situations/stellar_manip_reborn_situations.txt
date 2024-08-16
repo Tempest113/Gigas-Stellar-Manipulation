@@ -122,10 +122,10 @@ situation_stellar_extraction = {
 				sr_stellar_plasma = @harvester_plasma_production_m_star
 			}
 
-			produces = {
-				trigger = { target = { is_planet_class = pc_gigaignited_star } }
-				sr_stellar_plasma = @harvester_plasma_production_ignited_star
-			}
+			# produces = {
+			# 	trigger = { target = { is_planet_class = pc_gigaignited_star } }
+			# 	sr_stellar_plasma = @harvester_plasma_production_ignited_star
+			# }
 		}
 
 		ai_weight = {

@@ -119,11 +119,13 @@
 
  requires_star_lifter: "$TRIGGER_FAIL$Requires the £engineering£ §Y$giga_tech_star_lifter$§! technology."
  requires_fusion_supressor: "$TRIGGER_FAIL$Requires the £physics£ §Y$giga_tech_fusion_suppressor$§! technology."
+ stellar_manip_no_ignited_stars: "$TRIGGER_FAIL$$pc_gigaignited_star$s are not massive enough to harvest a meaningful amount of $sr_stellar_plasma$."
+ # stellar_manip_no_ignited_stars: "$TRIGGER_FAIL$Due to being artificially compressed $pc_gas_giant$s, $pc_gigaignited_star$s do not have enough mass for us to be able to harvest a meaningful amount of $sr_stellar_plasma$."
 
 
  # Megastructures
 
- #Stellar Manipulator
+ # Stellar Manipulator
 
  stellar_manipulator: "Stellar Manipulator"
 
@@ -158,7 +160,7 @@
  stellar_harvester_on: "Enabled Harvester"
  stellar_harvester_on_DESC: "A Harvester that has been re-enabled"
 
- #Star Printer
+ # Star Printer
  systemcraft_assembler_0: "$gc_giga$Systemcraft Assembler Construction Site"
  systemcraft_assembler_0_DESC: "This is the construction site upon which Systemcraft Assembler will be constructed"
  systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §Y$sr_solar_energy$§! and £alloys£ §Y$alloys$§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
@@ -184,7 +186,7 @@
  systemcraft_assembler_make_o_system: "Assemble Class O Systemcraft"
  systemcraft_assembler_make_o_system_DESC: "Builds a massively powerful Class O Stellar Systemcraft"
 
- #O war system
+ # O war system
  requires_standard_o_star_planet_class: "Must be built around a class O Star!"
 
  war_system_o_0: "$name_war_system$ Construction Site"
@@ -211,7 +213,7 @@
  war_system_o_5_DESC: "A completed $name_war_system$, complete with an Ecumenopolis and a smaller world to house most of its population, which serves as the crew."
 
 
-# Dialogue Events
+ # Dialogue Events
 
  # Manipulator events
 
