@@ -161,7 +161,7 @@
  #Star Printer
  systemcraft_assembler_0: "$gc_giga$Systemcraft Assembler Construction Site"
  systemcraft_assembler_0_DESC: "This is the construction site upon which Systemcraft Assembler will be constructed"
- systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §YPlanetary Mass§! and £alloys£ §YAlloys§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
+ systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §Y$sr_solar_energy$§! and £alloys£ §Y$alloys$§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
 
  systemcraft_assembler_1: "Systemcraft Assembler Stellar Ignitor"
  systemcraft_assembler_1_DESC: "The heart of the structure, a, for now non-functioning, stellar ignitor that will soon create new stars for a systemcraft"

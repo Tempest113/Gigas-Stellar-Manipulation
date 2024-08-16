@@ -18,7 +18,7 @@ tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod als
     potential = {
         has_ascension_perk = ap_stellar_manipulation
     }
-
+    # I should probably make this do something :clueless:
 }
 
 tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
@@ -50,21 +50,6 @@ tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
             desc = "advanced_stellar_manip2_desc"
         }
     }
-
-    weight_modifier = {
-        modifier = {
-            factor = 1.25
-
-        }
-    }
-
-    ai_weight = {
-        factor = 3
-        modifier = {
-            factor = 1.25
-
-        }
-    }
 }
 
 tech_stellar_assembler = { #systemcraft assembler
@@ -75,6 +60,11 @@ tech_stellar_assembler = { #systemcraft assembler
     is_rare = yes
     weight = @tier5weight3
 
+    potential = {
+        has_ascension_perk = ap_stellar_manipulation
+        NOT = { has_global_flag = stellar_manip_assembler_disabled }
+    }
+
     prerequisites = {
         "tech_gigas_stellar_manip_2"
         "giga_tech_war_system_6"
@@ -84,7 +74,6 @@ tech_stellar_assembler = { #systemcraft assembler
         megastructure_build_speed_mult = 0.05
         country_resource_max_alloys_add = 500000
         country_resource_max_energy_add = 500000
-
     }
     prereqfor_desc = {
         custom = { title = "allow_star_assembly"	desc = "allow_star_assembly_desc" }
@@ -108,13 +97,6 @@ tech_stellar_assembler = { #systemcraft assembler
         }
         modifier = { factor = 0     has_global_flag = planetshipyard_disabled }
     }
-
-    ai_weight = {
-        factor = @giga_aiweight_multiplier
-
-        modifier = { factor = 0 has_utopia = no }
-        modifier = { factor = 0     has_global_flag = planetshipyard_disabled }
-    }
 }
 
 tech_o_class_war_system = {
@@ -123,17 +105,24 @@ tech_o_class_war_system = {
     tier = 5
     category = { field_manipulation }
     is_rare = yes
+    weight = @tier5weight3
+
+    potential = {
+        has_ascension_perk = ap_stellar_manipulation
+        NOT = { has_global_flag = stellar_manip_o_systemcraft_disabled }
+    }
+
+
     prerequisites = {
         giga_tech_war_system_6
         giga_tech_dyson_o_star
     }
-    weight = 20
+
     prereqfor_desc = {
         custom = { title = "allow_o_class_war_system"	desc = "allow_o_class_war_system" }
     }
 
     weight_modifier = {
-
         modifier = {
             factor = 1.5
             has_ascension_perk = ap_technological_ascendancy
@@ -150,9 +139,5 @@ tech_o_class_war_system = {
                 any_member = { has_technology = tech_o_class_war_system }
             }
         }
-    }
-
-    ai_weight = {
-        factor = @giga_aiweight_multiplier
     }
 }

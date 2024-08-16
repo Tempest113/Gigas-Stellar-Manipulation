@@ -1,0 +1,109 @@
+#Stellar Manipulator
+# Can't disable the manipulator, why would you be able to disable the one thing the entirety of this mod and Hyperquasaric Megaconstruction are locked behind?
+#
+# stellar_manip_manipulator_enabled = {
+#     potential = {
+#         exists = from
+#         from = { has_country_flag = giga_popout_open }
+#         NOT = { has_global_flag = stellar_manip_manipulator_disabled }
+#     }
+#
+#     allow = { always = yes }
+#
+#     effect = {
+#         custom_tooltip = "giga_menu_disabled"
+#         set_global_flag = stellar_manip_manipulator_disabled
+#
+#         # These two rely on manipulators being enabled, so turning off their prereq turns them off
+#         set_global_flag = stellar_manip_assembler_disabled
+#         set_global_flag = stellar_manip_o_systemcraft_disabled
+#
+#         # If Hyperquasaric Megaconstruction is present, disable everything as its AP relies on manipulators being active
+#         if = {
+#             limit = {
+#                 quasarmod_enabled = yes
+#             }
+#             quasarmod_disable_everything = yes
+#         }
+#     }
+# }
+#
+# stellar_manip_manipulator_disabled = {
+#     potential = {
+#         exists = from
+#         from = { has_country_flag = giga_popout_open }
+#         has_global_flag = stellar_manip_manipulator_disabled
+#     }
+#
+#     allow = { always = yes }
+#
+#     effect = {
+#         custom_tooltip = "giga_menu_disabled"
+#         remove_global_flag = stellar_manip_manipulator_disabled
+#     }
+# }
+
+#Systemcraft Assembler
+stellar_manip_assember_enabled = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_popout_open }
+        NOT = { has_global_flag = stellar_manip_assembler_disabled }
+    }
+
+    allow = { always = yes }
+
+    effect = {
+        custom_tooltip = "giga_menu_disabled"
+        set_global_flag = stellar_manip_assembler_disabled
+    }
+}
+
+stellar_manip_assember_disabled = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_popout_open }
+        has_global_flag = stellar_manip_assembler_disabled
+    }
+
+    allow = { always = yes }
+
+    effect = {
+        custom_tooltip = "giga_menu_disabled"
+        remove_global_flag = stellar_manip_assembler_disabled
+        remove_global_flag = stellar_manip_manipulator_disabled # (This needs manipulators to be enabled)
+    }
+}
+
+# O Class Systemcraft
+stellar_manip_o_systemcraft_enabled = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_popout_open }
+        NOT = { has_global_flag = stellar_manip_o_systemcraft_disabled }
+    }
+
+    allow = { always = yes }
+
+    effect = {
+        custom_tooltip = "giga_menu_disabled"
+        set_global_flag = stellar_manip_o_systemcraft_disabled
+    }
+}
+
+stellar_manip_o_systemcraft_disabled = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_popout_open }
+        has_global_flag = stellar_manip_o_systemcraft_disabled
+    }
+
+    allow = { always = yes }
+
+    effect = {
+        custom_tooltip = "giga_menu_disabled"
+        remove_global_flag = stellar_manip_o_systemcraft_disabled
+        remove_global_flag = stellar_manip_manipulator_disabled # (This needs manipulators to be enabled)
+    }
+}
+
