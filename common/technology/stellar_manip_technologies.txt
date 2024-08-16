@@ -27,7 +27,7 @@ tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
     tier = 5
     category = { materials }
     is_rare = yes
-    weight = @tier5weight2
+    weight = @giga_tier6weight1
 
     prerequisites = { "tech_gigas_stellar_manip_1" }
     potential = {
@@ -58,7 +58,7 @@ tech_stellar_assembler = { #systemcraft assembler
     tier = 5
     category = { voidcraft }
     is_rare = yes
-    weight = @tier5weight3
+    weight = @giga_tier7weight3
 
     potential = {
         has_ascension_perk = ap_stellar_manipulation
@@ -81,21 +81,12 @@ tech_stellar_assembler = { #systemcraft assembler
 
     #copied the weights from systemcraft
     weight_modifier = {
+        inline_script = technology/tech_weight_boni/militarist_tech_weight_bonus
 
-        modifier = { factor = 0 has_utopia = no }
-        modifier = {
-            factor = 1.5
-            has_ascension_perk = ap_technological_ascendancy
+        inline_script = {
+            script = technologies/rare_technologies_weight_modifiers
+            TECHNOLOGY = giga_tech_war_system_6
         }
-        modifier = {
-            factor = 2
-            has_federation = yes
-            federation = {
-                has_federation_perk = rare_tech_boost
-                any_member = { has_technology = giga_tech_planetary_drive_yard }
-            }
-        }
-        modifier = { factor = 0     has_global_flag = planetshipyard_disabled }
     }
 }
 
@@ -105,7 +96,7 @@ tech_o_class_war_system = {
     tier = 5
     category = { field_manipulation }
     is_rare = yes
-    weight = @tier5weight3
+    weight = @giga_tier7weight3
 
     potential = {
         has_ascension_perk = ap_stellar_manipulation
@@ -123,21 +114,11 @@ tech_o_class_war_system = {
     }
 
     weight_modifier = {
-        modifier = {
-            factor = 1.5
-            has_ascension_perk = ap_technological_ascendancy
-        }
-        modifier = {
-            factor = 0
-            has_global_flag = giga_o_stars_disabled
-        }
-        modifier = {
-            factor = 2
-            has_federation = yes
-            federation = {
-                has_federation_perk = rare_tech_boost
-                any_member = { has_technology = tech_o_class_war_system }
-            }
+        inline_script = technology/tech_weight_boni/shipbuilding_tech_weight_bonus
+
+        inline_script = {
+            script = technologies/rare_technologies_weight_modifiers
+            TECHNOLOGY = giga_tech_planet_assembly
         }
     }
 }
