@@ -9,10 +9,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_foundry"
 	icon_frame = 1
 	power = -100
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_ALLOY_FOUNDRIES"
 	prerequisites = { "giga_tech_war_system_6" }
 
@@ -28,10 +28,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_dyson"
 	icon_frame = 1
 	power = -1000
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_DYSON_CAPACITOR"
 	prerequisites = { "giga_tech_war_system_6" }
 
@@ -47,10 +47,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_farms"
 	icon_frame = 1
 	power = -750
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_FARMS"
 	prerequisites = { "giga_tech_war_system_6" }
 
@@ -60,26 +60,23 @@ utility_component_template = {
 	}
 }
 
-utility_component_template = {
-	key = "SYSTEMCRAFT_SHIPYARD"
-	size = aux
-	icon = "GFX_ship_part_systemcraft_shipyard"
-	icon_frame = 1
-	power = -750
-	size_restriction = { 
-		giga_systemcraft
-		giga_o_systemcraft
- 	}
-	component_set = "SYSTEMCRAFT_SHIPYARD"
-	prerequisites = { "giga_tech_war_system_6" }
+# utility_component_template = {
+# 	key = "SYSTEMCRAFT_SHIPYARD"
+# 	size = aux
+# 	icon = "GFX_ship_part_systemcraft_shipyard"
+# 	icon_frame = 1
+# 	power = -750
+# 	size_restriction = { giga_systemcraft }
+# 	component_set = "SYSTEMCRAFT_SHIPYARD"
+# 	prerequisites = { "giga_tech_war_system_6" }
 
-	resources = {
-		category = ship_components
-		upkeep = { alloys = 15 }
-	}
+# 	resources = {
+# 		category = ship_components
+# 		upkeep = { alloys = 15 }
+# 	}
 
-	modifier = { starbase_shipyard_capacity_add = 1 }							# REVIEW
-}
+# 	modifier = { starbase_shipyard_capacity_add = 1 }							# REVIEW
+# }
 
 utility_component_template = {
 	key = "SYSTEMCRAFT_WEAPONS_PLANT"
@@ -87,10 +84,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_weapons"
 	icon_frame = 1
 	power = -750
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_WEAPONS_PLANT"
 	prerequisites = { "giga_tech_war_system_6" }
 
@@ -114,10 +111,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_stability"
 	icon_frame = 1
 	power = -750
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_STABILITY"
 	prerequisites = { "giga_tech_war_system_hull_booster" }
 
@@ -144,10 +141,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_systemcraft_shield"
 	icon_frame = 1
 	power = -750
-	size_restriction = { 
+	size_restriction = {
 		giga_systemcraft
 		giga_o_systemcraft
- 	}
+	}
 	component_set = "SYSTEMCRAFT_SHIELD"
 	prerequisites = { "giga_tech_war_system_6" }
 

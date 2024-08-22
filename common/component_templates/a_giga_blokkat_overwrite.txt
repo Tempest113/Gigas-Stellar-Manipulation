@@ -24,9 +24,7 @@ weapon_component_template = {
 	
 	component_set = "PLANET_LANCE_BLOKKAT"
 	projectile_gfx = "giga_super_omega_laser_blokkat"
-	tags = { weapon_type_energy 
-	weapon_type_anticompound
-}
+	tags = { weapon_type_energy weapon_type_anticompound }
 
 	size_restriction = { giga_planet_behemoth giga_systemcraft giga_o_systemcraft }
 	
