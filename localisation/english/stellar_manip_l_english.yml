@@ -16,7 +16,7 @@
  basic_stellar_manip1: "§KUnlocks Feature:§! Stellar Plasma Collection"
  basic_stellar_manip1_desc: "The ability to collect energetic plasma from stars and store it for future use will open the door to many wonderful possibilities. Supernovae caused by Fusion Suppressors and Star Eaters will provide Stellar Plasma after researching this technology."
 
- tech_gigas_stellar_manip_2: "Heliostructural Reconstitution" #Advanced Stellar Manipulation
+ tech_gigas_stellar_manip_2: "Heliostructural Reconstitution"
  tech_gigas_stellar_manip_2_desc: "To shape the very stars to our will we must explore a whole new avenue of research and development."
 
  advanced_stellar_manip1: "§KUnlocks Feature:§! Stellar Manipulation"
@@ -212,27 +212,45 @@
  war_system_o_5: "$name_war_system$"
  war_system_o_5_DESC: "A completed $name_war_system$, complete with an Ecumenopolis and a smaller world to house most of its population, which serves as the crew."
 
+ # Messages
+
+ MESSAGE_TITLE_STELLAR_MANIPULATOR_SITE_BUILT: "$stellar_manipulator_0$ Built"
+ MESSAGE_STELLAR_MANIPULATOR_SITE_BUILT: "A $stellar_manipulator_0$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_MANIPULATOR_BUILT: "$stellar_manipulator_1$ Built"
+ MESSAGE_STELLAR_MANIPULATOR_BUILT: "A $stellar_manipulator_1$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_HARVESTER_BUILT: "$stellar_manipulator_2$ Built"
+ MESSAGE_STELLAR_HARVESTER_BUILT: "A $stellar_manipulator_2$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_INJECTOR_BUILT: "$stellar_manipulator_3$ Built"
+ MESSAGE_STELLAR_INJECTOR_BUILT: "A $stellar_manipulator_3$ has been built in the [event_target:star_manip_system.GetName] system."
+
 
  # Dialogue Events
 
  # Manipulator events
 
  #Construction
- stellar_manip.101.name: "$stellar_manipulator_0$ Finished"
- stellar_manip.101.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
- stellar_manip.101.a: "Great."
+ # REPLACED BY MESSAGE/TOAST
+ # stellar_manip.101.name: "$stellar_manipulator_0$ Finished"
+ # stellar_manip.101.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
+ # stellar_manip.101.a: "Great."
 
- stellar_manip.102.name: "$stellar_manipulator_1$ Finished"
- stellar_manip.102.desc: "We have finished the construction of a stellar manipulator in the [From.GetName] system, now we must decide what to do with the star."
- stellar_manip.102.a: "Great."
+ # REPLACED BY MESSAGE/TOAST
+ # stellar_manip.102.name: "$stellar_manipulator_1$ Finished"
+ # stellar_manip.102.desc: "We have finished the construction of a stellar manipulator in the [From.GetName] system, now we must decide what to do with the star."
+ # stellar_manip.102.a: "Great."
 
- stellar_manip.103.name: "$stellar_manipulator_2$ Finished"
- stellar_manip.103.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
- stellar_manip.103.a: "Great."
- stellar_manip.103.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
-
- stellar_manip.104.name: "$stellar_manipulator_3$ Finished"
- stellar_manip.104.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
+ # REPLACED BY MESSAGE/TOAST
+ # stellar_manip.103.name: "$stellar_manipulator_2$ Finished"
+ # stellar_manip.103.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
+ # stellar_manip.103.a: "Great."
+ # stellar_manip.103.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
+ #
+ # # REPLACED BY MESSAGE/TOAST
+ # stellar_manip.104.name: "$stellar_manipulator_3$ Finished"
+ # stellar_manip.104.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
 
  #Injector Disabled
  stellar_manip.100.title: "Stellar Mass Injectors Disabled"
@@ -272,7 +290,7 @@
  star_printer.102.a: "Moving on."
 
  star_printer.103.name: "Systemcraft Assembler Logistical Frame Constructed"
- star_printer.103.desc: "With the system obstacles gone and the [FROM.GetName] harvested we are ready to proceed. The central ring of the Systemcraft Assembler has been built and will serve as crew quarters and central logistical system for the structure to make sure everything goes where it needs to go"
+ star_printer.103.desc: "With the system obstacles gone and the [From.GetName] harvested we are ready to proceed. The central ring of the Systemcraft Assembler has been built and will serve as crew quarters and central logistical system for the structure to make sure everything goes where it needs to go"
  star_printer.103.a: "The plasma extracted from the star will be useful."
 
  star_printer.104.name: "Systemcraft Assembler Celestial Fabricators Built"

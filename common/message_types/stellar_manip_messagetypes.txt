@@ -1,0 +1,51 @@
+# Construction Site
+message_type = {
+    key = "MESSAGE_STELLAR_MANIPULATOR_SITE_BUILT"
+    icon = "GFX_message_megastructure_built"
+    icon_frame = 1
+
+    name = "MESSAGE_TITLE_STELLAR_MANIPULATOR_SITE_BUILT"
+    sound = "notification"
+    ping = "ping_notification_green"
+
+    category = economy
+}
+
+# Base Manipulator
+message_type = {
+    key = "MESSAGE_STELLAR_MANIPULATOR_BUILT"
+    icon = "GFX_message_megastructure_built"
+    icon_frame = 1
+
+    name = "MESSAGE_TITLE_STELLAR_MANIPULATOR_BUILT"
+    sound = "notification"
+    ping = "ping_notification_green"
+
+    category = economy
+}
+
+# Harvester
+message_type = {
+    key = "MESSAGE_STELLAR_HARVESTER_BUILT"
+    icon = "GFX_message_megastructure_built"
+    icon_frame = 1
+
+    name = "MESSAGE_TITLE_STELLAR_HARVESTER_BUILT"
+    sound = "notification"
+    ping = "ping_notification_green"
+
+    category = economy
+}
+
+# Injector
+message_type = {
+    key = "MESSAGE_STELLAR_INJECTOR_BUILT"
+    icon = "GFX_message_megastructure_built"
+    icon_frame = 1
+
+    name = "MESSAGE_TITLE_STELLAR_INJECTOR_BUILT"
+    sound = "notification"
+    ping = "ping_notification_green"
+
+    category = economy
+}

@@ -68,17 +68,30 @@ stellar_manipulator_0 = {
 		#maybe i should actually make weights for once, maybe not
 	}
 	on_build_complete = {
+		save_event_target_as = star_manip_system
+		fromfrom = { save_event_target_as = star_manip_mega }
+
+		create_message = {
+			type = MESSAGE_STELLAR_MANIPULATOR_SITE_BUILT
+			localization = MESSAGE_STELLAR_MANIPULATOR_SITE_BUILT
+			days = @toast_message_days
+			target = event_target:star_manip_system
+
+		}
+
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
 			set_planet_flag = megastructure
+			set_planet_flag = star_manip_target
 			save_event_target_as = star_manip_planet
 		}
-		save_event_target_as = star_manip_system
-		owner = {
-			country_event = {
-				id = stellar_manip.101
-			}
-		}
+
+		# REPLACED BY MESSAGE/TOAST
+		# owner = {
+		# 	country_event = {
+		# 		id = stellar_manip.101
+		# 	}
+		# }
 	}
 }
 
@@ -108,11 +121,23 @@ stellar_manipulator_1 = {
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
-		owner = {
-			country_event = {
-				id = stellar_manip.102
-			}
+		fromfrom = { save_event_target_as = star_manip_mega }
+
+		create_message = {
+			type = MESSAGE_STELLAR_MANIPULATOR_BUILT
+			localization = MESSAGE_STELLAR_MANIPULATOR_BUILT
+			days = @toast_message_days
+			target = event_target:star_manip_system
+
 		}
+
+		# REPLACED BY MESSAGE/TOAST
+		# owner = {
+		# 	country_event = {
+		# 		id = stellar_manip.102
+		# 	}
+		# }
+
 		if = {
 			limit = {
 				fromfrom.planet = {
@@ -129,6 +154,7 @@ stellar_manipulator_1 = {
 			}
 			remove_megastructure = fromfrom
 		}
+
 	}
 }
 
@@ -137,7 +163,6 @@ stellar_manipulator_2 = {
 	entity = "stellar_manip_full_entity"
 	construction_entity = "stellar_manip_full_entity"
 	portrait = "GFX_star_manip_01_background"
- 	#scales_with_planet = yes
 	build_time = 1260
 	upgrade_from = { stellar_manipulator_1 }
 
@@ -156,12 +181,27 @@ stellar_manipulator_2 = {
 	possible = {
 		custom_tooltip = {
 			text = stellar_manip_no_ignited_stars
-			event_target:star_manip_planet = { NOT = { is_planet_class = pc_gigaignited_star } }
+			star = {
+				NAND = {
+					is_planet_class = pc_gigaignited_star
+					has_planet_flag = star_manip_target
+				}
+			}
 		}
 	}
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
+		fromfrom = { save_event_target_as = star_manip_mega }
+
+		create_message = {
+			type = MESSAGE_STELLAR_HARVESTER_BUILT
+			localization = MESSAGE_STELLAR_HARVESTER_BUILT
+			days = @toast_message_days
+			target = event_target:star_manip_system
+
+		}
+
 		if = {
 			limit = {
 				owner = {
@@ -171,36 +211,24 @@ stellar_manipulator_2 = {
 					}
 				}
 			}
-			owner = {
-				country_event = {
-					id = stellar_manip.103
-				}
-			}
+			# REPLACED BY MESSAGE/TOAST
+			# owner = {
+			# 	country_event = {
+			# 		id = stellar_manip.103
+			# 	}
+			# }
 		}
+
 		owner = {
 			remove_country_flag = auto_harvester
 			remove_country_flag = restarted_harvester
 		}
+
 		fromfrom = {
 			save_event_target_as = star_harvester
 		}
 		fromfrom.planet = {
 			save_event_target_as = star_being_harvested
-			# if = {
-			# 	limit = {
-			# 		is_planet_class = pc_giga_o_star
-			# 	}
-			# 	planet_event = {
-			# 		id = stellar_manip.1000
-			# 		days = 1460
-			# 	}				#1460 - 4 years, for o classes it's doubled
-			# }
-			# else = {
-			# 	planet_event = {
-			# 		id = stellar_manip.1000
-			# 		days = 730
-			# 	}				#730 - 2 years
-			# }
 		}
 		if = {
 			limit = {
@@ -223,6 +251,7 @@ stellar_manipulator_2 = {
 				}
 			}
 		}
+
 	}
 }
 
@@ -242,87 +271,28 @@ stellar_manipulator_3 = {
 		upkeep = {
 			energy = 150
 		}
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_b_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_b_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_m_giant_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_m_giant_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_a_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_a_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_f_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_f_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_g_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_g_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_k_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_k_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_m_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_m_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
-		# upkeep = {
-		# 	trigger = {
-		# 		this.planet = {
-		# 			is_planet_class = pc_gigaignited_star
-		# 		}
-		# 	}
-		# 	sr_stellar_plasma = @injector_plasma_ignited_star
-		# 	multiplier = this.planet.value:stellarm_infusion_multiplier
-		# }
 	}
+
 	upgrade_from = {
 		stellar_manipulator_1
 	}
+
 	ai_weight = {
 		factor = 1
 		#maybe i should actually make weights for once, maybe not
 	}
 	on_build_complete = {
+		save_event_target_as = star_manip_system
+		fromfrom = { save_event_target_as = star_injector }
+
+		create_message = {
+			type = MESSAGE_STELLAR_INJECTOR_BUILT
+			localization = MESSAGE_STELLAR_INJECTOR_BUILT
+			days = @toast_message_days
+			target = event_target:star_manip_system
+
+		}
+
 		if = {
 			limit = {
 				owner = {
@@ -337,26 +307,21 @@ stellar_manipulator_3 = {
 				remove_country_flag = auto_injector
 			}
 		}
-		else = {
-			save_event_target_as = star_manip_system
-			owner = {
-				country_event = {
-					id = stellar_manip.104
-				}
-			}
-		}
-		fromfrom = {
-			save_event_target_as = star_injector
-		}
+
+		# REPLACED BY MESSAGE/TOAST
+		# else = {
+		# 	save_event_target_as = star_manip_system
+		# 	owner = {
+		# 		country_event = {
+		# 			id = stellar_manip.104
+		# 		}
+		# 	}
+		# }
+
 		fromfrom.planet = {
 			save_event_target_as = star_being_injected
-			# if = {
-			# 	limit = { is_planet_class = pc_b_star }
-			# 	planet_event = { id = stellar_manip.1001 days = 1460 } #1460 - 4 years, for o classes it's doubled
-			# } else = {
-			# 	planet_event = { id = stellar_manip.1001 days = 730 } #730 - 2 years
-			# }
 		}
+
 		if = {
 			limit = {
 				exists = from
@@ -378,6 +343,7 @@ stellar_manipulator_3 = {
 				}
 			}
 		}
+
 	}
 }
 
@@ -428,11 +394,13 @@ stellar_manipulator_o_2 = {
 	}
 	on_build_complete = {
 		save_event_target_as = star_manip_system
-		owner = {
-			country_event = {
-				id = stellar_manip.103
-			}
-		}
+
+		# REPLACED BY MESSAGE/TOAST
+		# owner = {
+		# 	country_event = {
+		# 		id = stellar_manip.103
+		# 	}
+		# }
 		fromfrom = {
 			save_event_target_as = star_harvester
 		}
