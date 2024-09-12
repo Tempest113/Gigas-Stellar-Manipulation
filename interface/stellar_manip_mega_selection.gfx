@@ -1,0 +1,14 @@
+spriteTypes = {
+
+    # Stellar Manipulator
+    spriteType = {
+        name = "GFX_stellar_manipulator_0_build_icon"
+        textureFile = "gfx/interface/icons/technologies/tech_gigas_stellar_manip_2.dds"
+    }
+
+    # Systemcraft Assembler (cringe)
+    spriteType = {
+        name = "GFX_systemcraft_assembler_0_build_icon"
+        textureFile = "gfx/interface/icons/technologies/tech_stellar_assembler.dds"
+    }
+}
