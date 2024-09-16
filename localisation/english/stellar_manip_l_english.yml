@@ -233,24 +233,24 @@
 
  #Construction
  # REPLACED BY MESSAGE/TOAST
- # stellar_manip.101.name: "$stellar_manipulator_0$ Finished"
- # stellar_manip.101.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
- # stellar_manip.101.a: "Great."
+ stellar_manip.101.name: "$stellar_manipulator_0$ Finished"
+ stellar_manip.101.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
+ stellar_manip.101.a: "Great."
 
  # REPLACED BY MESSAGE/TOAST
- # stellar_manip.102.name: "$stellar_manipulator_1$ Finished"
- # stellar_manip.102.desc: "We have finished the construction of a stellar manipulator in the [From.GetName] system, now we must decide what to do with the star."
- # stellar_manip.102.a: "Great."
+ stellar_manip.102.name: "$stellar_manipulator_1$ Finished"
+ stellar_manip.102.desc: "We have finished the construction of a stellar manipulator in the [From.GetName] system, now we must decide what to do with the star."
+ stellar_manip.102.a: "Great."
 
  # REPLACED BY MESSAGE/TOAST
- # stellar_manip.103.name: "$stellar_manipulator_2$ Finished"
- # stellar_manip.103.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
- # stellar_manip.103.a: "Great."
- # stellar_manip.103.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
+ stellar_manip.103.name: "$stellar_manipulator_2$ Finished"
+ stellar_manip.103.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
+ stellar_manip.103.a: "Great."
+ stellar_manip.103.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
  #
  # # REPLACED BY MESSAGE/TOAST
- # stellar_manip.104.name: "$stellar_manipulator_3$ Finished"
- # stellar_manip.104.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
+ stellar_manip.104.name: "$stellar_manipulator_3$ Finished"
+ stellar_manip.104.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
 
  #Injector Disabled
  stellar_manip.100.title: "Stellar Mass Injectors Disabled"
@@ -266,10 +266,10 @@
 
  #Fully Finished
  stellar_manip.2002.name: "Automated Stellar Harvesting Finished"
- stellar_manip.2002.desc: "Our stellar mass harvester in the [From.GetName] system has fully finished, the star has been reduced down to a class T, we recovered some alloys while dismantling the structure"
+ stellar_manip.2002.desc: "Our stellar mass harvester in the [From.GetName] system has fully finished, the star has been reduced down to a class T, we have also recovered some alloys while dismantling the structure"
 
  stellar_manip.2005.name: "Automated Stellar Injection Fully Finished"
- stellar_manip.2005.desc: "Our stellar mass injector in the [From.GetName] system has fully finished and the star has been increased to a class O, we have recovered some alloys while dismantling the structure"
+ stellar_manip.2005.desc: "Our stellar mass injector in the [From.GetName] system has fully finished and the star has been increased to a class O, we have also recovered some alloys while dismantling the structure"
 
  #Out of Energy
  stellar_manip.2003.name: "Automated Harvester Out of Energy"
