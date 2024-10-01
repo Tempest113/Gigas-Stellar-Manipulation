@@ -324,3 +324,8 @@
 
  REACTOR_SYSTEM_O: "Captive Class O Star"
  REACTOR_SYSTEM_O_DESC: "A entire Class O star is held within this gargantuan vessel providing massive levels of power"
+
+ # Maginot
+
+ GIGA_MAGINOT_O_STAR_REACTOR: "Upscaled $GIGA_MAGINOT_STAR_REACTOR$"
+ GIGA_MAGINOT_O_STAR_REACTOR_DESC: "The advent of the $giga_o_systemcraft$ has allowed for the same techniques used by previous maginot $GIGA_MAGINOT_STAR_REACTOR$ Systems to be increased in scale, allowing for a massive increase in available power."
