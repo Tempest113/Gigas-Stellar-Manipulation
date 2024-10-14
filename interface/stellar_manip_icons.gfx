@@ -37,8 +37,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ship_part_reactor_system_o"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_reactor_system_o.dds"
-		masking_texture = "gfx/interface/situation_log/event_mask.dds"
-		alwaystransparent = yes
 	}
 }
 spriteTypes = {

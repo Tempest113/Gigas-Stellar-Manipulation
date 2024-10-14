@@ -13,16 +13,16 @@
  tech_gigas_stellar_manip_1: "High Energy Plasma Containment"
  tech_gigas_stellar_manip_1_desc: "Exploding stars expel a significant amount of high energy plasma that can be collected and used in various scientific endeavours."
 
- basic_stellar_manip1: "§KUnlocks Feature:§! Stellar Plasma Collection"
+ basic_stellar_manip1: "§HUnlocks Feature:§! Stellar Plasma Collection"
  basic_stellar_manip1_desc: "The ability to collect energetic plasma from stars and store it for future use will open the door to many wonderful possibilities. Supernovae caused by Fusion Suppressors and Star Eaters will provide Stellar Plasma after researching this technology."
 
  tech_gigas_stellar_manip_2: "Heliostructural Reconstitution"
  tech_gigas_stellar_manip_2_desc: "To shape the very stars to our will we must explore a whole new avenue of research and development."
 
- advanced_stellar_manip1: "§KUnlocks Feature:§! Stellar Manipulation"
+ advanced_stellar_manip1: "§HUnlocks Feature:§! Stellar Manipulation"
  advanced_stellar_manip1_desc: "We will reshape even the stars above."
 
- advanced_stellar_manip2: "§KUnlocks Megastructure:§! $stellar_manipulator$"
+ advanced_stellar_manip2: "§HUnlocks Megastructure:§! $stellar_manipulator$"
  advanced_stellar_manip2_desc: "A megastructure capable of changing the size and structure of a star through highly advanced Stellar Plasma injection and harvesting techniques"
 
  tech_stellar_assembler: "Mass Stellar Ignition"
