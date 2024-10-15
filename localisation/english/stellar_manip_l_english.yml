@@ -31,9 +31,11 @@
  allow_star_assembly: "§RAllows the construction of systemcraft assemblers"
  allow_star_assembly_desc: "A gigastructure capable of building a systemcraft in one stage"
 
- tech_o_class_war_system: "Class O Systemcraft"
- tech_o_class_war_system_desc: "Class O stars have a massive power output, utilizing one for our systemcrafts can allow them to field much more heavy weaponry"
- allow_o_class_war_system: "Allows for the construction of §YO-Class Systemcraft§!, significantly more powerful than our regular Systemcraft"
+ tech_o_class_war_system: "Systemcraft Superscaling"
+ tech_o_class_war_system_desc: "Class O stars have a massive power output, utilizing one for our $name_war_system$s would allow them to field much more heavy weaponry"
+
+ allow_o_class_war_system: "§HUnlocks Megastructure:§! $giga_o_systemcraft$"
+ allow_o_class_war_system_desc: "Allows for the construction of §Y$giga_o_systemcraft$§!, significantly more powerful than our regular Systemcraft"
 
 
 # Situations
@@ -314,7 +316,7 @@
  # Class O Systemcraft
 
  giga_o_systemcraft: "Class O Stellar Systemcraft"
- giga_o_systemcraft_plural: "$giga_o_systemcraft$"
+ giga_o_systemcraft_plural: "$giga_o_systemcraft$s"
  systemcraft_ship_o_bowgun_01_key: "Primary Annihilator Lances"
  systemcraft_ship_o_bow_01_key: "Existence Removal Beams"
  systemcraft_ship_o_mid_01_key: "Nicoll-Dyson Capacitor Array"
@@ -327,5 +329,5 @@
 
  # Maginot
 
- GIGA_MAGINOT_O_STAR_REACTOR: "Upscaled $GIGA_MAGINOT_STAR_REACTOR$"
- GIGA_MAGINOT_O_STAR_REACTOR_DESC: "The advent of the $giga_o_systemcraft$ has allowed for the same techniques used by previous maginot $GIGA_MAGINOT_STAR_REACTOR$ Systems to be increased in scale, allowing for a massive increase in available power."
+ GIGA_MAGINOT_O_STAR_REACTOR: "Upgraded $GIGA_MAGINOT_STAR_REACTOR$"
+ GIGA_MAGINOT_O_STAR_REACTOR_DESC: "The advent of the $giga_o_systemcraft$ has allowed for the various techniques employed by the $GIGA_MAGINOT_STAR_REACTOR$ to be greatly increased in scale, allowing for a massive increase in available power."

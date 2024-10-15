@@ -110,7 +110,12 @@ tech_o_class_war_system = {
     }
 
     prereqfor_desc = {
-        custom = { title = "allow_o_class_war_system"	desc = "allow_o_class_war_system" }
+        hide_prereq_for_desc = ship
+        hide_prereq_for_desc = component
+        hide_prereq_for_desc = feature
+        hide_prereq_for_desc = resource
+        custom = { title = "header_03_insane"	desc = "header_03_insane_desc" }
+        custom = { title = "allow_o_class_war_system"	desc = "allow_o_class_war_system_desc" }
     }
 
     weight_modifier = {
