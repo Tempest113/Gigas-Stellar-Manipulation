@@ -569,6 +569,199 @@ planet_event = {
  	}
  }
 
+# planet_event = {
+# 	id = stellar_manip.1999
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 	trigger = {
+# 		is_scope_valid = yes
+# 	}
+# 	immediate = {
+# 		remove_planet_flag = has_megastructure
+# 		remove_planet_flag = megastructure
+# 		switch = {
+# 			trigger = giga_is_o_star_for_megas
+# 			pc_b_star = {
+# 				solar_system = {
+# 					stellar_manip_create_o_star = yes
+# 				}
+# 			}
+# 			pc_m_giant_star = {
+# 				change_pc = pc_b_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_b
+# 					}
+# 				}
+# 			}
+# 			pc_a_star = {
+# 				change_pc = pc_b_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_b
+# 					}
+# 				}
+# 			}
+# 			pc_f_star = {
+# 				change_pc = pc_a_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_a
+# 					}
+# 				}
+# 			}
+# 			pc_g_star = {
+# 				change_pc = pc_f_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_f
+# 					}
+# 				}
+# 			}
+# 			pc_k_star = {
+# 				change_pc = pc_g_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_g
+# 					}
+# 				}
+# 			}
+# 			pc_m_star = {
+# 				change_pc = pc_k_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_k
+# 					}
+# 				}
+# 			}
+# 			pc_gigaignited_star = {
+# 				change_pc = pc_m_star
+# 				solar_system = {
+# 					if = {
+# 						limit = {
+# 							giga_is_bitrinary = no
+# 						}
+# 						set_star_class = sc_m
+# 					}
+# 				}
+# 			}
+# 		}
+# 		save_event_target_as = star_manip_planet
+# 		# from.owner = {
+# 		# planet_event = {
+# 		# 	id = stellar_manip.1002
+# 		# }
+# 		# }
+# 		if = {
+# 			#automatic injection
+# 			limit = {
+# 				from.owner = {
+# 					has_policy_flag = policy_automatic_injection
+# 				}
+# 			}
+# 			if = {
+# 				#injected up to class O
+# 				limit = {
+# 					giga_is_o_star_for_megas = yes
+# 				}
+# 				space_owner = {
+# 					country_event = {
+# 						id = stellar_manip.2005
+# 					}
+# 				}
+# 				stellar_manip_remove_applicable_injector_mega = yes
+# 			}
+# 			else = {
+# 				if = {
+# 					#check for energy
+# 					limit = {
+# 						space_owner = {
+# 							has_resource = {
+# 								type = energy
+# 								amount > 5000
+# 							}
+# 						}
+# 					}
+# 					space_owner = {
+# 						add_resource = {
+# 							energy = -5000
+# 						}
+# 						set_country_flag = auto_injector
+# 					}
+# 					stellar_manip_remove_applicable_injector_mega = yes
+# 					solar_system = {
+# 						spawn_megastructure = {
+# 							type = stellar_manipulator_3
+# 							owner = ROOT.space_owner
+# 							planet = ROOT
+# 						}
+# 					}
+# 					from.owner = {
+# 						start_situation = {
+# 							type = situation_stellar_infusion
+# 							target = root
+# 						}
+# 					}
+#
+# 				}
+# 				else = {
+# 					#no energy
+# 					stellar_manip_remove_applicable_injector_mega = yes
+# 					solar_system = {
+# 						save_event_target_as = star_being_injected
+#
+# 							set_star_flag = stellarm_tempt_dont_abort
+#
+# 						spawn_megastructure = {
+# 							type = stellar_manipulator_off
+# 							owner = ROOT.space_owner
+# 							planet = ROOT
+# 							init_effect = {
+# 								save_event_target_as = star_injector
+# 							}
+# 						}
+#
+# 							remove_star_flag = stellarm_tempt_dont_abort
+#
+# 					}
+# 					space_owner = {
+# 						country_event = {
+# 							id = stellar_manip.2006
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		else = {
+# 			#manual injection
+# 			space_owner = {
+# 				country_event = {
+# 					id = stellar_manip.2004
+# 				}
+# 			}
+# 			stellar_manip_remove_applicable_injector_mega = yes
+# 		}
+# 		destroy_situation = from
+# 	}
+# }
 planet_event = {
 	id = stellar_manip.1999
 	is_triggered_only = yes
@@ -579,97 +772,82 @@ planet_event = {
 	immediate = {
 		remove_planet_flag = has_megastructure
 		remove_planet_flag = megastructure
-		switch = {
-			trigger = is_planet_class
-			pc_b_star = {
-				solar_system = {
-					stellar_manip_create_o_star = yes
-				}
+		save_event_target_as = star_manip_planet
+
+		#Star class change
+		if = {
+			limit = {
+				giga_is_b_star_for_megas = yes
 			}
-			pc_m_giant_star = {
-				change_pc = pc_b_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_b
-					}
-				}
+
+			solar_system = {
+				stellar_manip_create_o_star = yes
 			}
-			pc_a_star = {
-				change_pc = pc_b_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_b
-					}
-				}
+
+		}
+		else_if = {
+			limit = {
+				giga_is_m_giant_star_for_megas = yes
 			}
-			pc_f_star = {
-				change_pc = pc_a_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_a
-					}
-				}
-			}
-			pc_g_star = {
-				change_pc = pc_f_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_f
-					}
-				}
-			}
-			pc_k_star = {
-				change_pc = pc_g_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_g
-					}
-				}
-			}
-			pc_m_star = {
-				change_pc = pc_k_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_k
-					}
-				}
-			}
-			pc_gigaignited_star = {
-				change_pc = pc_m_star
-				solar_system = {
-					if = {
-						limit = {
-							giga_is_bitrinary = no
-						}
-						set_star_class = sc_m
-					}
-				}
+
+			solar_system = {
+				set_star_class = sc_b
 			}
 		}
-		save_event_target_as = star_manip_planet
-		# from.owner = {
-		# planet_event = {
-		# 	id = stellar_manip.1002
-		# }
-		# }
+
+		else_if = {
+			limit = {
+				giga_is_a_star_for_megas = yes
+			}
+
+			solar_system = {
+				set_star_class = sc_m_giant
+			}
+		}
+
+		else_if = {
+			limit = {
+				giga_is_f_star_for_megas = yes
+			}
+
+			solar_system = {
+				set_star_class = sc_a
+			}
+		}
+
+		else_if = {
+			limit = {
+				giga_is_g_star_for_megas = yes
+			}
+
+			solar_system = {
+				set_star_class = sc_f
+			}
+		}
+
+		else_if = {
+			limit = {
+				giga_is_k_star_for_megas = yes
+			}
+
+			solar_system = {
+				set_star_class = sc_g
+			}
+		}
+
+		else_if = {
+			limit = {
+				giga_is_m_star_for_megas = yes
+			}
+
+			solar_system = {
+				set_star_class = sc_k
+			}
+		}
+
+
+		# Other stuff
+
 		if = {
 			#automatic injection
 			limit = {
@@ -727,9 +905,9 @@ planet_event = {
 					stellar_manip_remove_applicable_injector_mega = yes
 					solar_system = {
 						save_event_target_as = star_being_injected
-						
+
 							set_star_flag = stellarm_tempt_dont_abort
-						
+
 						spawn_megastructure = {
 							type = stellar_manipulator_off
 							owner = ROOT.space_owner
@@ -738,9 +916,9 @@ planet_event = {
 								save_event_target_as = star_injector
 							}
 						}
-						
+
 							remove_star_flag = stellarm_tempt_dont_abort
-						
+
 					}
 					space_owner = {
 						country_event = {
