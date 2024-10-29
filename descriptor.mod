@@ -1,4 +1,4 @@
-version="3.12.*"
+version="2.0"
 tags={
 	"Balance"
 	"Utilities"
@@ -6,6 +6,6 @@ tags={
 	"Ships"
 	"Events"
 }
-name="[3.13] Stellar Manipulation Rewrite/Revival"
-supported_version="v3.13.*"
+name="[3.14] Stellar Manipulation Rewrite/Revival"
+supported_version="v3.14.*"
 remote_file_id="3278963965"
