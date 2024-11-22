@@ -34,6 +34,8 @@ giga_o_systemcraft = {
 	can_have_federation_design = no
 	possible_construction = { always = no }
 
+	construction_type = starbase_shipyard
+
 	ship_roles = { artillery }
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"

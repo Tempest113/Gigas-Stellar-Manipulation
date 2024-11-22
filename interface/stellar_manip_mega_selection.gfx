@@ -11,4 +11,10 @@ spriteTypes = {
         name = "GFX_systemcraft_assembler_0_build_icon"
         textureFile = "gfx/interface/icons/technologies/tech_stellar_assembler.dds"
     }
+
+    # O Class Systemcraft (equally cringe)
+    spriteType = {
+        name = "GFX_war_system_o_0_build_icon"
+        textureFile = "gfx/interface/icons/technologies/tech_o_class_war_system.dds"
+    }
 }

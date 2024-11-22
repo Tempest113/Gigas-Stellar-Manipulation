@@ -3,20 +3,86 @@ war_system_o_0 = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	potential = { always = no }
+	prerequisites = { tech_o_class_war_system }
 
 	ai_weight = { factor = 0 }
+	build_time = 1800
 	resources = {
-		category = giga_gigastructures
-		upkeep = { energy = 15 }
+		category = megastructures
+		cost = {
+			alloys = 10000
+			influence = 300
+			unity = @giga_tera_start_unity_cost
+		}
+		upkeep = { energy = 5 }
+	}
+
+	potential = {
+		is_ai = no
+		has_technology = tech_o_class_war_system
+		has_ascension_perk = ap_celestial_printing
+		NOT = { has_global_flag = systemcraft_disabled }
+		OR = {
+			check_variable = { which = giga_systemcraft_cap value = 0 }						# No Cap
+			check_variable = { which = giga_current_systemcraft value < giga_systemcraft_cap }
+		}
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = "requires_no_habitable_planets"		NOT = { any_system_planet = { is_colony = yes } } }
+		custom_tooltip = { fail_text = "requires_inside_border"				is_inside_border = from }
+		custom_tooltip = { fail_text = "requires_no_crisis_system"			NOT = { any_system_planet = { has_planet_flag = crisis_vital_planet } } }
+		custom_tooltip = {
+			fail_text = "requires_not_capped"
+			from = {
+				OR = {
+					check_variable = { which = giga_systemcraft_cap value = 0 }						# No Cap
+					check_variable = { which = giga_current_systemcraft value < giga_systemcraft_cap }
+				}
+			}
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_existing_megastructure"				planet_has_no_megastructure = yes }
+			custom_tooltip = { fail_text = "must_build_around_star"							is_star = yes }
+			custom_tooltip = { fail_text = "requires_no_anomaly"							has_anomaly = no }
+			custom_tooltip = {
+				fail_text = "requires_standard_o_star_planet_class"
+				giga_is_o_star_for_megas= yes ##can build on O stars
+				NOT = {
+					giga_is_bitrinary = yes
+				}
+			}
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = giga_system
+		if = { limit = { exists = fromfrom.planet } fromfrom.planet = { save_event_target_as = giga_planet } }
+		from = {
+			country_event = { id = giga_dialog.2802 }	# Notification
+			change_variable = { which = giga_current_systemcraft value = 1 }
+		}
+		fromfrom.planet = {
+			if = { limit = { exists = orbital_station } orbital_station = { dismantle = yes } }
+			set_planet_flag = megastructure
+			giga_set_has_mega_flag = yes
+		}
 	}
 }
 
 war_system_o_1 = {
 	entity = "war_system_o_phase_01_entity"
-	construction_entity = "war_system_o_phase_01_entity"
+	construction_entity = "war_system_o_phase_01_construction_entity"
 	portrait = "GFX_megastructure_moon"
 	upgrade_from = { war_system_o_0 }
+
+	outliner_trigger = {
+		exists = owner
+		NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+	}
 
 	build_time = 10800
 	resources = {
@@ -35,7 +101,7 @@ war_system_o_1 = {
 			has_technology = tech_o_class_war_system
 			has_technology = giga_tech_war_system_1
 			has_technology = giga_tech_war_system_2
-			has_ascension_perk = ap_systemcraft
+			has_ascension_perk = ap_celestial_printing
 		}
 	}
 
@@ -43,11 +109,6 @@ war_system_o_1 = {
 		save_event_target_as = giga_system
 		fromfrom.planet = {
 			save_event_target_as = giga_planet
-		}
-		#delete the star
-		set_star_class = sc_empty_space
-		remove_star_flag = giga_o_star_system
-		fromfrom.planet = {
 			change_pc = pc_giga_empty_space
 			remove_modifier = giga_o_star_modifier
 		}
@@ -55,6 +116,9 @@ war_system_o_1 = {
 		giga_remove_system_debris = yes
 		set_asteroid_belt = { radius = 0 }
 		from = { country_event = { id = giga_dialog.2803 } }	# Notification
+
+		remove_star_flag = giga_o_star_system
+
 	}
 }
 
@@ -81,7 +145,7 @@ war_system_o_2 = {
 			has_technology = giga_tech_war_system_1
 			has_technology = giga_tech_war_system_2
 			has_technology = giga_tech_war_system_3
-			has_ascension_perk = ap_systemcraft
+			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_2"
@@ -170,7 +234,7 @@ war_system_o_3 = {
 			has_technology = giga_tech_war_system_2
 			has_technology = giga_tech_war_system_3
 			has_technology = giga_tech_war_system_4
-			has_ascension_perk = ap_systemcraft
+			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_moon_2"
@@ -241,7 +305,7 @@ war_system_o_3 = {
 			has_technology = giga_tech_war_system_3
 			has_technology = giga_tech_war_system_4
 			has_technology = giga_tech_war_system_5
-			has_ascension_perk = ap_systemcraft
+			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_2"
@@ -284,8 +348,7 @@ war_system_o_3 = {
 	}
 }
 
-
- war_system_o_5 = {
+war_system_o_5 = {
 	entity = ""
 	construction_entity = "war_system_o_phase_05_construction_entity"
 	portrait = "GFX_megastructure_moon"
@@ -311,7 +374,7 @@ war_system_o_3 = {
 			has_technology = giga_tech_war_system_4
 			has_technology = giga_tech_war_system_5
 			has_technology = giga_tech_war_system_6
-			has_ascension_perk = ap_systemcraft
+			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = { fail_text = "requires_systemcraft_crew"		from = { has_country_flag = systemcraft_crew_required } }
 		custom_tooltip = {
