@@ -33,6 +33,7 @@ giga_o_systemcraft = {
 	can_disable = no
 	can_have_federation_design = no
 	possible_construction = { always = no }
+	potential_construction = { always = no }
 
 	construction_type = starbase_shipyard
 
