@@ -133,7 +133,7 @@
 
  stellar_manipulator_0: "$gc_mega$$stellar_manipulator$ Construction Site"
  stellar_manipulator_0_DESC: "This is the construction site upon which a $stellar_manipulator$ will be constructed, ready to reshape the star below."
- stellar_manipulator_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_megastructure$ - $giga_list_category_miscellaneous$\nCan change the class of stars by collecting or consuming £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!\n§LChanges the size of stars for better utilization of scaling megastructures§!"
+ stellar_manipulator_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_megastructure$ - $giga_list_category_strategic_resource_production$ - $giga_list_category_miscellaneous$\nCan change the class of stars by collecting or consuming £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!\n§LChanges the size of stars for better utilization of scaling megastructures§!"
 
  stellar_manipulator_1: "$stellar_manipulator$"
  stellar_manipulator_1_DESC: "A completed stellar manipulator, ready to shape the stars to our will"
