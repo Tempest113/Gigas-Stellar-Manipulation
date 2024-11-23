@@ -145,6 +145,7 @@ stellar_manip_o_systemcraft_disabled = {
     effect = {
         custom_tooltip = "giga_menu_disabled"
         remove_global_flag = stellar_manip_o_systemcraft_disabled
+        remove_global_flag = systemcraft_disabled
     }
 }
 
