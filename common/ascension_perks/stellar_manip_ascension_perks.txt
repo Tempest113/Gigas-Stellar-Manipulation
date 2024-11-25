@@ -17,6 +17,10 @@ ap_stellar_manipulation = {
         NOT = {
             has_ascension_perk = ap_stellar_manipulation
         }
+        NAND = {
+            has_global_flag = stellar_manip_manipulator_disabled
+            has_global_flag = stellar_manip_assembler_disabled
+        }
     }
 
     on_enabled = {
