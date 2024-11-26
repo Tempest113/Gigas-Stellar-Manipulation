@@ -181,10 +181,10 @@ stellar_manipulator_2 = {
 	possible = {
 		custom_tooltip = {
 			text = stellar_manip_no_ignited_stars
-			star = {
-				NAND = {
+			event_target:star_manip_planet = {
+				NOT = {
 					is_planet_class = pc_gigaignited_star
-					has_planet_flag = star_manip_target
+					# has_planet_flag = star_manip_target
 				}
 			}
 		}
@@ -377,10 +377,7 @@ stellar_manipulator_o_2 = {
 			energy = 10000
 			unity = @giga_kilo_unity_cost
 		}
-		# produces = {
-		# 	sr_stellar_plasma = @harvester_plasma_production_o_star
-		# 	multiplier = this.planet.value:stellarm_harvest_multiplier
-		# }
+
 		upkeep = {
 			energy = 250
 		}
@@ -390,7 +387,6 @@ stellar_manipulator_o_2 = {
 	}
 	ai_weight = {
 		factor = 10
-		#maybe i should actually make weights for once, maybe not
 	}
 	on_build_complete = {
 		save_event_target_as = star_manip_system
