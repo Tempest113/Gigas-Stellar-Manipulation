@@ -178,17 +178,18 @@ stellar_manipulator_2 = {
 		}
 	}
 
-	possible = {
-		custom_tooltip = {
-			text = stellar_manip_no_ignited_stars
-			event_target:star_manip_planet = {
-				NOT = {
-					is_planet_class = pc_gigaignited_star
-					# has_planet_flag = star_manip_target
-				}
-			}
-		}
-	}
+	# Disabled until i can be bothered to find a fix
+	# possible = {
+	# 	custom_tooltip = {
+	# 		text = stellar_manip_no_ignited_stars
+	# 		event_target:star_manip_planet = {
+	# 			NOT = {
+	# 				is_planet_class = pc_gigaignited_star
+	# 				# has_planet_flag = star_manip_target
+	# 			}
+	# 		}
+	# 	}
+	# }
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
