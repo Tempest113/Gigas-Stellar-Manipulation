@@ -1,0 +1,440 @@
+namespace = stellar_manip_dialogue
+
+# Stellar Manipulator Construction Site
+country_event = {
+    id = stellar_manip_dialogue.1
+    title = stellar_manip_dialogue.1.name
+    desc = stellar_manip_dialogue.1.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_start
+    location = event_target:star_manip_system
+
+    option = {
+        name = "stellar_manip_dialogue.1.a"
+    }
+}
+
+# Stellar Manipulator Finished - Now you specialize it!
+country_event = {
+    id = stellar_manip_dialogue.2
+    title = stellar_manip_dialogue.2.name
+    desc = stellar_manip_dialogue.2.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_system
+
+    option = {
+        name = "stellar_manip_dialogue.2.a"
+        allow = {
+            custom_tooltip = {
+                fail_text = stellar_manip_no_ignited_stars
+                fromfromfrom = {
+                    NOT = {
+                        is_planet_class = pc_gigaignited_star
+                    }
+                }
+            }
+        }
+
+        hidden_effect = {
+            fromfrom = {
+                if = {
+                    limit = { fromfromfrom = { NOT = { giga_is_o_star_for_megas = yes } } }
+                    upgrade_megastructure_to = stellar_manipulator_2
+                }
+
+                else = {
+                    upgrade_megastructure_to = stellar_manipulator_o_2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "stellar_manip_dialogue.2.b"
+        allow = {
+            custom_tooltip = {
+                fail_text = stellar_manip_no_o_stars
+                fromfromfrom = {
+                    NOT = {
+                        giga_is_o_star_for_megas = yes
+                    }
+                }
+            }
+        }
+
+        hidden_effect = {
+            fromfrom = {
+                upgrade_megastructure_to = stellar_manipulator_3
+            }
+        }
+    }
+}
+
+# Stellar Mass Harvester Finished
+country_event = {
+    id = stellar_manip_dialogue.3
+    title = stellar_manip_dialogue.3.name
+    desc = stellar_manip_dialogue.3.desc
+    picture = GFX_star_manip_01_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_system
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.3.a"
+        custom_tooltip = "stellar_manip_dialogue.3.a.tooltip"
+    }
+}
+
+# Stellar Mass Injector Finished
+country_event = {
+    id = stellar_manip_dialogue.4
+    title = stellar_manip_dialogue.4.name
+    desc = stellar_manip_dialogue.4.desc
+    picture = GFX_star_manip_01_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_system
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.1.a"
+    }
+}
+
+# Stellar Mass Harvester - Manual Harvesting (Situation ends, destroys mega and refunds alloy cost)
+country_event = {
+    id = stellar_manip_dialogue.5
+    title = stellar_manip_dialogue.5.name
+    desc = stellar_manip_dialogue.5.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.1.a"
+
+        # Removed variable refund value, stellar manipulator now costs the same amount regardless of star class
+        add_resource = {
+            alloys = 5000
+        }
+    }
+}
+
+# Stellar Mass Harvesting Complete - Harvested all the way to a Brown Dwarf
+country_event = {
+    id = stellar_manip_dialogue.6
+    title = stellar_manip_dialogue.6.name
+    desc = stellar_manip_dialogue.6.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.1.a"
+
+        # Was 1500 alloys, now stays at 5000 since the manipulator costs 5k regardless of star class now
+        add_resource = {
+            alloys = 5000
+        }
+    }
+}
+
+# Stellar Mass Harvester Out of Energy
+country_event = {
+    id = stellar_manip_dialogue.7
+    title = stellar_manip_dialogue.7.name
+    desc = stellar_manip_dialogue.7.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        name = "stellar_manip_dialogue.7.a"
+    }
+}
+
+# Stellar Mass Injector - Manual Injection (Situation ends, destroys mega and refunds alloy cost)
+country_event = {
+    id = stellar_manip_dialogue.8
+    title = stellar_manip_dialogue.8.name
+    desc = stellar_manip_dialogue.8.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.1.a"
+
+        # Removed variable refund value, stellar manipulator now costs the same amount regardless of star class
+        add_resource = {
+            alloys = 5000
+        }
+    }
+}
+
+# Stellar Mass Injection Complete - Have fun with your new O Class
+country_event = {
+    id = stellar_manip_dialogue.9
+    title = stellar_manip_dialogue.9.name
+    desc = stellar_manip_dialogue.9.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        #Good, good.
+        name = "stellar_manip_dialogue.1.a"
+        add_resource = {
+            alloys = 5000
+        }
+    }
+}
+
+# Stellar Mass Injector Out of Energy
+country_event = {
+    id = stellar_manip_dialogue.10
+    title = stellar_manip_dialogue.10.name
+    desc = stellar_manip_dialogue.10.desc
+    picture = GFX_star_manip_02_background
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_planet
+    option = {
+        name = "stellar_manip_dialogue.7.a"
+    }
+}
+
+# Systemcraft Assembler Construction Site
+country_event = {
+    id = stellar_manip_dialogue.11
+    title = stellar_manip_dialogue.11.name
+    desc = stellar_manip_dialogue.11.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_start
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.11.a"
+    }
+}
+
+# Systemcraft Assembler Stage 2
+country_event = {
+    id = stellar_manip_dialogue.12
+    title = stellar_manip_dialogue.12.name
+    desc = stellar_manip_dialogue.12.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.12.a"
+    }
+}
+
+# Systemcraft Assembler Stage 3
+country_event = {
+    id = stellar_manip_dialogue.13
+    title = stellar_manip_dialogue.13.name
+    desc = stellar_manip_dialogue.13.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.13.a"
+    }
+}
+
+# Systemcraft Assembler Stage 4
+country_event = {
+    id = stellar_manip_dialogue.14
+    title = stellar_manip_dialogue.14.name
+    desc = stellar_manip_dialogue.14.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.14.a"
+    }
+}
+
+# Systemcraft Assembler Stage 5
+country_event = {
+    id = stellar_manip_dialogue.15
+    title = stellar_manip_dialogue.15.name
+    desc = stellar_manip_dialogue.15.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_upgrade_panel
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.15.a"
+    }
+}
+
+# Systemcraft Assembler Stage 6
+country_event = {
+    id = stellar_manip_dialogue.16
+    title = stellar_manip_dialogue.16.name
+    desc = stellar_manip_dialogue.16.desc
+    picture = GFX_evt_binary_stars
+    is_triggered_only = yes
+    hide_window = no
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:star_manip_system
+
+    option = { #Good, good.
+        name = "stellar_manip_dialogue.16.a"
+    }
+}
+
+# Systemcraft Assembled
+country_event = { #print regular
+    id = stellar_manip_dialogue.17
+    title = "stellar_manip_dialogue.17.name"
+    desc = "stellar_manip_dialogue.17.desc"
+    hide_window = no
+    is_triggered_only = yes
+    show_sound = event_ringworld_build_complete
+    location = event_target:star_printer_location
+    picture = GFX_evt_binary_stars
+
+    immediate = {
+        random_owned_megastructure = {
+            limit = { is_megastructure_type = systemcraft_assembler_make_system NOT = { has_megastructure_flag = already_printed_a_star } }
+            set_megastructure_flag = already_printed_a_star
+            save_global_event_target_as = latest_star_printer
+            planet = { save_global_event_target_as = star_printer_location }
+            solar_system = {
+                spawn_megastructure = {
+                    type = "systemcraft_assembler_5"
+                    planet = PREV.planet
+                    owner = root
+                }
+            }
+            create_fleet = {
+                name = "Stellar Systemcraft"
+                settings = {
+                    spawn_debris = no
+                    can_change_composition = no
+                    is_boss = yes
+                }
+                effect = {
+                    set_owner = prev
+                    create_ship = {
+                        name = "Stellar Systemcraft"
+                        random_existing_design = giga_systemcraft
+                        effect = {
+                            set_ship_flag = random
+                            add_modifier = {
+                                modifier = printed_celestial_warship
+                                days = -1
+                            }
+                        }
+                    }
+                    set_formation_scale = 10
+                    set_location = {
+                        target = event_target:latest_star_printer
+                        distance = 20
+                        angle = 0
+                    }
+                }
+            }
+            remove_megastructure = this
+        }
+    }
+
+    option = { #Good, good.
+        name = "giga_printer.1000.a"
+    }
+}
+
+# O Class Systemcraft Assembled
+country_event = { #print o class
+    id = stellar_manip_dialogue.18
+    title = "stellar_manip_dialogue.17.name"
+    desc = "stellar_manip_dialogue.17.desc"
+    hide_window = no
+    is_triggered_only = yes
+    show_sound = event_ringworld_build_complete
+    location = event_target:star_printer_location
+    picture = GFX_evt_binary_stars
+
+    immediate = {
+        random_owned_megastructure = {
+            limit = { is_megastructure_type = systemcraft_assembler_make_o_system NOT = { has_megastructure_flag = already_printed_a_star } }
+            set_megastructure_flag = already_printed_a_star
+            save_global_event_target_as = latest_star_printer
+            planet = { save_global_event_target_as = star_printer_location }
+            solar_system = {
+                spawn_megastructure = {
+                    type = "systemcraft_assembler_5"
+                    planet = PREV.planet
+                    owner = root
+                }
+            }
+            create_fleet = {
+                name = "Stellar Systemcraft"
+                settings = {
+                    spawn_debris = no
+                    can_change_composition = no
+                    is_boss = yes
+                }
+                effect = {
+                    set_owner = prev
+                    create_ship = {
+                        name = "Stellar Systemcraft"
+                        random_existing_design = giga_o_systemcraft
+                        effect = {
+                            set_ship_flag = random
+                            add_modifier = {
+                                modifier = printed_celestial_warship
+                                days = -1
+                            }
+                        }
+                    }
+                    set_formation_scale = 10
+                    set_location = {
+                        target = event_target:latest_star_printer
+                        distance = 20
+                        angle = 0
+                    }
+                }
+            }
+            remove_megastructure = this
+        }
+    }
+
+    option = { #Good, good.
+        name = "giga_printer.1000.a"
+    }
+}
+

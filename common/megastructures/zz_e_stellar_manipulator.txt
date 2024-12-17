@@ -118,7 +118,7 @@ stellar_manipulator_1 = {
 
 		owner = {
 			country_event = {
-				id = stellar_manip.102
+				id = stellar_manip_dialogue.2
 				scopes = {
 					from = this
 					fromfrom = root.fromfrom # mega scope
@@ -312,7 +312,7 @@ stellar_manipulator_3 = {
 		# 	save_event_target_as = star_manip_system
 		# 	owner = {
 		# 		country_event = {
-		# 			id = stellar_manip.104
+		# 			id = stellar_manip_dialogue.4
 		# 		}
 		# 	}
 		# }

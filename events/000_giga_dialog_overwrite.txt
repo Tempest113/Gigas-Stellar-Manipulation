@@ -1,7 +1,7 @@
 namespace = giga_dialog
 
 ####
-####this overwrites a event in giga_003_dialog to make fusion supressor explosions create stellar plasma
+####this overwrites a event in giga_003_dialog to make fusion suppressor explosions create stellar plasma
 ####
 
 country_event = {
@@ -15,18 +15,17 @@ country_event = {
 
 	option = {
 		name = "giga_dialog.3409.a"
-		}
+	}
 	immediate = {
 		hidden_effect = {
+			add_resource = { influence = 200 }
+
 			if = {
 				limit = {
 					has_technology = tech_gigas_stellar_manip_1
 				}
 				add_resource = { sr_stellar_plasma = 15000 }
 			}
-			add_resource = { 
-				influence = 200 
-		}
 			event_target:giga_system = {
 
 				# Destroy System
@@ -44,8 +43,16 @@ country_event = {
 					}
 					remove_megastructure = this
 				}
-	
+
 				giga_remove_system_debris = yes
+				every_fleet_in_system = {
+					limit = {
+						exists = orbit
+						is_ship_class = shipclass_habitat_station
+					}
+					orbit = { remove_planet_flag = has_megastructure }
+					dismantle = yes
+				}
 				every_fleet_in_system = {
 					limit = { owner = { NOT = { is_immune_to_giga_hyperweapon = yes } } } 
 					destroy_fleet = this 
@@ -60,10 +67,7 @@ country_event = {
 
 				# remove planets and change types
 				every_system_planet = {
-					limit = {
-						is_star = no
-						is_astral_scar = no
-					}
+					limit = { is_star = no is_astral_scar = no }
 					giga_clear_mega_planet_modifiers = yes
 					if = {
 						limit = {
@@ -78,39 +82,11 @@ country_event = {
 							4 = { set_planet_flag = giga_suppressor_remove }
 						}
 					}
-					if = {
-						limit = {
-							giga_is_gas_giant = yes
-						}
-						set_planet_size = 5 change_pc = pc_molten }
-
-					else_if = {
-						limit = {
-							is_planet_class = pc_ice_asteroid
-						}
-						set_planet_size = 1 change_pc = pc_asteroid
-					}
-					else_if = {
-						limit = {
-							planet_size < 7
-						}
-						set_planet_size = 2 change_pc = pc_asteroid
-					}
-
-					else_if = {
-						limit = {
-							planet_size <= 10 planet_size >= 7
-						}
-						change_planet_size = -5 change_pc = pc_asteroid
-					}
-
-					else_if = {
-						limit = {
-							planet_size > 10
-						}
-						change_planet_size = -5
-					}
-
+					if = { limit = { giga_is_gas_giant = yes }			set_planet_size = 5 change_pc = pc_molten }
+					else_if = { limit = { is_planet_class = pc_ice_asteroid } 	set_planet_size = 1 change_pc = pc_asteroid }
+					else_if = { limit = { planet_size <7 }						set_planet_size = 2 change_pc = pc_asteroid }
+					else_if = { limit = { planet_size <= 10 planet_size >= 7 }	change_planet_size = -5 change_pc = pc_asteroid }
+					else_if = { limit = { planet_size > 10 } 					change_planet_size = -5 }
 					if = {
 						limit = {
 							NOR = {
@@ -125,7 +101,7 @@ country_event = {
 					}
 				}
 
-				# if every target is going to be removed, save one!
+					# if every target is going to be removed, save one!
 				if = {
 					limit = {
 						# if every prospective planet has a science deposit

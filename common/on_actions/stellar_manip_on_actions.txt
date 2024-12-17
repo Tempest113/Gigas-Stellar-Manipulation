@@ -1,18 +1,11 @@
 on_game_start = {
     events = {
-        stellar_manip.1
+        stellar_manip_utility.1
     }
 }
 
 on_destroy_planet_with_PLANET_KILLER_STAR_CRACKER = {
     events = {
-        stellarm_crisis.4550
-    }
-}
-
-# War System Debris event
-on_ship_destroyed_victim = {
-    events = {
-        stellar_manoip.711
+        stellar_manip_utility.9
     }
 }

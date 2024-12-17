@@ -1,5 +1,4 @@
 # Irony this is a placeholder file please ignore it
 systemcraft_assembler_0 = {
-
-		entity = ""
+	entity = ""
 }

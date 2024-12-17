@@ -20,7 +20,6 @@ stellar_manip_is_valid_star = {
 stellar_manip_is_extraction_type_megastructure = {
     #optimize_memory
     OR = {
-
         is_megastructure_type = stellar_manipulator_2
         is_megastructure_type = stellar_manipulator_o_2
     }

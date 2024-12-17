@@ -1,19 +1,17 @@
-namespace = stellar_manoip
+namespace = giga_mega
+
 country_event = { #It splits lol
-	id = stellar_manoip.711
-	title = "giga_mega.711.name"
-	desc = "giga_mega.711.desc"
-	picture = GFX_evt_supernova
-	show_sound = event_super_explosion
+	id = giga_mega.711
+	hide_window = yes
 	is_triggered_only = yes
-	option = { name = "giga_mega.711.a" }
 
 	trigger = {
 		fromfrom = {
-			
-				
-				is_ship_size = giga_o_systemcraft #adds this line so the o class system can be destroyed properly
-			
+			OR = {
+				is_ship_size = giga_systemcraft
+				is_ship_size = giga_o_systemcraft
+			}
+
 		}
 	}
 
@@ -21,6 +19,53 @@ country_event = { #It splits lol
 		subtract_variable = {
 			which = giga_current_systemcraft
 			value = 1
+		}
+		subtract_variable = {
+			which = giga_current_systemcraft_finished
+			value = 1
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = giga_current_systemcraft_finished
+					value = 0
+				}
+				NOT = {
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = nicoll_beam_cooldown
+							is_megastructure_type = nicoll_beam_menu
+							is_megastructure_type = nicoll_beam_ready
+							is_megastructure_type = nicoll_beam_firing
+							is_megastructure_type = quasi_stellar_obliterator_5
+							is_megastructure_type = quasi_stellar_obliterator_6
+							is_megastructure_type = quasi_stellar_obliterator_firing_1
+						}
+					}
+				}
+			}
+			remove_country_flag = giga_has_active_hyperweapon
+		}
+		create_message = {
+			type = WAR_SYSTEM_DESTROYED
+			localization = MESSAGE_WAR_SYSTEM_DESTROYED_DESC
+			days = 30
+			target = fromfrom
+			variable = {
+				type = name
+				localization = ENEMY_NAME
+				scope = from
+			}
+			variable = {
+				type = name
+				localization = CELESTIAL_WARSHIP_NAME
+				scope = fromfrom
+			}
+			variable = {
+				type = name
+				localization = SYSTEM_NAME
+				scope = fromfrom.solar_system
+			}
 		}
 		fromfrom = {
 			solar_system = {
@@ -56,8 +101,8 @@ country_event = { #It splits lol
 						}
 						while = {
 							count = 5
-							create_ship = { 
-								name = "Attack Moon" 
+							create_ship = {
+								name = "Attack Moon"
 								random_existing_design = giga_massive_planet
 								effect = {
 									reduce_hp = 150000

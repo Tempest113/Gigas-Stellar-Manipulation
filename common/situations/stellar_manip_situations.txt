@@ -6,20 +6,20 @@ situation_stellar_extraction = {
 
 	on_start = {
 		situation_event = {
-			id = stellar_manip.8000
+			id = stellar_manip_utility.4
 		}
 	}
 
 	on_monthly = {
 		events = {
-			stellar_manip.9010
+			stellar_manip_utility.8
 		}
 	}
 
 	on_progress_complete = {
 		target = {
 			planet_event = {
-				id = stellar_manip.2000
+				id = stellar_manip_utility.2
 			}
 		}
 		destroy_situation = this
@@ -196,21 +196,21 @@ situation_stellar_infusion = {
 
 	on_start = {
 		situation_event = {
-			id = stellar_manip.8001
+			id = stellar_manip_utility.5
 		}
 	}
 
 	on_monthly = {
 		events = {
-			stellar_manip.9001
-			stellar_manip.9010
+			stellar_manip_utility.7
+			stellar_manip_utility.8
 		}
 	}
 
 	on_progress_complete = {
 		target = {
 			planet_event = {
-				id = stellar_manip.1999
+				id = stellar_manip_utility.3
 			}
 		}
 		destroy_situation = this

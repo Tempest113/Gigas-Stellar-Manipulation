@@ -12,7 +12,7 @@ stellarm_harvester_progress_initializer = {
 	min = -49.9
 }
 
-stellarm_injecter_progress_initializer = {
+stellarm_injector_progress_initializer = {
 	base = 0
 	modifier = {
 		is_variable_set = stellarm_harvester_progress

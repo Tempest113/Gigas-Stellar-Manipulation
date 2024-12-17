@@ -226,85 +226,85 @@
 
  #Construction
 
- # stellar_manip2.name: "$stellar_manip.102.name$"
+ # stellar_manip2.name: "$stellar_manip_dialogue.2.name$"
  # stellar_manip2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [From.System.GetName] system, we must now decide whether to specialize it towards harvesting $sr_stellar_plasma$ or injecting it."
  # stellar_manip.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
  # stellar_manip.2.b: "Specialize towards $sr_stellar_plasma$ injection."
 
  # REPLACED BY MESSAGE/TOAST
- stellar_manip.101.name: "$stellar_manipulator_0$ Finished"
- stellar_manip.101.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
- stellar_manip.101.a: "Great."
+ stellar_manip_dialogue.1.name: "$stellar_manipulator_0$ Finished"
+ stellar_manip_dialogue.1.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
+ stellar_manip_dialogue.1.a: "Great."
 
  # REPLACED BY MESSAGE/TOAST
- stellar_manip.102.name: "$stellar_manipulator_1$ Finished"
- stellar_manip.102.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [FromFrom.System.GetName] system, we must now decide whether to specialize the structure towards harvesting $sr_stellar_plasma$ or injecting it."
- stellar_manip.102.a: "Specialize towards $sr_stellar_plasma$ harvesting."
- stellar_manip.102.b: "Specialize towards $sr_stellar_plasma$ injection."
+ stellar_manip_dialogue.2.name: "$stellar_manipulator_1$ Finished"
+ stellar_manip_dialogue.2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [FromFrom.System.GetName] system, we must now decide whether to specialize the structure towards harvesting $sr_stellar_plasma$ or injecting it."
+ stellar_manip_dialogue.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
+ stellar_manip_dialogue.2.b: "Specialize towards $sr_stellar_plasma$ injection."
 
  # REPLACED BY MESSAGE/TOAST
- stellar_manip.103.name: "$stellar_manipulator_2$ Finished"
- stellar_manip.103.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
- stellar_manip.103.a: "Great."
- stellar_manip.103.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
+ stellar_manip_dialogue.3.name: "$stellar_manipulator_2$ Finished"
+ stellar_manip_dialogue.3.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
+ stellar_manip_dialogue.3.a: "Great."
+ stellar_manip_dialogue.3.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
 
  # # REPLACED BY MESSAGE/TOAST
- stellar_manip.104.name: "$stellar_manipulator_3$ Finished"
- stellar_manip.104.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
+ stellar_manip_dialogue.4.name: "$stellar_manipulator_3$ Finished"
+ stellar_manip_dialogue.4.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
 
 
  #Finished
- stellar_manip.2001.name: "Stellar Harvesting Finished"
- stellar_manip.2001.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has finished and the star's size has decreased, we recovered some alloys while dismantling the structure"
+ stellar_manip_dialogue.5.name: "Stellar Harvesting Finished"
+ stellar_manip_dialogue.5.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has finished and the star's size has decreased, we recovered some alloys while dismantling the structure"
 
- stellar_manip.2004.name: "Stellar Injecting Finished"
- stellar_manip.2004.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has finished and the star's size has increased, we recovered some alloys while dismantling the structure"
+ stellar_manip_dialogue.8.name: "Stellar Injecting Finished"
+ stellar_manip_dialogue.8.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has finished and the star's size has increased, we recovered some alloys while dismantling the structure"
 
  #Fully Finished
- stellar_manip.2002.name: "Automated Stellar Harvesting Finished"
- stellar_manip.2002.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has fully finished, the star has been reduced down to a class T, we have also recovered some alloys while dismantling the structure"
+ stellar_manip_dialogue.6.name: "Automated Stellar Harvesting Finished"
+ stellar_manip_dialogue.6.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has fully finished, the star has been reduced down to a class T, we have also recovered some alloys while dismantling the structure"
 
- stellar_manip.2005.name: "$pc_giga_o_star$ Created"
- stellar_manip.2005.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has completed its task and the star has been increased to a Class O, we have also recovered some alloys while dismantling the structure"
+ stellar_manip_dialogue.9.name: "$pc_giga_o_star$ Created"
+ stellar_manip_dialogue.9.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has completed its task and the star has been increased to a Class O, we have also recovered some alloys while dismantling the structure"
 
  #Out of Energy
- stellar_manip.2003.name: "$stellar_manipulator_2$ Out of Energy"
- stellar_manip.2003.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
- stellar_manip.2003.a: "Understood."
+ stellar_manip_dialogue.7.name: "$stellar_manipulator_2$ Out of Energy"
+ stellar_manip_dialogue.7.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
+ stellar_manip_dialogue.7.a: "Understood."
 
- stellar_manip.2006.name: "$stellar_manipulator_3$ Out of Energy"
- stellar_manip.2006.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
+ stellar_manip_dialogue.10.name: "$stellar_manipulator_3$ Out of Energy"
+ stellar_manip_dialogue.10.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
 
  # Star Printer Events
 
- star_printer.101.name: "Systemcraft Assembler Site Constructed"
- star_printer.101.desc: "We have begun the construction of a Systemcraft Assembler, once completed this structure will allow us to efficiently build systemcraft without the previous limitations"
- star_printer.101.a: "Let us begin."
+ stellar_manip_dialogue.11.name: "Systemcraft Assembler Site Constructed"
+ stellar_manip_dialogue.11.desc: "We have begun the construction of a Systemcraft Assembler, once completed this structure will allow us to efficiently build systemcraft without the previous limitations"
+ stellar_manip_dialogue.11.a: "Let us begin."
 
- star_printer.102.name: "Systemcraft Assembler Stellar Ignitor Constructed"
- star_printer.102.desc: "A stellar ignitor capable of building a star from scratch has been finished, this structure shall serve as the heart for a systemcraft assembler capable of building the most powerful ship in the galaxy"
- star_printer.102.a: "Moving on."
+ stellar_manip_dialogue.12.name: "Systemcraft Assembler Stellar Ignitor Constructed"
+ stellar_manip_dialogue.12.desc: "A stellar ignitor capable of building a star from scratch has been finished, this structure shall serve as the heart for a systemcraft assembler capable of building the most powerful ship in the galaxy"
+ stellar_manip_dialogue.12.a: "Moving on."
 
- star_printer.103.name: "Systemcraft Assembler Logistical Frame Constructed"
- star_printer.103.desc: "With the system obstacles gone and the [From.GetName] harvested we are ready to proceed. The central ring of the Systemcraft Assembler has been built and will serve as crew quarters and central logistical system for the structure to make sure everything goes where it needs to go"
- star_printer.103.a: "The plasma extracted from the star will be useful."
+ stellar_manip_dialogue.13.name: "Systemcraft Assembler Logistical Frame Constructed"
+ stellar_manip_dialogue.13.desc: "With the system obstacles gone and the [From.GetName] harvested we are ready to proceed. The central ring of the Systemcraft Assembler has been built and will serve as crew quarters and central logistical system for the structure to make sure everything goes where it needs to go"
+ stellar_manip_dialogue.13.a: "The plasma extracted from the star will be useful."
 
- star_printer.104.name: "Systemcraft Assembler Celestial Fabricators Built"
- star_printer.104.desc: "These macrofabricators that will assemble the attack moons and planetcraft needed for the Stellar Systemcraft, the use of a external power source and logistical system can allow modifications to our usual design to be much smaller and cheaper than our usual models"
- star_printer.104.a: "Good news!"
+ stellar_manip_dialogue.14.name: "Systemcraft Assembler Celestial Fabricators Built"
+ stellar_manip_dialogue.14.desc: "These macrofabricators that will assemble the attack moons and planetcraft needed for the Stellar Systemcraft, the use of a external power source and logistical system can allow modifications to our usual design to be much smaller and cheaper than our usual models"
+ stellar_manip_dialogue.14.a: "Good news!"
 
- star_printer.105.name: "Systemcraft Assembler Drydock"
- star_printer.105.desc: "The extra assembly yards have been built, these systems will build extra components needed for the vessel such as thrusters, weapons, computers and others"
- star_printer.105.a: "Good, good."
+ stellar_manip_dialogue.15.name: "Systemcraft Assembler Drydock"
+ stellar_manip_dialogue.15.desc: "The extra assembly yards have been built, these systems will build extra components needed for the vessel such as thrusters, weapons, computers and others"
+ stellar_manip_dialogue.15.a: "Good, good."
 
- star_printer.106.name: "Systemcraft Assembler Completed"
- star_printer.106.desc: "With the massive storage tanks finished we are finally done, a systemcraft assembler has been finished and is now ready to construct vessels. All systemcraft produced by a Systemcraft Assembler are automated and have no need for a crew to be acquired from a planet, they will also benefit from increased defensive and offensive capabilities but at a higher cost and build time"
- star_printer.106.a: "Perfect."
+ stellar_manip_dialogue.16.name: "Systemcraft Assembler Completed"
+ stellar_manip_dialogue.16.desc: "With the massive storage tanks finished we are finally done, a systemcraft assembler has been finished and is now ready to construct vessels. All systemcraft produced by a Systemcraft Assembler are automated and have no need for a crew to be acquired from a planet, they will also benefit from increased defensive and offensive capabilities but at a higher cost and build time"
+ stellar_manip_dialogue.16.a: "Perfect."
 
  # systemcraft built
- star_printer.1000.name: "Systemcraft Assembled"
- star_printer.1000.desc: "The impossible has been done! A new stellar systemcraft built from scratch in one single stage now flies under our command, systemcraft produced by a Systemcraft Assembler are automated and will benefit from increased defensive and offensive capabilities."
- star_printer.1000.a: "Go forth and conquer"
+ stellar_manip_dialogue.17.name: "Systemcraft Assembled"
+ stellar_manip_dialogue.17.desc: "The impossible has been done! A new stellar systemcraft built from scratch in one single stage now flies under our command, systemcraft produced by a Systemcraft Assembler are automated and will benefit from increased defensive and offensive capabilities."
+ stellar_manip_dialogue.17.a: "Go forth and conquer"
 
 
  # Class O Systemcraft

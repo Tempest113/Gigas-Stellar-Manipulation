@@ -44,7 +44,7 @@ systemcraft_assembler_0 = {
 		}
 		from = {
 			country_event = {
-				id = star_printer.101
+				id = stellar_manip_dialogue.11
 			}			# Notification
 		}
 		fromfrom.planet = {
@@ -96,7 +96,7 @@ systemcraft_assembler_1 = {
 		}
 		from = {
 			country_event = {
-				id = star_printer.102
+				id = stellar_manip_dialogue.12
 			}
 		}		# Notification
 	}
@@ -162,7 +162,7 @@ systemcraft_assembler_2 = {
 		}
 		from = {
 			country_event = {
-				id = star_printer.103
+				id = stellar_manip_dialogue.13
 			}
 		}		# Notification
 	}
@@ -201,7 +201,7 @@ systemcraft_assembler_3 = {
 		}
 		from = {
 			country_event = {
-				id = star_printer.104
+				id = stellar_manip_dialogue.14
 			}
 		}		# Notification
 	}
@@ -240,7 +240,7 @@ systemcraft_assembler_4 = {
 		}
 		from = {
 			country_event = {
-				id = star_printer.105
+				id = stellar_manip_dialogue.15
 			}
 		}		# Notification
 	}
@@ -289,7 +289,7 @@ systemcraft_assembler_5 = { #ready to print
 					}
 				}
 				country_event = {
-					id = star_printer.106
+					id = stellar_manip_dialogue.16
 				}				# Notification
 			}
 			else_if = {
@@ -367,7 +367,7 @@ systemcraft_assembler_make_system = { #print normal
 		from = {
 			set_country_flag = just_assembled_systemcraft
 			country_event = {
-				id = star_printer.1000
+				id = stellar_manip_dialogue.17
 			}
 			if = {
 				limit = {
@@ -451,7 +451,7 @@ systemcraft_assembler_make_o_system = { #print o class
 		from = {
 			set_country_flag = just_assembled_systemcraft
 			country_event = {
-				id = star_printer.1001
+				id = stellar_manip_dialogue.18
 			}
 			if = {
 				limit = {
