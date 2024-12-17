@@ -1,5 +1,9 @@
 namespace = stellar_manip
 
+#I absolutely despise the event ID system in this, should probably redo them eventually since they're inherited from the old stellar manipulation
+#There is so much random, unused shit in here now that it's almost impossible to start going through to work out what can be deleted
+#like the stuff relating to stellar_harvester_off, but that's partially my fault since i changed how the harvesting/injection mechanics worked, still aids though lol
+
 event = {
 	id = stellar_manip.1
 	is_triggered_only = yes
@@ -25,8 +29,8 @@ country_event = {
 	hide_window = no
 	show_sound = event_dyson_sphere_build_start
 	location = event_target:star_manip_system
+
 	option = {
-		#Good, good.
 		name = "stellar_manip.101.a"
 	}
 }
@@ -41,9 +45,52 @@ country_event = {
 	hide_window = no
 	show_sound = event_dyson_sphere_build_complete
 	location = event_target:star_manip_system
+
 	option = {
-		#Good, good.
 		name = "stellar_manip.102.a"
+		allow = {
+			custom_tooltip = {
+				fail_text = stellar_manip_no_ignited_stars
+				fromfromfrom = {
+					NOT = {
+						is_planet_class = pc_gigaignited_star
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			fromfrom = {
+				if = {
+					limit = { fromfromfrom = { NOT = { giga_is_o_star_for_megas = yes } } }
+					upgrade_megastructure_to = stellar_manipulator_2
+				}
+
+				else = {
+					upgrade_megastructure_to = stellar_manipulator_o_2
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "stellar_manip.102.b"
+		allow = {
+			custom_tooltip = {
+				fail_text = stellar_manip_no_o_stars
+				fromfromfrom = {
+					NOT = {
+						giga_is_o_star_for_megas = yes
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			fromfrom = {
+				upgrade_megastructure_to = stellar_manipulator_3
+			}
+		}
 	}
 }
 
@@ -77,44 +124,6 @@ country_event = {
 	option = {
 		#Good, good.
 		name = "stellar_manip.101.a"
-	}
-}
-
-### MONTHLY EVENT, REPLACE INJECTORS IF NO RESOURCE
-country_event = {
-	id = stellar_manip.100
-	title = stellar_manip.100.title
-	desc = stellar_manip.100.desc
-	picture = GFX_star_manip_03_background
-	is_triggered_only = yes
-	trigger = {
-		any_owned_megastructure = {
-			is_megastructure_type = stellar_manipulator_3
-		}
-		NOT = {
-			has_resource = sr_stellar_plasma
-		}
-	}
-	immediate = {
-		every_owned_megastructure = {
-			limit = {
-				is_megastructure_type = stellar_manipulator_3
-			}
-			this.planet = {
-				save_event_target_as = star_manip_planet
-			}
-			remove_megastructure = this
-			solar_system = {
-				spawn_megastructure = {
-					type = stellar_manipulator_off
-					planet = event_target:star_manip_planet
-				}
-			}
-		}
-	}
-	option = {
-		#Good, good.
-		name = "stellar_manip.100.a"
 	}
 }
 
@@ -306,6 +315,7 @@ planet_event = {
 					# }
 				}
 			}
+
 			if = {
 				#harvested down to class T
 				limit = {
@@ -322,6 +332,7 @@ planet_event = {
 				# }
 				destroy_situation = from
 			}
+
 			else = {
 				if = {
 					#check for energy
@@ -347,56 +358,25 @@ planet_event = {
 							planet = ROOT
 						}
 					}
-					
-					# if = {
-					# 	limit = {
-					# 		space_owner = {
-					# 			not = {
-					# 				any_situation = {
-					# 				is_situation_type = situation_stellar_extraction
-					# 				target = {
-					# 					is_same_value = root
-					# 				}
-					# 			}
-					# 		}
 
-					# 		}
-					# 	}
-						from.owner = {
-							start_situation = {
-								type = situation_stellar_extraction
-								target = root
-							}
+					from.owner = {
+						start_situation = {
+							type = situation_stellar_extraction
+							target = root
 						}
-						destroy_situation = from
-						# log = "Situation does not exist"
-					# }
-					# else = {
-					# 	log = "Situation still exists"
-					# }
-					# stellar_manip_unset_if_set = {
-					# 	variable = stellarm_harvester_progress
-					# }
+					}
+					destroy_situation = from
+
 				}
 				else = {
 					#no energy
 					stellar_manip_remove_applicable_harvester_mega = yes
-					solar_system = {
-						save_event_target_as = star_being_harvested
-						set_star_flag = stellarm_tempt_dont_abort
-						spawn_megastructure = {
-							type = stellar_harvester_off
-							owner = ROOT.space_owner
-							planet = ROOT
-							init_effect = {
-								save_event_target_as = star_harvester
-							}
-						}
-						remove_star_flag = stellarm_tempt_dont_abort
-					}
 					space_owner = {
 						country_event = {
 							id = stellar_manip.2003
+						}
+						add_resource = {
+							alloys = 5000
 						}
 					}
 					destroy_situation = from
@@ -419,7 +399,7 @@ planet_event = {
 }
 
 # #injector
- planet_event = {
+planet_event = {
  	id = stellar_manip.1001
  	is_triggered_only = yes
  	hide_window = yes
@@ -542,226 +522,29 @@ planet_event = {
  							planet = ROOT
  						}
  					}
- 				} else = { #no energy
+ 				}
+
+				else = {
+					#no energy
  					remove_megastructure = event_target:star_injector
- 					solar_system = {
- 						save_event_target_as = star_being_injected
- 						spawn_megastructure = {
- 							type = stellar_manipulator_off
- 							owner = ROOT.space_owner
- 							planet = ROOT
- 							init_effect = {
- 								save_event_target_as = star_injector
- 							}
- 						}
- 					}
  					space_owner = {
- 						country_event = { id = stellar_manip.2006 }
+ 						country_event = {
+							id = stellar_manip.2006
+						}
  					}
  				}
  			}
- 		} else = { #manual injection
+ 		}
+
+		else = { #manual injection
  			space_owner = {
  				country_event = { id = stellar_manip.2004 }
  			}
  			remove_megastructure = event_target:star_injector
  		}
- 	}
- }
+	}
+}
 
-# planet_event = {
-# 	id = stellar_manip.1999
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	trigger = {
-# 		is_scope_valid = yes
-# 	}
-# 	immediate = {
-# 		remove_planet_flag = has_megastructure
-# 		remove_planet_flag = megastructure
-# 		switch = {
-# 			trigger = giga_is_o_star_for_megas
-# 			pc_b_star = {
-# 				solar_system = {
-# 					stellar_manip_create_o_star = yes
-# 				}
-# 			}
-# 			pc_m_giant_star = {
-# 				change_pc = pc_b_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_b
-# 					}
-# 				}
-# 			}
-# 			pc_a_star = {
-# 				change_pc = pc_b_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_b
-# 					}
-# 				}
-# 			}
-# 			pc_f_star = {
-# 				change_pc = pc_a_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_a
-# 					}
-# 				}
-# 			}
-# 			pc_g_star = {
-# 				change_pc = pc_f_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_f
-# 					}
-# 				}
-# 			}
-# 			pc_k_star = {
-# 				change_pc = pc_g_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_g
-# 					}
-# 				}
-# 			}
-# 			pc_m_star = {
-# 				change_pc = pc_k_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_k
-# 					}
-# 				}
-# 			}
-# 			pc_gigaignited_star = {
-# 				change_pc = pc_m_star
-# 				solar_system = {
-# 					if = {
-# 						limit = {
-# 							giga_is_bitrinary = no
-# 						}
-# 						set_star_class = sc_m
-# 					}
-# 				}
-# 			}
-# 		}
-# 		save_event_target_as = star_manip_planet
-# 		# from.owner = {
-# 		# planet_event = {
-# 		# 	id = stellar_manip.1002
-# 		# }
-# 		# }
-# 		if = {
-# 			#automatic injection
-# 			limit = {
-# 				from.owner = {
-# 					has_policy_flag = policy_automatic_injection
-# 				}
-# 			}
-# 			if = {
-# 				#injected up to class O
-# 				limit = {
-# 					giga_is_o_star_for_megas = yes
-# 				}
-# 				space_owner = {
-# 					country_event = {
-# 						id = stellar_manip.2005
-# 					}
-# 				}
-# 				stellar_manip_remove_applicable_injector_mega = yes
-# 			}
-# 			else = {
-# 				if = {
-# 					#check for energy
-# 					limit = {
-# 						space_owner = {
-# 							has_resource = {
-# 								type = energy
-# 								amount > 5000
-# 							}
-# 						}
-# 					}
-# 					space_owner = {
-# 						add_resource = {
-# 							energy = -5000
-# 						}
-# 						set_country_flag = auto_injector
-# 					}
-# 					stellar_manip_remove_applicable_injector_mega = yes
-# 					solar_system = {
-# 						spawn_megastructure = {
-# 							type = stellar_manipulator_3
-# 							owner = ROOT.space_owner
-# 							planet = ROOT
-# 						}
-# 					}
-# 					from.owner = {
-# 						start_situation = {
-# 							type = situation_stellar_infusion
-# 							target = root
-# 						}
-# 					}
-#
-# 				}
-# 				else = {
-# 					#no energy
-# 					stellar_manip_remove_applicable_injector_mega = yes
-# 					solar_system = {
-# 						save_event_target_as = star_being_injected
-#
-# 							set_star_flag = stellarm_tempt_dont_abort
-#
-# 						spawn_megastructure = {
-# 							type = stellar_manipulator_off
-# 							owner = ROOT.space_owner
-# 							planet = ROOT
-# 							init_effect = {
-# 								save_event_target_as = star_injector
-# 							}
-# 						}
-#
-# 							remove_star_flag = stellarm_tempt_dont_abort
-#
-# 					}
-# 					space_owner = {
-# 						country_event = {
-# 							id = stellar_manip.2006
-# 						}
-# 					}
-# 				}
-# 			}
-# 		}
-# 		else = {
-# 			#manual injection
-# 			space_owner = {
-# 				country_event = {
-# 					id = stellar_manip.2004
-# 				}
-# 			}
-# 			stellar_manip_remove_applicable_injector_mega = yes
-# 		}
-# 		destroy_situation = from
-# 	}
-# }
 planet_event = {
 	id = stellar_manip.1999
 	is_triggered_only = yes
@@ -903,26 +686,12 @@ planet_event = {
 				else = {
 					#no energy
 					stellar_manip_remove_applicable_injector_mega = yes
-					solar_system = {
-						save_event_target_as = star_being_injected
-
-							set_star_flag = stellarm_tempt_dont_abort
-
-						spawn_megastructure = {
-							type = stellar_manipulator_off
-							owner = ROOT.space_owner
-							planet = ROOT
-							init_effect = {
-								save_event_target_as = star_injector
-							}
-						}
-
-							remove_star_flag = stellarm_tempt_dont_abort
-
-					}
 					space_owner = {
 						country_event = {
 							id = stellar_manip.2006
+						}
+						add_resource = {
+							alloys = 5000
 						}
 					}
 				}
@@ -1006,22 +775,15 @@ planet_event = {
 			else = {
 				#no energy
 				stellar_manip_remove_applicable_harvester_mega = yes
-				solar_system = {
-					save_event_target_as = star_being_harvested
-					spawn_megastructure = {
-						type = stellar_harvester_off
-						owner = ROOT.space_owner
-						planet = ROOT
-						init_effect = {
-							save_event_target_as = star_harvester
-						}
-					}
-				}
 				space_owner = {
 					country_event = {
 						id = stellar_manip.2003
 					}
+					add_resource = {
+						alloys = 5000
+					}
 				}
+				destroy_situation = from
 			}
 		}
 		else = {
@@ -1377,8 +1139,6 @@ situation_event = {
 	hide_window = yes
 	trigger = {
 		or = {
-			#current_situation_approach = approach_stellarm_faster_infusion
-			#current_situation_approach = approach_stellarm_more_efficient_infusion
 			current_situation_approach = approach_stellarm_standard_infusion
 		}
 	}
@@ -1414,19 +1174,8 @@ situation_event = {
 			}
 	}
 }
-situation_event = {
-	id = stellar_manip.9002
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = {
-		owner = { has_deficit = sr_stellar_plasma }
-	}
-	immediate = {
-		set_situation_approach = approach_stellarm_pause
-	}
-}
 
-
+# Abort manipulation (same event for both situations)
 situation_event = {
 	id = stellar_manip.9010
 	is_triggered_only = yes
@@ -1434,6 +1183,7 @@ situation_event = {
 	trigger = {
 		current_situation_approach = approach_abort_stellar_manipulation
 	}
+
 	immediate = {
 		abort_situation = this
 		remove_megastructure = event_target:star_harvester

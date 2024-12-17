@@ -85,13 +85,6 @@ stellar_manipulator_0 = {
 			set_planet_flag = star_manip_target
 			save_event_target_as = star_manip_planet
 		}
-
-		# REPLACED BY MESSAGE/TOAST
-		# owner = {
-		# 	country_event = {
-		# 		id = stellar_manip.101
-		# 	}
-		# }
 	}
 }
 
@@ -100,8 +93,8 @@ stellar_manipulator_1 = {
 	entity = "stellar_manip_full_nobeam_entity"
 	construction_entity = "stellar_manip_full_nobeam_entity"
 	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
 	build_time = 1260
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -123,38 +116,16 @@ stellar_manipulator_1 = {
 		save_event_target_as = star_manip_system
 		fromfrom = { save_event_target_as = star_manip_mega }
 
-		create_message = {
-			type = MESSAGE_STELLAR_MANIPULATOR_BUILT
-			localization = MESSAGE_STELLAR_MANIPULATOR_BUILT
-			days = @toast_message_days
-			target = event_target:star_manip_system
-
-		}
-
-		# REPLACED BY MESSAGE/TOAST
-		# owner = {
-		# 	country_event = {
-		# 		id = stellar_manip.102
-		# 	}
-		# }
-
-		if = {
-			limit = {
-				fromfrom.planet = {
-					giga_is_o_star_for_megas = yes
+		owner = {
+			country_event = {
+				id = stellar_manip.102
+				scopes = {
+					from = this
+					fromfrom = root.fromfrom # mega scope
+					fromfromfrom = fromfrom.planet
 				}
 			}
-			fromfrom.planet = {
-				save_event_target_as = star_manip_planet
-			}
-			spawn_megastructure = {
-				type = stellar_manipulator_o_1
-				planet = event_target:star_manip_planet
-				owner = fromfrom.owner
-			}
-			remove_megastructure = fromfrom
 		}
-
 	}
 }
 
@@ -163,8 +134,9 @@ stellar_manipulator_2 = {
 	entity = "stellar_manip_full_entity"
 	construction_entity = "stellar_manip_full_entity"
 	portrait = "GFX_star_manip_01_background"
-	build_time = 1260
+	build_time = 0
 	upgrade_from = { stellar_manipulator_1 }
+	potential = { always = no }
 
 	resources = {
 		category = megastructures
@@ -174,22 +146,37 @@ stellar_manipulator_2 = {
 		}
 
 		upkeep = {
-			energy = 250
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_extraction
+						this = {
+							current_situation_approach = approach_stellarm_standard
+						}
+					}
+				}
+			}
+			energy = 150
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_extraction
+						this = {
+							NOT = {
+								current_situation_approach = approach_stellarm_standard
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
-	# Disabled until i can be bothered to find a fix
-	# possible = {
-	# 	custom_tooltip = {
-	# 		text = stellar_manip_no_ignited_stars
-	# 		event_target:star_manip_planet = {
-	# 			NOT = {
-	# 				is_planet_class = pc_gigaignited_star
-	# 				# has_planet_flag = star_manip_target
-	# 			}
-	# 		}
-	# 	}
-	# }
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
@@ -202,24 +189,6 @@ stellar_manipulator_2 = {
 			target = event_target:star_manip_system
 
 		}
-
-		if = {
-			limit = {
-				owner = {
-					NOR = {
-						has_country_flag = restarted_harvester
-						has_country_flag = auto_harvester
-					}
-				}
-			}
-			# REPLACED BY MESSAGE/TOAST
-			# owner = {
-			# 	country_event = {
-			# 		id = stellar_manip.103
-			# 	}
-			# }
-		}
-
 		owner = {
 			remove_country_flag = auto_harvester
 			remove_country_flag = restarted_harvester
@@ -231,6 +200,7 @@ stellar_manipulator_2 = {
 		fromfrom.planet = {
 			save_event_target_as = star_being_harvested
 		}
+
 		if = {
 			limit = {
 				exists = from
@@ -261,27 +231,55 @@ stellar_manipulator_3 = {
 	entity = "stellar_manip_full_entity"
 	construction_entity = "stellar_manip_full_entity"
 	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	build_time = 1260
+	build_time = 0
+	upgrade_from = { stellar_manipulator_1}
+	potential = { always = no }
+
 	resources = {
 		category = megastructures
 		cost = {
 			energy = 5000
 			unity = 500
 		}
+
+		# Not injecting? No upkeep! (like when you have no plasma)
 		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_infusion
+						this = {
+							current_situation_approach = approach_stellarm_standard_infusion
+						}
+					}
+				}
+			}
 			energy = 150
 		}
-	}
 
-	upgrade_from = {
-		stellar_manipulator_1
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_infusion
+						this = {
+							NOT = {
+								current_situation_approach = approach_stellarm_standard_infusion
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	ai_weight = {
 		factor = 1
 		#maybe i should actually make weights for once, maybe not
 	}
+
 	on_build_complete = {
 		save_event_target_as = star_manip_system
 		fromfrom = { save_event_target_as = star_injector }
@@ -349,29 +347,31 @@ stellar_manipulator_3 = {
 }
 
 #o class full
-stellar_manipulator_o_1 = {
-	entity = "stellar_manip_o_full_nobeam_entity"
-	construction_entity = "stellar_manip_full_nobeam_entity"
-	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	resources = {
-		category = megastructures
-		upkeep = {
-			energy = 50
-		}
-	}
-	potential = {
-		always = no
-	}
-}
+# stellar_manipulator_o_1 = {
+# 	entity = "stellar_manip_o_full_nobeam_entity"
+# 	construction_entity = "stellar_manip_full_nobeam_entity"
+# 	portrait = "GFX_star_manip_01_background"
+# 	place_entity_on_planet_plane = yes
+# 	resources = {
+# 		category = megastructures
+# 		upkeep = {
+# 			energy = 50
+# 		}
+# 	}
+# 	potential = {
+# 		always = no
+# 	}
+# }
 
 #o harvester
 stellar_manipulator_o_2 = {
 	entity = "stellar_manip_o_full_entity"
 	construction_entity = "stellar_manip_full_entity"
 	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	build_time = 1260
+	build_time = 0
+	upgrade_from = { stellar_manipulator_1 }
+	potential = { always = no }
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -380,24 +380,44 @@ stellar_manipulator_o_2 = {
 		}
 
 		upkeep = {
-			energy = 250
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_extraction
+						this = {
+							current_situation_approach = approach_stellarm_standard
+						}
+					}
+				}
+			}
+			energy = 150
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					any_situation = {
+						is_situation_type = situation_stellar_extraction
+						this = {
+							NOT = {
+								current_situation_approach = approach_stellarm_standard
+							}
+						}
+					}
+				}
+			}
 		}
 	}
-	upgrade_from = {
-		stellar_manipulator_o_1
-	}
+
 	ai_weight = {
 		factor = 10
 	}
+
 	on_build_complete = {
 		save_event_target_as = star_manip_system
 
-		# REPLACED BY MESSAGE/TOAST
-		# owner = {
-		# 	country_event = {
-		# 		id = stellar_manip.103
-		# 	}
-		# }
 		fromfrom = {
 			save_event_target_as = star_harvester
 		}
@@ -420,204 +440,3 @@ stellar_manipulator_o_2 = {
 }
 
 #disabled injector
-stellar_manipulator_off = {
-	entity = "stellar_manip_full_nobeam_entity"
-	construction_entity = "stellar_manip_full_nobeam_entity"
-	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	potential = {
-		always = no
-	}
-	resources = {
-		category = megastructures
-		upkeep = {
-			energy = 15
-		}
-	}
-	on_build_complete = {
-		if = {
-			limit = {
-				not = {
-					has_star_flag = stellarm_tempt_dont_abort
-				}
-				fromfrom = {
-					exists = planet
-				}
-			}
-			every_country = {
-				limit = {
-					any_situation = {
-						exists = target
-						OR = {
-							is_situation_type = situation_stellar_extraction
-							is_situation_type = situation_stellar_infusion
-						}
-						target = {
-							is_same_value = root.fromfrom.planet
-						}
-					}
-				}
-				every_situation = {
-					limit = {
-						exists = target
-						OR = {
-							is_situation_type = situation_stellar_extraction
-							is_situation_type = situation_stellar_infusion
-						}
-						target = {
-							is_same_value = root.fromfrom.planet
-						}
-					}
-					abort_situation = this
-				}
-			}
-		}
-	}
-}
-
-stellar_manipulator_on = {
-	entity = "stellar_manip_full_entity"
-	construction_entity = "stellar_manip_full_nobeam_entity"
-	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	resources = {
-		category = megastructures
-		upkeep = {
-			energy = 150
-		}
-		cost = {
-			sr_stellar_plasma = 100
-			energy = 5000
-		}
-	}
-	upgrade_from = {
-		stellar_manipulator_off
-	}
-	build_time = 30
-	on_build_complete = {
-		owner = {
-			set_country_flag = restarted_injector
-		}
-		fromfrom.planet = {
-			save_event_target_as = star_manip_planet
-		}
-		spawn_megastructure = {
-			type = stellar_manipulator_3
-			planet = event_target:star_manip_planet
-			owner = fromfrom.owner
-		}
-		remove_megastructure = fromfrom
-		if = {
-			limit = {
-				exists = from
-			}
-			from = {
-				start_situation = {
-					type = situation_stellar_infusion
-					target = root.fromfrom.planet
-				}
-			}
-		}
-	}
-}
-
-#disabled harvester
-stellar_harvester_off = {
-	entity = "stellar_manip_full_nobeam_entity"
-	construction_entity = "stellar_manip_full_nobeam_entity"
-	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	potential = {
-		always = no
-	}
-	resources = {
-		category = megastructures
-		upkeep = {
-			energy = 15
-		}
-	}
-	on_build_complete = {
-		if = {
-			limit = {
-				not = {
-					has_star_flag = stellarm_tempt_dont_abort
-				}
-				fromfrom = {
-					exists = planet
-				}
-			}
-			every_country = {
-				limit = {
-					any_situation = {
-						exists = target
-						OR = {
-							is_situation_type = situation_stellar_extraction
-							is_situation_type = situation_stellar_infusion
-						}
-						target = {
-							is_same_value = root.fromfrom.planet
-						}
-					}
-				}
-				every_situation = {
-					limit = {
-						exists = target
-						OR = {
-							is_situation_type = situation_stellar_extraction
-							is_situation_type = situation_stellar_infusion
-						}
-						target = {
-							is_same_value = root.fromfrom.planet
-						}
-					}
-					abort_situation = this
-				}
-			}
-		}
-	}
-}
-
-stellar_harvester_on = {
-	entity = "stellar_manip_full_entity"
-	construction_entity = "stellar_manip_full_nobeam_entity"
-	portrait = "GFX_star_manip_01_background"
-	place_entity_on_planet_plane = yes
-	resources = {
-		category = megastructures
-		upkeep = {
-			energy = 150
-		}
-		cost = {
-			energy = 5000
-		}
-	}
-	upgrade_from = {
-		stellar_harvester_off
-	}
-	build_time = 30
-	on_build_complete = {
-		owner = {
-			set_country_flag = restarted_harvester
-		}
-		fromfrom.planet = {
-			save_event_target_as = star_manip_planet
-		}
-		spawn_megastructure = {
-			type = stellar_manipulator_2
-			planet = event_target:star_manip_planet
-			owner = fromfrom.owner
-		}
-		remove_megastructure = fromfrom
-		if = {
-			limit = {
-				exists = from
-			}
-			from = {
-				start_situation = {
-					type = situation_stellar_extraction
-					target = root.fromfrom.planet
-				}
-			}
-		}
-	}
-}

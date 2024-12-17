@@ -480,11 +480,8 @@ war_system_o_5 = {
 								is_at_war_with = root.from
 								is_ai = yes
 								NOR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-									has_civic = civic_machine_terminator
-									has_civic = civic_hive_devouring_swarm
-									has_civic = civic_fanatic_purifiers
+									is_fallen_empire = yes
+									is_homicidal = yes
 								}
 								ehof_default_country = yes
 							}
@@ -495,12 +492,10 @@ war_system_o_5 = {
 								is_at_war_with = root.from
 								is_ai = yes
 								NOR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-									has_civic = civic_machine_terminator
-									has_civic = civic_hive_devouring_swarm
-									has_civic = civic_fanatic_purifiers
+									is_fallen_empire = yes
+									is_homicidal = yes
 								}
+
 								ehof_default_country = yes
 							}
 							save_event_target_as = systemcraft_surrender_empire
@@ -510,7 +505,6 @@ war_system_o_5 = {
 				}
 			}
 		}
-
 		remove_megastructure = fromfrom
 	}
 }

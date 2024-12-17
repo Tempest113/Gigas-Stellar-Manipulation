@@ -10,6 +10,12 @@ situation_stellar_extraction = {
 		}
 	}
 
+	on_monthly = {
+		events = {
+			stellar_manip.9010
+		}
+	}
+
 	on_progress_complete = {
 		target = {
 			planet_event = {
@@ -70,11 +76,36 @@ situation_stellar_extraction = {
 			}
 		}
 	}
+
+	approach = {
+		name = approach_stellar_manip_harvest_pause
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_pause_harvest_approach_tooltip
+		}
+
+		resources = {
+			category = stellar_manip_situation
+			upkeep = { sr_stellar_plasma = 0 }
+		}
+	}
+
 	approach = {
 		name = approach_stellarm_standard
 		icon = GFX_situation_approach_this_is_fine
 		icon_background = GFX_situation_approach_bg_yellow
 		default = yes
+		allow = {
+			custom_tooltip = {
+				fail_text = situation_no_energy_for_manipulation
+				NOR = {
+					owner = { has_actual_deficit = { RESOURCE = energy } }
+					owner = { resource_stockpile_compare = { RESOURCE = energy VALUE <= 0 }}
+				}
+			}
+		}
+
 
 		on_select = {
 			custom_tooltip = situation_standard_extraction_approach_tooltip
@@ -121,11 +152,6 @@ situation_stellar_extraction = {
 				trigger = { target = { giga_is_m_star_for_megas = yes } }
 				sr_stellar_plasma = @harvester_plasma_production_m_star
 			}
-
-			# produces = {
-			# 	trigger = { target = { is_planet_class = pc_gigaignited_star } }
-			# 	sr_stellar_plasma = @harvester_plasma_production_ignited_star
-			# }
 		}
 
 		ai_weight = {
@@ -133,15 +159,8 @@ situation_stellar_extraction = {
 		}
 	}
 
-	on_monthly = {
-		events = {
-			#stellar_manip.9000
-			stellar_manip.9010
-		}
-	}
 	monthly_progress = {
 		base = 0
-
 		modifier = {
 			add = 2.05
 			desc = STRING_APPROACH_STELLARM_STANDARD
@@ -155,6 +174,17 @@ situation_stellar_extraction = {
 				giga_is_o_star_for_megas = yes
 			}
 		}
+
+		modifier = {
+			multiply = 0
+			desc = energy_deficit
+			owner = {
+				has_actual_deficit = {
+					RESOURCE = energy
+				}
+
+			}
+		}
 	}
 }
 
@@ -163,11 +193,20 @@ situation_stellar_infusion = {
 	category = positive
 	complete_icon = GFX_situation_outcome_unknown
 	complete_icon_frame = GFX_situation_outcome_frame_green
+
 	on_start = {
 		situation_event = {
 			id = stellar_manip.8001
 		}
 	}
+
+	on_monthly = {
+		events = {
+			stellar_manip.9001
+			stellar_manip.9010
+		}
+	}
+
 	on_progress_complete = {
 		target = {
 			planet_event = {
@@ -252,9 +291,22 @@ situation_stellar_infusion = {
 		icon_background = GFX_situation_approach_bg_green
 		default = yes
 		allow = {
-			NOT = { owner = { has_actual_deficit = { RESOURCE = sr_stellar_plasma } } }
-			# custom_tooltip = sr_stellar_plasma_deficit
+			custom_tooltip = {
+				fail_text = situation_no_plasma_to_infuse
+				NOR = {
+					owner = { has_actual_deficit = { RESOURCE = sr_stellar_plasma } }
+					owner = { resource_stockpile_compare = { RESOURCE = sr_stellar_plasma VALUE <= 0 }}
+				}
+			}
+			custom_tooltip = {
+				fail_text = situation_no_energy_for_manipulation
+				NOR = {
+					owner = { has_actual_deficit = { RESOURCE = energy } }
+					owner = { resource_stockpile_compare = { RESOURCE = energy VALUE <= 0 }}
+				}
+			}
 		}
+
 		on_select = {
 			custom_tooltip = situation_standard_infusion_approach_tooltip
 		}
@@ -304,13 +356,6 @@ situation_stellar_infusion = {
 		}
 	}
 
-	on_monthly = {
-			events = {
-				stellar_manip.9001
-				stellar_manip.9002
-				stellar_manip.9010
-		}
-	}
 	monthly_progress = {
 		base = 0
 		modifier = {
@@ -329,16 +374,13 @@ situation_stellar_infusion = {
 
 		modifier = {
 			multiply = 0
-			desc = sr_stellar_plasma_deficit
-			current_situation_approach = approach_stellarm_pause
-		}
+			desc = energy_deficit
+			owner = {
+				has_actual_deficit = {
+					RESOURCE = energy
+				}
 
-		# modifier = {
-		# 	factor = owner.value:giga_stellarm_plasma_deficit_value
-		# 	desc = sr_stellar_plasma_deficit
-		# 	owner = {
-		# 		has_deficit = sr_stellar_plasma
-		# 	}
-		# }
+			}
+		}
 	}
 }

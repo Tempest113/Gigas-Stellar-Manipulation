@@ -99,7 +99,7 @@ stellar_manip_assember_disabled = {
 
 
     effect = {
-        custom_tooltip = "stellar_manip_systemcraft_assmbler_ensabled_tt"
+        custom_tooltip = "stellar_manip_systemcraft_assmbler_enabled_tt"
         remove_global_flag = stellar_manip_assembler_disabled
         remove_global_flag = stellar_manip_manipulator_disabled # (This needs manipulators to be enabled)
     }

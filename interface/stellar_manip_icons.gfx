@@ -119,26 +119,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
 		
 	}
-	spriteType = {
-		name = "GFX_stellar_manipulator_on_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_stellar_manipulator_off_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_stellar_harvester_on_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_stellar_harvester_off_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
-	}
 #############################	
 	spriteType = {
 		name = "GFX_systemcraft_assembler_0_outliner_icon"

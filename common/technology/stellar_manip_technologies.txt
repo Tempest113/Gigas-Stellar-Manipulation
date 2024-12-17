@@ -85,7 +85,7 @@ tech_stellar_assembler = { #systemcraft assembler
 
         inline_script = {
             script = technologies/rare_technologies_weight_modifiers
-            TECHNOLOGY = giga_tech_war_system_6
+            TECHNOLOGY = tech_stellar_assembler
         }
     }
 }
@@ -126,7 +126,7 @@ tech_o_class_war_system = {
 
         inline_script = {
             script = technologies/rare_technologies_weight_modifiers
-            TECHNOLOGY = giga_tech_planet_assembly
+            TECHNOLOGY = tech_o_class_war_system
         }
     }
 }
