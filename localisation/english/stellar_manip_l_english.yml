@@ -2,10 +2,10 @@
 
  # Ascension Perk
 
- ap_stellar_manipulation: "Stellar Manipulation"
- ap_stellar_manipulation_desc: "By using the same methods employed by fusion suppressors and star lifters on a much larger scale, we can shape the very stars that light our sky."
+ ap_stellar_manip: "Stellar Manipulation"
+ ap_stellar_manip_desc: "By using the same methods employed by fusion suppressors and star lifters on a much larger scale, we can shape the very stars that light our sky."
  ap_stellar_manip_extra_desc: "Allows to change the class of stars via a megastructure once the proper methods are studied"
- ap_stellar_manipulation_add_research: "\nResearch options gained:\n £physics_research£ §Y$tech_gigas_stellar_manip_1$§!"
+ ap_stellar_manip_add_research: "\nResearch options gained:\n £physics_research£ §Y$tech_gigas_stellar_manip_1$§!"
 
 
  # Technologies

@@ -1,4 +1,4 @@
-ap_stellar_manipulation = {
+ap_stellar_manip = {
     modifier = {
         description = ap_stellar_manip_extra_desc
         country_megastructure_build_cap_add = 1
@@ -15,7 +15,7 @@ ap_stellar_manipulation = {
         host_has_dlc = "Utopia"
         is_ai = no
         NOT = {
-            has_ascension_perk = ap_stellar_manipulation
+            has_ascension_perk = ap_stellar_manip
         }
         NAND = {
             has_global_flag = stellar_manip_manipulator_disabled
@@ -24,7 +24,7 @@ ap_stellar_manipulation = {
     }
 
     on_enabled = {
-        custom_tooltip = "ap_stellar_manipulation_add_research"
+        custom_tooltip = "ap_stellar_manip_add_research"
         hidden_effect = {
             if = { limit = { NOT = { has_technology = tech_gigas_stellar_manip_1 } } add_research_option = tech_gigas_stellar_manip_1 }
         }

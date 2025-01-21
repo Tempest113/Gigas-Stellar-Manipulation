@@ -1,6 +1,6 @@
 stellar_manip_is_active = { always = yes }
 
-has_stellar_manip_ap = { has_ascension_perk = ap_stellar_manipulation }
+has_stellar_manip_ap = { has_ascension_perk = ap_stellar_manip }
 
 stellar_manip_is_valid_star = {
     optimize_memory

@@ -1,7 +1,7 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_ap_stellar_manipulation"
-		texturefile = "gfx/interface/icons/ascension_perks/ap_stellar_manipulation.dds"
+		name = "GFX_ap_stellar_manip"
+		texturefile = gfx/interface/icons/ascension_perks/ap_stellar_manip.dds
 		alwaystransparent = yes
 	}
 }
