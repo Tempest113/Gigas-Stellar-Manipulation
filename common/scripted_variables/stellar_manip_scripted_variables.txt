@@ -1,3 +1,4 @@
+@has_stellar_manip = 1
 @supernovae_plasma_production = 12000
 
 #manip cost scaling

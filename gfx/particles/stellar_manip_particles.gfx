@@ -1,0 +1,7 @@
+objectTypes = {
+    pdxparticle = {
+        name = "o_class_star_particle"
+        type = "a_class_star_file"
+        scale = 9
+    }
+}

@@ -52,6 +52,10 @@ stellar_manipulator_0 = {
 				stellar_manip_is_valid_star = yes
 			}
 			custom_tooltip = {
+				fail_text = "requires_no_binary_trinary"
+				giga_is_bitrinary = no
+			}
+			custom_tooltip = {
 				fail_text = "requires_no_habitable_planets"
 				NOT = {
 					solar_system = {
@@ -438,5 +442,3 @@ stellar_manipulator_o_2 = {
 		}
 	}
 }
-
-#disabled injector

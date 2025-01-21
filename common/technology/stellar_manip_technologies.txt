@@ -70,11 +70,13 @@ tech_stellar_assembler = { #systemcraft assembler
         "giga_tech_war_system_6"
         "giga_tech_planet_assembly"
     }
+
     modifier = {
         megastructure_build_speed_mult = 0.05
         country_resource_max_alloys_add = 500000
         country_resource_max_energy_add = 500000
     }
+
     prereqfor_desc = {
         custom = { title = "allow_star_assembly"	desc = "allow_star_assembly_desc" }
     }
@@ -105,7 +107,6 @@ tech_o_class_war_system = {
             has_global_flag = systemcraft_disabled
         }
     }
-
 
     prerequisites = {
         giga_tech_war_system_6

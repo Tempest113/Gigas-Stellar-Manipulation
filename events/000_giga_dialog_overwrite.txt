@@ -84,7 +84,7 @@ country_event = {
 					}
 					if = { limit = { giga_is_gas_giant = yes }			set_planet_size = 5 change_pc = pc_molten }
 					else_if = { limit = { is_planet_class = pc_ice_asteroid } 	set_planet_size = 1 change_pc = pc_asteroid }
-					else_if = { limit = { planet_size <7 }						set_planet_size = 2 change_pc = pc_asteroid }
+					else_if = { limit = { planet_size <=7 }						set_planet_size = 2 change_pc = pc_asteroid }
 					else_if = { limit = { planet_size <= 10 planet_size >= 7 }	change_planet_size = -5 change_pc = pc_asteroid }
 					else_if = { limit = { planet_size > 10 } 					change_planet_size = -5 }
 					if = {

@@ -116,13 +116,13 @@ planet_event = {
                 }
             }
             pc_m_giant_star = {
-                change_pc = pc_m_star
+                change_pc = pc_a_star
                 solar_system = {
                     if = {
                         limit = {
                             giga_is_bitrinary = no
                         }
-                        set_star_class = sc_m
+                        set_star_class = sc_a
                     }
                 }
             }
