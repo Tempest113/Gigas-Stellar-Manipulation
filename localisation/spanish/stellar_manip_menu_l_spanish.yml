@@ -1,0 +1,13 @@
+﻿l_spanish:
+
+ # O Class Systemcraft
+ giga_menu_name_o_systemcraft: "$giga_o_systemcraft$"
+ giga_menu_o_systemcraft_tooltip: "$war_system_o_0_MEGASTRUCTURE_DETAILS$\n\nIf systemcraft are capped, the $giga_o_systemcraft$ shares that cap."
+
+ #Systemcraft Assembler
+ giga_menu_name_systemcraft_assembler: "Systemcraft Fabrication"
+ stellar_manip_systemcraft_assmbler_enabled_tt: "£menu_disabled£The Systemcraft Assembler\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not."
+ stellar_manip_systemcraft_assmbler_disabled_tt: "£menu_enabled£The Systemcraft Assembler\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not."
+
+ # Stellar Manipulator
+ giga_menu_name_stellar_manipulator: "Stellar Manipulator"

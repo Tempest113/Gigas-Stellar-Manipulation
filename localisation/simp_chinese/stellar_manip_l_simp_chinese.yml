@@ -1,0 +1,327 @@
+﻿l_simp_chinese:
+
+ # Ascension Perk
+
+ ap_stellar_manip: "Stellar Manipulation"
+ ap_stellar_manip_desc: "By using the same methods employed by fusion suppressors and star lifters on a much larger scale, we can shape the very stars that light our sky."
+ ap_stellar_manip_extra_desc: "Allows to change the class of stars via a megastructure once the proper methods are studied"
+ ap_stellar_manip_add_research: "\nResearch options gained:\n £physics_research£ §Y$tech_gigas_stellar_manip_1$§!"
+
+
+ # Technologies
+
+ tech_gigas_stellar_manip_1: "High Energy Plasma Containment"
+ tech_gigas_stellar_manip_1_desc: "Exploding stars expel a significant amount of high energy plasma that can be collected and used in various scientific endeavours."
+
+ basic_stellar_manip1: "§HUnlocks Feature:§! Stellar Plasma Collection"
+ basic_stellar_manip1_desc: "The ability to collect energetic plasma from stars and store it for future use will open the door to many wonderful possibilities. Supernovae caused by Fusion Suppressors and Star Eaters will provide Stellar Plasma after researching this technology."
+
+ tech_gigas_stellar_manip_2: "Heliostructural Reconstitution"
+ tech_gigas_stellar_manip_2_desc: "To shape the very stars to our will we must explore a whole new avenue of research and development."
+
+ advanced_stellar_manip1: "§HUnlocks Feature:§! Stellar Manipulation"
+ advanced_stellar_manip1_desc: "We will reshape even the stars above."
+
+ advanced_stellar_manip2: "§HUnlocks Megastructure:§! $stellar_manipulator$"
+ advanced_stellar_manip2_desc: "A megastructure capable of changing the size and structure of a star through highly advanced Stellar Plasma injection and harvesting techniques"
+
+ tech_stellar_assembler: "Mass Stellar Ignition"
+ tech_stellar_assembler_desc: "Now that we can ignite and build stars from scratch we may be able to incorporate the designs from our celestial warship fabricators we might be able to build our Systemcrafts in a much more efficient manner"
+
+ allow_star_assembly: "§RAllows the construction of systemcraft assemblers"
+ allow_star_assembly_desc: "A gigastructure capable of building a systemcraft in one stage"
+
+ tech_o_class_war_system: "Systemcraft Superscaling"
+ tech_o_class_war_system_desc: "Class O stars have a massive power output, utilizing one for our $name_war_system$s would allow them to field much more heavy weaponry"
+
+ allow_o_class_war_system: "§HUnlocks Megastructure:§! $giga_o_systemcraft$"
+ allow_o_class_war_system_desc: "Allows for the construction of §Y$giga_o_systemcraft$§!, significantly more powerful than our regular Systemcraft"
+
+
+# Situations
+
+ situation_stellar_extraction: "Extraction from [This.Target.GetName]"
+ situation_stellar_extraction_type: "Stellar Manipulation"
+ situation_stellar_extraction_desc: "The light of a great celestial body is being dimmed by our efforts, the plasma will be put to good use."
+ situation_stellar_extraction_monthly_change_tooltip: ""
+
+ situation_stellar_infusion: "Infusion into [This.Target.GetName]"
+ situation_stellar_infusion_type: "Stellar Manipulation"
+ situation_stellar_infusion_desc: "A new and greater star is being born from the remnants of another."
+ situation_stellar_infusion_monthly_change_tooltip: ""
+
+ approach_abort_stellar_manipulation: "§RAbort Manipulation§!"
+ approach_abort_stellar_manipulation_tooltip: "§RWARNING§! This will remove the megastructure and abort the process! Your progress will not be lost but the megastructure will be!"
+
+ approach_stellarm_standard: "Standard Extraction"
+ situation_standard_extraction_approach_tooltip: "We are harvesting stellar plasma from [target.GetName]. Soon enough, the star will shrink to such a degree that it will have to be reclassified."
+ situation_no_plasma_to_infuse: "$TRIGGER_FAIL$We have no $sr_stellar_plasma$ to inject!"
+
+ approach_stellarm_standard_infusion: "Standard Infusion"
+ situation_standard_infusion_approach_tooltip: "Standard Stellar Infusion"
+ situation_no_energy_for_manipulation: "$TRIGGER_FAIL$$energy_deficit$"
+
+ approach_stellarm_pause: "Pause Infusion"
+ approach_stellar_manip_harvest_pause: "Pause Harvesting"
+ situation_pause_infusion_approach_tooltip: "Infusion Paused"
+ situation_pause_harvest_approach_tooltip: "Harvesting Paused"
+
+ stellarm_manip_stage: "[This.Target.GetClassName] Manipulation"
+ stellar_manip_situation: "Stellar Manipulation"
+ STRING_APPROACH_STELLARM_STANDARD_INFUSION: "Standard Approach"
+ STRING_APPROACH_STELLARM_STANDARD: "Standard Approach"
+ STRING_STELLARM_IS_O_STAR: "Target is O Class Star"
+ STRING_STELLARM_IS_B_STAR: "Target is B Class Star"
+ #STRING_HAS_PLASMA_DEFICIT: "Stellar Plasma Deficit"
+
+
+ # Strategic Resource
+
+ sr_stellar_plasma: "Stellar Plasma"
+ sr_stellar_plasma_desc: "Highly energetic plasma extracted directly from stars, ready for use in a variety of highly advanced stellar manipulation projects."
+ sr_stellar_plasma_deficit: "Stellar Plasma Shortage"
+
+
+
+ # Policies
+
+ policy_stellar_manip_automatic_harvest: "Automatic Stellar Harvesting"
+ policy_stellar_manip_automatic_harvest_desc: "Makes stellar harvesters work automatically or not"
+
+ policy_manual_harvest: "Manual Harvesting"
+ policy_manual_harvest_desc: "Stellar Harvesters will auto dismantle after every stage"
+
+ policy_automatic_harvest: "Automatic Harvesting"
+ policy_automatic_harvest_desc: "Stellar Harvesters will work automatically and auto dismantle at class T"
+
+ policy_stellar_manip_automatic_injection: "Automatic Stellar Injection"
+ policy_stellar_manip_automatic_injection_desc: "Makes stellar injectors work automatically or not"
+
+ policy_manual_injection: "Manual Injection"
+ policy_manual_injection_desc: "Stellar injectors will auto dismantle at every stage"
+
+ policy_automatic_injection: "Automatic Injection"
+ policy_automatic_injection_desc: "Stellar injectors will work automatically and auto dismantle at class O"
+
+ policy_automatic_harvest_name: "Automatic"
+ policy_manual_harvest_name: "Manual"
+
+ policy_automatic_injection_name: "Automatic"
+ policy_manual_injection_name: "Manual"
+
+ policy_stmp_automatic_harvest: "Stellar Harvesting Methodology"
+ policy_stmp_automatic_injection: "Stellar Injection Methodology"
+
+
+ # Modifiers
+
+ mod_stellarm_all_situation_upkeep_mult: "Stellar Manipulation Upkeep"
+ mod_stellarm_injection_situation_upkeep_mult: "Stellar Injection Upkeep"
+ mod_stellarm_extraction_situation_upkeep_mult: "Stellar Harvest Upkeep"
+ mod_stellarm_situation_speed_mult: "Stellar Manipulation Speed"
+ mod_stellarm_situation_speed_add: "Stellar Manipulation Speed"
+
+
+ # Tooltips
+
+ requires_star_lifter: "$TRIGGER_FAIL$Requires the £engineering£ §Y$giga_tech_star_lifter$§! technology."
+ requires_fusion_supressor: "$TRIGGER_FAIL$Requires the £physics£ §Y$giga_tech_fusion_suppressor$§! technology."
+ stellar_manip_no_ignited_stars: "$pc_gigaignited_star$s are not massive enough to harvest a meaningful amount of $sr_stellar_plasma$."
+ stellar_manip_no_o_stars: "$pc_giga_o_star$s are too massive to safely inject $sr_stellar_plasma$."
+ # stellar_manip_no_ignited_stars: "$TRIGGER_FAIL$Due to being artificially compressed $pc_gas_giant$s, $pc_gigaignited_star$s do not have enough mass for us to be able to harvest a meaningful amount of $sr_stellar_plasma$."
+
+
+ # Megastructures
+
+ # Stellar Manipulator
+
+ stellar_manipulator: "Stellar Manipulator"
+
+ stellar_manipulator_0: "$gc_mega$$stellar_manipulator$ Construction Site"
+ stellar_manipulator_0_DESC: "This is the construction site upon which a $stellar_manipulator$ will be constructed, ready to reshape the star below."
+ stellar_manipulator_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_megastructure$ - $giga_list_category_strategic_resource_production$ - $giga_list_category_miscellaneous$\nCan change the class of stars by collecting or consuming £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!\n§LChanges the size of stars for better utilization of scaling megastructures§!"
+
+ stellar_manipulator_1: "$stellar_manipulator$"
+ stellar_manipulator_1_DESC: "A completed stellar manipulator, ready to shape the stars to our will"
+
+ stellar_manipulator_2: "Stellar Mass Harvester"
+ stellar_manipulator_2_DESC: "A structure to extract plasma from the star, reducing it's size in the process"
+
+ stellar_manipulator_3: "Stellar Mass Injector"
+ stellar_manipulator_3_DESC: "A structure to inject plasma into the star, increasing it's size in the process"
+
+ stellar_manipulator_o_1: "$stellar_manipulator_1$"
+ stellar_manipulator_o_1_DESC: "$stellar_manipulator_1_DESC$"
+
+ stellar_manipulator_o_2: "$stellar_manipulator_2$"
+ stellar_manipulator_o_2_DESC: "$stellar_manipulator_2_DESC$"
+
+ # Star Printer
+ systemcraft_assembler_0: "$gc_giga$Systemcraft Assembler Construction Site"
+ systemcraft_assembler_0_DESC: "This is the construction site upon which Systemcraft Assembler will be constructed"
+ systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §Y$sr_solar_energy$§! and £alloys£ §Y$alloys$§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
+
+ systemcraft_assembler_1: "Systemcraft Assembler Stellar Ignitor"
+ systemcraft_assembler_1_DESC: "The heart of the structure, a, for now non-functioning, stellar ignitor that will soon create new stars for a systemcraft"
+
+ systemcraft_assembler_2: "Systemcraft Assembler Operational Frame"
+ systemcraft_assembler_2_DESC: "The frame where the crew, computers and logistical systems needed for the systemcraft assembler will go"
+
+ systemcraft_assembler_3: "Systemcraft Assembler Celestial Fabricators"
+ systemcraft_assembler_3_DESC: "The fabricators that will move enormous amounts of planetary matter to assemble the celestial bodies needed for the Stellar Systemcraft"
+
+ systemcraft_assembler_4: "Systemcraft Assembler Colossal Drydock"
+ systemcraft_assembler_4_DESC: "Extra fabricators to assemble other components needed for the systemcraft such as weapons and thrusters"
+
+ systemcraft_assembler_5: "Systemcraft Assembler"
+ systemcraft_assembler_5_DESC: "A finished Systemcraft Assembler ready to fabricate a Stellar Systemcraft"
+
+ systemcraft_assembler_make_system: "Assemble Stellar Systemcraft"
+ systemcraft_assembler_make_system_DESC: "Builds a Stellar Systemcraft"
+
+ systemcraft_assembler_make_o_system: "Assemble Class O Systemcraft"
+ systemcraft_assembler_make_o_system_DESC: "Builds a massively powerful Class O Stellar Systemcraft"
+
+ # O war system
+ requires_standard_o_star_planet_class: "$TRIGGER_FAIL$Must build around an O Class Star."
+
+ war_system_o_0: "$gc_giga$$giga_o_systemcraft$ Construction Site"
+ war_system_o_0_DESC: "The construction site for a future $giga_o_systemcraft$, possibly the largest and most powerful vessel ever built in this galaxy."
+ war_system_o_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nConverts a §YStar§!, §Y5 Attack Moons§! and §Y4 Behemoth Planetcrafts§! into a §YSystemcraft§!\n$giga_list_removes_system_planets$\n§LA gigantic weaponized star system, possessing tremendous amounts of weaponry."
+ war_system_o_0_CONSTRUCTION_INFO_DELAYED: "$giga_list_additional_data$ - When destroyed the §YSystemcraft§! will split into its constituent §Y4 Attack Moons§! and §Y5 Behemoth Planetcrafts§!.\n§RWARNING! AVOID PUTTING HULL-REGENERATION COMPONENTS ON THE SYSTEMCRAFT AS IT IS LIKELY TO CAUSE OVERFLOW AND DELETE THE SHIP!§!"
+
+ war_system_o_1: "Systemcraft Solar Compressor"
+ war_system_o_1_DESC: "Two massive gravitocompressors are shrinking down the system's central star and harvesting its energy in order to power the future Systemcraft's powerful weaponry."
+
+ war_system_o_2: "Systemcraft Synchronized Planetary Thrusters"
+ war_system_o_2_DESC: "Powered by the central star, this set of absolutely gigantic thrusters embedded within a large planet and two smaller moons will serve as the Systemcraft's means of propulsion. Do not inhale the exhaust."
+
+ war_system_o_3: "Systemcraft Lunar Supports"
+ war_system_o_3_DESC: "Two smaller celestial bodies supporting massive structural trusses on the side of the Systemcraft in order to reinforce its structural integrity even more."
+
+ war_system_o_4: "Systemcraft Celestial Erasers"
+ war_system_o_4_DESC: "The Systemcraft's Celestial Erasers consist of two $name_war_planet$s attached to the main structure. The star's colossal energy output allows them to field weapons much more powerful than on a typical Planetcraft. These weapons are capable of obliterating basically anything standing in the way of the Systemcraft."
+
+ war_system_o_5: "$name_war_system$"
+ war_system_o_5_DESC: "A completed $name_war_system$, complete with an Ecumenopolis and a smaller world to house most of its population, which serves as the crew."
+
+ # Messages
+
+ MESSAGE_TITLE_STELLAR_MANIPULATOR_SITE_BUILT: "$stellar_manipulator_0$ Built"
+ MESSAGE_STELLAR_MANIPULATOR_SITE_BUILT: "A $stellar_manipulator_0$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_MANIPULATOR_BUILT: "$stellar_manipulator_1$ Built"
+ MESSAGE_STELLAR_MANIPULATOR_BUILT: "A $stellar_manipulator_1$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_HARVESTER_BUILT: "$stellar_manipulator_2$ Built"
+ MESSAGE_STELLAR_HARVESTER_BUILT: "A $stellar_manipulator_2$ has been built in the [event_target:star_manip_system.GetName] system."
+
+ MESSAGE_TITLE_STELLAR_INJECTOR_BUILT: "$stellar_manipulator_3$ Built"
+ MESSAGE_STELLAR_INJECTOR_BUILT: "A $stellar_manipulator_3$ has been built in the [event_target:star_manip_system.GetName] system."
+
+
+ # Dialogue Events
+
+ # Manipulator events
+
+ #Construction
+
+ # stellar_manip2.name: "$stellar_manip_dialogue.2.name$"
+ # stellar_manip2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [From.System.GetName] system, we must now decide whether to specialize it towards harvesting $sr_stellar_plasma$ or injecting it."
+ # stellar_manip.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
+ # stellar_manip.2.b: "Specialize towards $sr_stellar_plasma$ injection."
+
+ # REPLACED BY MESSAGE/TOAST
+ stellar_manip_dialogue.1.name: "$stellar_manipulator_0$ Finished"
+ stellar_manip_dialogue.1.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
+ stellar_manip_dialogue.1.a: "Great."
+
+ # REPLACED BY MESSAGE/TOAST
+ stellar_manip_dialogue.2.name: "$stellar_manipulator_1$ Finished"
+ stellar_manip_dialogue.2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [FromFrom.System.GetName] system, we must now decide whether to specialize the structure towards harvesting $sr_stellar_plasma$ or injecting it."
+ stellar_manip_dialogue.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
+ stellar_manip_dialogue.2.b: "Specialize towards $sr_stellar_plasma$ injection."
+
+ # REPLACED BY MESSAGE/TOAST
+ stellar_manip_dialogue.3.name: "$stellar_manipulator_2$ Finished"
+ stellar_manip_dialogue.3.desc: "We have finished the construction of a $stellar_manipulator_2$ in the [From.GetName] system, it will now harvest £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! from the star, decreasing its size in the process."
+ stellar_manip_dialogue.3.a: "Great."
+ stellar_manip_dialogue.3.a.tooltip: "§YThe harvester takes 2 years to finish, this time is doubled when harvesting a O class star."
+
+ # # REPLACED BY MESSAGE/TOAST
+ stellar_manip_dialogue.4.name: "$stellar_manipulator_3$ Finished"
+ stellar_manip_dialogue.4.desc: "We finished building a stellar mass injector in the [From.GetName] system, it will inject plasma into the star and increase it's size.\n§YThe injector takes 2 years to finish, this time is doubled when injecting a B class star."
+
+
+ #Finished
+ stellar_manip_dialogue.5.name: "Stellar Harvesting Finished"
+ stellar_manip_dialogue.5.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has finished and the star's size has decreased, we recovered some alloys while dismantling the structure"
+
+ stellar_manip_dialogue.8.name: "Stellar Injecting Finished"
+ stellar_manip_dialogue.8.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has finished and the star's size has increased, we recovered some alloys while dismantling the structure"
+
+ #Fully Finished
+ stellar_manip_dialogue.6.name: "Automated Stellar Harvesting Finished"
+ stellar_manip_dialogue.6.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has fully finished, the star has been reduced down to a class T, we have also recovered some alloys while dismantling the structure"
+
+ stellar_manip_dialogue.9.name: "$pc_giga_o_star$ Created"
+ stellar_manip_dialogue.9.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has completed its task and the star has been increased to a Class O, we have also recovered some alloys while dismantling the structure"
+
+ #Out of Energy
+ stellar_manip_dialogue.7.name: "$stellar_manipulator_2$ Out of Energy"
+ stellar_manip_dialogue.7.desc: "Our $stellar_manipulator_2$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
+ stellar_manip_dialogue.7.a: "Understood."
+
+ stellar_manip_dialogue.10.name: "$stellar_manipulator_3$ Out of Energy"
+ stellar_manip_dialogue.10.desc: "Our $stellar_manipulator_3$ in the [From.GetName] system has been shut down and dismantled as we do not have enough energy to sustain its continued operation, all construction materials used have been recovered."
+
+ # Star Printer Events
+
+ stellar_manip_dialogue.11.name: "Systemcraft Assembler Site Constructed"
+ stellar_manip_dialogue.11.desc: "We have begun the construction of a Systemcraft Assembler, once completed this structure will allow us to efficiently build systemcraft without the previous limitations"
+ stellar_manip_dialogue.11.a: "Let us begin."
+
+ stellar_manip_dialogue.12.name: "Systemcraft Assembler Stellar Ignitor Constructed"
+ stellar_manip_dialogue.12.desc: "A stellar ignitor capable of building a star from scratch has been finished, this structure shall serve as the heart for a systemcraft assembler capable of building the most powerful ship in the galaxy"
+ stellar_manip_dialogue.12.a: "Moving on."
+
+ stellar_manip_dialogue.13.name: "Systemcraft Assembler Logistical Frame Constructed"
+ stellar_manip_dialogue.13.desc: "With the system obstacles gone and the [From.GetName] harvested we are ready to proceed. The central ring of the Systemcraft Assembler has been built and will serve as crew quarters and central logistical system for the structure to make sure everything goes where it needs to go"
+ stellar_manip_dialogue.13.a: "The plasma extracted from the star will be useful."
+
+ stellar_manip_dialogue.14.name: "Systemcraft Assembler Celestial Fabricators Built"
+ stellar_manip_dialogue.14.desc: "These macrofabricators that will assemble the attack moons and planetcraft needed for the Stellar Systemcraft, the use of a external power source and logistical system can allow modifications to our usual design to be much smaller and cheaper than our usual models"
+ stellar_manip_dialogue.14.a: "Good news!"
+
+ stellar_manip_dialogue.15.name: "Systemcraft Assembler Drydock"
+ stellar_manip_dialogue.15.desc: "The extra assembly yards have been built, these systems will build extra components needed for the vessel such as thrusters, weapons, computers and others"
+ stellar_manip_dialogue.15.a: "Good, good."
+
+ stellar_manip_dialogue.16.name: "Systemcraft Assembler Completed"
+ stellar_manip_dialogue.16.desc: "With the massive storage tanks finished we are finally done, a systemcraft assembler has been finished and is now ready to construct vessels. All systemcraft produced by a Systemcraft Assembler are automated and have no need for a crew to be acquired from a planet, they will also benefit from increased defensive and offensive capabilities but at a higher cost and build time"
+ stellar_manip_dialogue.16.a: "Perfect."
+
+ # systemcraft built
+ stellar_manip_dialogue.17.name: "Systemcraft Assembled"
+ stellar_manip_dialogue.17.desc: "The impossible has been done! A new stellar systemcraft built from scratch in one single stage now flies under our command, systemcraft produced by a Systemcraft Assembler are automated and will benefit from increased defensive and offensive capabilities."
+ stellar_manip_dialogue.17.a: "Go forth and conquer"
+
+
+ # Class O Systemcraft
+
+ giga_o_systemcraft: "Class O Stellar Systemcraft"
+ giga_o_systemcraft_plural: "$giga_o_systemcraft$s"
+ systemcraft_ship_o_bowgun_01_key: "Primary Annihilator Lances"
+ systemcraft_ship_o_bow_01_key: "Existence Removal Beams"
+ systemcraft_ship_o_mid_01_key: "Nicoll-Dyson Capacitor Array"
+ systemcraft_ship_o_stern_01_key: "Secondary Armament"
+ systemcraft_ship_o_sternthrusters_01_key: "Grand Stellar Hangars"
+ systemcraft_ship_o_kugel_01_key: "Omega Kugelblitz Protectors"
+
+ REACTOR_SYSTEM_O: "Captive Class O Star"
+ REACTOR_SYSTEM_O_DESC: "A entire Class O star is held within this gargantuan vessel providing massive levels of power"
+
+ # Maginot
+
+ GIGA_MAGINOT_O_STAR_REACTOR: "Upgraded $GIGA_MAGINOT_STAR_REACTOR$"
+ GIGA_MAGINOT_O_STAR_REACTOR_DESC: "The advent of the $giga_o_systemcraft$ has allowed for the various techniques employed by the $GIGA_MAGINOT_STAR_REACTOR$ to be greatly increased in scale, allowing for a massive increase in available power."
