@@ -187,7 +187,7 @@
 
  war_system_o_0: "$gc_giga$$giga_o_systemcraft$ Construction Site"
  war_system_o_0_DESC: "The construction site for a future $giga_o_systemcraft$, possibly the largest and most powerful vessel ever built in this galaxy."
- war_system_o_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nConverts a §YStar§!, §Y5 Attack Moons§! and §Y4 Behemoth Planetcrafts§! into a §YSystemcraft§!\n$giga_list_removes_system_planets$\n§LA gigantic weaponized star system, possessing tremendous amounts of weaponry."
+ war_system_o_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nA more powerful variant of the $name_war_system|Y$ built around an $sc_giga_o_star|Y$\n$giga_list_removes_system_planets$\n§LA gigantic weaponized star system, possessing tremendous amounts of weaponry."
  war_system_o_0_CONSTRUCTION_INFO_DELAYED: "$giga_list_additional_data$ - When destroyed the §YSystemcraft§! will split into its constituent §Y4 Attack Moons§! and §Y5 Behemoth Planetcrafts§!.\n§RWARNING! AVOID PUTTING HULL-REGENERATION COMPONENTS ON THE SYSTEMCRAFT AS IT IS LIKELY TO CAUSE OVERFLOW AND DELETE THE SHIP!§!"
 
  war_system_o_1: "Systemcraft Solar Compressor"

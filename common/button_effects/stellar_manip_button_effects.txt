@@ -54,12 +54,7 @@ stellar_manip_assember_enabled = {
     potential = {
         exists = from
         from = {
-            OR = {
-                has_country_flag = giga_menu_page_00
-                has_country_flag = giga_menu_page_01
-                has_country_flag = giga_menu_page_02
-                has_country_flag = giga_menu_page_03
-            }
+            has_country_flag = giga_menu_page_00
             NOT = { has_global_flag = stellar_manip_assembler_disabled }
         }
 
@@ -81,12 +76,7 @@ stellar_manip_assember_disabled = {
     potential = {
         exists = from
         from = {
-            OR = {
-                has_country_flag = giga_menu_page_00
-                has_country_flag = giga_menu_page_01
-                has_country_flag = giga_menu_page_02
-                has_country_flag = giga_menu_page_03
-            }
+            has_country_flag = giga_menu_page_00
             has_global_flag = stellar_manip_assembler_disabled
         }
 

@@ -23,21 +23,27 @@ war_system_o_0 = {
 		has_ascension_perk = ap_celestial_printing
 		NOT = { has_global_flag = systemcraft_disabled }
 		OR = {
-			check_variable = { which = giga_systemcraft_cap value = 0 }						# No Cap
-			check_variable = { which = giga_current_systemcraft value < giga_systemcraft_cap }
+			has_global_flag = systemcraft_capped_u
+			check_variable = {
+				which = giga_current_systemcraft
+				value < value:giga_systemcraft_limit
+			}
 		}
 	}
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_no_habitable_planets"		NOT = { any_system_planet = { is_colony = yes } } }
+		custom_tooltip = { fail_text = "requires_no_habitable_planets"			NOT = { any_system_planet = { is_colony = yes } } }
 		custom_tooltip = { fail_text = "requires_inside_border"				is_inside_border = from }
 		custom_tooltip = { fail_text = "requires_no_crisis_system"			NOT = { any_system_planet = { has_planet_flag = crisis_vital_planet } } }
 		custom_tooltip = {
 			fail_text = "requires_not_capped"
 			from = {
 				OR = {
-					check_variable = { which = giga_systemcraft_cap value = 0 }						# No Cap
-					check_variable = { which = giga_current_systemcraft value < giga_systemcraft_cap }
+					has_global_flag = systemcraft_capped_u
+					check_variable = {
+						which = giga_current_systemcraft
+						value < value:giga_systemcraft_limit
+					}
 				}
 			}
 		}
@@ -45,7 +51,7 @@ war_system_o_0 = {
 
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = { fail_text = "requires_no_existing_megastructure"				planet_has_no_megastructure = yes }
+			custom_tooltip = { fail_text = "requires_no_existing_megastructure"			planet_has_no_megastructure = yes }
 			custom_tooltip = { fail_text = "must_build_around_star"							is_star = yes }
 			custom_tooltip = { fail_text = "requires_no_anomaly"							has_anomaly = no }
 			custom_tooltip = {

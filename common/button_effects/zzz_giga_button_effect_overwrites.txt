@@ -17,3 +17,24 @@ giga_systemcraft_enabled = {
         set_global_flag = stellar_manip_o_systemcraft_disabled
     }
 }
+
+giga_warplanet_enabled = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_03
+        }
+        NOT = {
+            has_global_flag = warplanet_disabled
+        }
+    }
+
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = "giga_menu_disabled"
+        set_global_flag = warplanet_disabled
+        set_global_flag = systemcraft_disabled
+        set_global_flag = stellar_manip_o_systemcraft_disabled
+        set_global_flag = giga_celestial_printing_planet_disabled
+    }
+}
