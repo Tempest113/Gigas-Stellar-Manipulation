@@ -1,13 +1,8 @@
 sr_stellar_plasma = {
     tradable = no
-    max = 1000000
-
+    max = 100000
     prerequisites = { "tech_gigas_stellar_manip_1" }
     visibility_prerequisite = { always = yes }
-
-    ai_weight = {
-        weight = 100
-    }
+    ai_weight = { weight = 100 }
     deficit_modifier = sr_stellar_plasma_deficit
-
 }
