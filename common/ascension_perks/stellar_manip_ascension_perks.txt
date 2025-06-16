@@ -5,6 +5,7 @@ ap_stellar_manip = {
         megastructure_build_speed_mult = 0.20
         country_resource_max_add = 25000
     }
+
     possible = {
         custom_tooltip = { fail_text = "requires_ap_galactic_wonders"			has_galactic_wonders = yes	}
         custom_tooltip = { fail_text = "requires_fusion_supressor"            has_technology = giga_tech_fusion_suppressor }
@@ -15,7 +16,7 @@ ap_stellar_manip = {
         host_has_dlc = "Utopia"
         is_ai = no
         NOT = {
-            has_ascension_perk = ap_stellar_manip
+            has_stellar_manip_ap = yes
         }
         NAND = {
             has_global_flag = stellar_manip_manipulator_disabled
