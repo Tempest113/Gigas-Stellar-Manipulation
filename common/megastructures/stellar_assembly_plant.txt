@@ -10,9 +10,12 @@ systemcraft_assembler_0 = {
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 5000
 			influence = 300
 			unity = @giga_tera_unity_cost
+		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 5000
 		}
 		upkeep = {
 			energy = 5
@@ -74,12 +77,16 @@ systemcraft_assembler_1 = {
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 50000
 			unity = @giga_tera_unity_cost
 			rare_crystals = 2000
 			volatile_motes = 2000
 			exotic_gases = 2000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 50000
+		}
+
 		upkeep = {
 			energy = 400
 			alloys = 200
@@ -114,12 +121,16 @@ systemcraft_assembler_2 = {
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 115000
 			unity = @giga_tera_unity_cost
 			rare_crystals = 2000
 			volatile_motes = 2000
 			exotic_gases = 2000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 115000
+		}
+
 		upkeep = {
 			energy = 800
 			alloys = 400
@@ -180,12 +191,16 @@ systemcraft_assembler_3 = {
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 115000
 			unity = @giga_tera_unity_cost
 			rare_crystals = 3000
 			volatile_motes = 3000
 			exotic_gases = 3000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 115000
+		}
+
 		upkeep = {
 			energy = 1000
 			alloys = 500
@@ -219,12 +234,16 @@ systemcraft_assembler_4 = {
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 115000
 			unity = @giga_tera_unity_cost
 			rare_crystals = 3000
 			volatile_motes = 3000
 			exotic_gases = 3000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 115000
+		}
+
 		upkeep = {
 			energy = 1500
 			alloys = 750
@@ -258,12 +277,16 @@ systemcraft_assembler_5 = { #ready to print
 	resources = {
 		category = giga_gigastructures
 		cost = {
-			alloys = 9000
 			unity = @giga_tera_unity_cost
 			rare_crystals = 3000
 			volatile_motes = 3000
 			exotic_gases = 3000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 9000
+		}
+
 		upkeep = {
 			energy = 3000
 			alloys = 1500
@@ -316,11 +339,16 @@ systemcraft_assembler_make_system = { #print normal
 		category = giga_gigastructures
 		# category = megastructures
 		cost = {
-			alloys = 1750000				#250k alloys per planet for 1M on planetcrafts + 30k per moon for 150k + 600k for the systemcraft (it costs 550k, so i added a bit more) for a total of 1.750.000
-			sr_solar_energy = 140			#planetary matter || 26 per planetcraft * 4 = 104 on planetcrafts + 7 per moon * 5 = 35 on moons for a total of 139
-			energy = 1000000				#just made it 2M, i'm not doing more math
+			giga_sr_bulk_matter = 140			#planetary matter || 26 per planetcraft * 4 = 104 on planetcrafts + 7 per moon * 5 = 35 on moons for a total of 139
+			energy = 1000000				#just made it 1M, i'm not doing more math
 			sr_stellar_plasma = 2500		#Harvesting a g class star down to a brown dwarf gives 2060 stellar plasma, rounded it off to 2500
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 1750000 #250k alloys per planet for 1M on planetcrafts + 30k per moon for 150k + 600k for the systemcraft (it costs 550k, so i added a bit more) for a total of 1.750.000
+
+		}
+
 		upkeep = {
 			energy = 3000
 			alloys = 1500
@@ -399,11 +427,15 @@ systemcraft_assembler_make_o_system = { #print o class
 		category = giga_gigastructures
 		# category = megastructures
 		cost = {
-			alloys = 4375000
-			sr_solar_energy = 140
+			giga_sr_bulk_matter = 140
 			energy = 2000000
 			sr_stellar_plasma = 25000
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 4375000
+		}
+
 		upkeep = {
 			energy = 3000
 			alloys = 1500

@@ -20,7 +20,7 @@ decision_systemcraft_crew = {
 	}
 
 	allow = {
-		count_owned_pop = { count >= 41 }
+		count_owned_pop_amount = { count >= 4100 }
 		owner = { resource_stockpile_compare = { resource = energy value >= 1000 } }
 	}
 
@@ -31,7 +31,9 @@ decision_systemcraft_crew = {
 		}
 		while = {
 			count = 40
-			random_owned_pop = { kill_pop = yes }
+			random_owned_pop_group = {
+				kill_single_pop = yes
+			}
 		}
 	}
 }

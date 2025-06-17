@@ -9,9 +9,13 @@ stellar_manipulator_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
 			unity = @giga_kilo_unity_cost
 		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
+			alloys = 5000
+		}
+
 		upkeep = {
 			energy = 5
 		}
@@ -103,8 +107,12 @@ stellar_manipulator_1 = {
 		category = megastructures
 		cost = {
 			unity = @giga_mega_unity_cost
+		}
+		inline_script = {
+			script = megastructures/generic_parts/giga_mega_alloy_cost
 			alloys = 5000
 		}
+
 		upkeep = {
 			energy = 25
 		}
