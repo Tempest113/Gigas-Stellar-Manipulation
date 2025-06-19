@@ -43,7 +43,7 @@ situation_stellar_extraction = {
 			}
 		}
 	}
-	start_value = 50
+	start_value = 0
 
 	stages = {
 		stellarm_manip_stage = {
@@ -236,7 +236,7 @@ situation_stellar_infusion = {
 		}
 	}
 
-	start_value = 50
+	start_value = 0
 	stages = {
 		stellarm_manip_stage = {
 			icon = GFX_situation_stage_1

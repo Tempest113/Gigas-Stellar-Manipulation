@@ -23,6 +23,7 @@ planet_event = {
     trigger = {
         is_scope_valid = yes
     }
+
     immediate = {
         remove_planet_flag = has_megastructure
         remove_planet_flag = megastructure
@@ -596,7 +597,6 @@ situation_event = {
         remove_megastructure = event_target:star_injector
     }
 }
-
 
 planet_event = {
     id = stellar_manip_utility.9
