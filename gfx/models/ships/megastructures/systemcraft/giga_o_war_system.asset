@@ -220,8 +220,8 @@ entity = {
 	scale = 1.5
 
 	default_state = "idle"
-	state = { name = "idle" state_time = 5
-		event = { time = 0	node = "root"					particle = "o_class_star_particle"					keep_particle = no  trigger_once = yes }
+	state = { name = "idle"
+		event = { time = 0.0	node = "root" 	particle = "o_class_star_particle"	keep_particle = no  trigger_once = yes sound = { soundeffect = "amb_star_fusion" } }
 	}
 
 	meshsettings = {

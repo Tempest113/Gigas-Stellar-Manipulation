@@ -1,6 +1,6 @@
 namespace = stellar_manip_utility
 
-# Sets global flag for mod detection
+# Global flag for mod detection
 event = {
     id = stellar_manip_utility.1
     is_triggered_only = yes
@@ -182,18 +182,8 @@ planet_event = {
                     }
                 }
             }
-            pc_gigaignited_star = {
-                change_pc = pc_t_star
-            }
         }
         save_event_target_as = star_manip_planet
-        from.owner = {
-            stellar_manip_set_if_not_set = {
-                variable = stellarm_star_resource_value
-                value = 1
-                CHANGE = yes
-            }
-        }
         if = {
             #automatic harvesting
             limit = {
@@ -365,9 +355,7 @@ planet_event = {
             }
         }
 
-
         # Other stuff
-
         if = {
             #automatic injection
             limit = {
@@ -455,20 +443,39 @@ situation_event = {
     trigger = {
         target = {
             OR = {
-                is_variable_set = stellarm_harvester_progress
-                is_variable_set = stellarm_injecter_progress
+                is_variable_set = stellar_manip_harvesting_progress
+                is_variable_set = stellar_manip_injection_progress
             }
+
         }
     }
     immediate = {
-        add_situation_progress = target.value:stellarm_harvester_progress_initializer
-        target = {
-            stellar_manip_unset_if_set = {
-                variable = stellarm_harvester_progress
+        # If you have previously harvested plasma from the star, you pick up where you left off
+        if = {
+            limit = {
+                target = {
+                    is_variable_set = stellar_manip_harvesting_progress
+                }
             }
-            stellar_manip_unset_if_set = {
-                variable = stellarm_injecter_progress
+            add_situation_progress = target.stellar_manip_harvesting_progress
+            target = { clear_variable = stellar_manip_harvesting_progress }
+        }
+
+        # If you have previously injected plasma into the star, you'll have to undo the progress made in the injection situation
+        if = {
+            limit = {
+                target = {
+                    is_variable_set = stellar_manip_injection_progress
+                }
             }
+            target = {
+                multiply_variable = {
+                    which = stellar_manip_injection_progress
+                    value = -1
+                }
+            }
+            add_situation_progress = target.stellar_manip_injection_progress
+            target = { clear_variable = stellar_manip_injection_progress }
         }
     }
 }
@@ -481,110 +488,44 @@ situation_event = {
     trigger = {
         target = {
             OR = {
-                is_variable_set = stellarm_harvester_progress
-                is_variable_set = stellarm_injecter_progress
+                is_variable_set = stellar_manip_injection_progress
+                is_variable_set = stellar_manip_harvesting_progress
             }
         }
     }
     immediate = {
-        add_situation_progress = target.value:stellarm_injector_progress_initializer
-        target = {
-            stellar_manip_unset_if_set = {
-                variable = stellarm_harvester_progress
+        # If you have previously injected plasma into the star, you pick up where you left off
+        if = {
+            limit = {
+                target = {
+                    is_variable_set = stellar_manip_injection_progress
+                }
             }
-            stellar_manip_unset_if_set = {
-                variable = stellarm_injecter_progress
+            add_situation_progress = target.stellar_manip_injection_progress
+        }
+
+        # If you have previously harvested plasma from the star, you'll have to undo the progress made in the harvesting situation
+        if = {
+            limit = {
+                target = {
+                    is_variable_set = stellar_manip_harvesting_progress
+                }
             }
+            target = {
+                multiply_variable = {
+                    which = stellar_manip_harvesting_progress
+                    value = -1
+                }
+            }
+            add_situation_progress = target.stellar_manip_harvesting_progress
+            target = { clear_variable = stellar_manip_harvesting_progress }
         }
     }
 }
 
-# I don't remember exactly what this does, and nothing uses it but i'm hesitant to remove it just in case
+# Abort manipulation (Harvesting)
 situation_event = {
     id = stellar_manip_utility.6
-    is_triggered_only = yes
-    hide_window = yes
-    trigger = {
-        current_situation_approach = approach_stellarm_standard
-    }
-
-    immediate = {
-        target = {
-            stellar_manip_set_if_not_set = {
-                variable = stellarm_harvest_yield_multiplier
-            }
-            if = {
-                limit = {
-                    check_variable = {
-                        which = stellarm_harvest_yield_multiplier
-                        value > 0
-                    }
-                }
-                set_variable = {
-                    which = stellarm_harvest_yield_multiplier
-                    value = value:stellarm_harvest_yield_decrement_calculation
-                }
-            }
-            else_if = {
-                limit = {
-                    check_variable = {
-                        which = stellarm_harvest_yield_multiplier
-                        value < 0
-                    }
-                }
-                set_variable = {
-                    which = stellarm_harvest_yield_multiplier
-                    value = value:stellarm_harvest_yield_increment_calculation
-                }
-            }
-        }
-    }
-}
-
-# Same goes for this but this one IS used
-situation_event = {
-    id = stellar_manip_utility.7
-    is_triggered_only = yes
-    hide_window = yes
-    trigger = {
-        current_situation_approach = approach_stellarm_standard_infusion
-    }
-    immediate = {
-        target = {
-            stellar_manip_set_if_not_set = {
-                variable = stellarm_infusion_upkeep_multiplier
-            }
-            if = {
-                limit = {
-                    check_variable = {
-                        which = stellarm_infusion_upkeep_multiplier
-                        value > 0
-                    }
-                }
-                set_variable = {
-                    which = stellarm_infusion_upkeep_multiplier
-                    value = value:stellarm_infusion_upkeep_decrement_calculation
-                }
-            }
-            else_if = {
-                limit = {
-                    check_variable = {
-                        which = stellarm_infusion_upkeep_multiplier
-                        value < 0
-                    }
-                }
-                set_variable = {
-                    which = stellarm_infusion_upkeep_multiplier
-                    value = value:stellarm_infusion_upkeep_increment_calculation
-                }
-            }
-        }
-    }
-}
-
-# Abort manipulation (same event for both situations)
-situation_event = {
-    id = stellar_manip_utility.8
     is_triggered_only = yes
     hide_window = yes
     trigger = {
@@ -592,16 +533,48 @@ situation_event = {
     }
 
     immediate = {
+        target = {
+            set_variable = {
+                which = stellar_manip_harvesting_progress
+                value = prev.trigger:situation_progress
+            }
+            subtract_variable = { # You start at 100 so 100 is removed
+                which = stellar_manip_harvesting_progress
+                value = 100
+            }
+        }
         abort_situation = this
-        remove_megastructure = event_target:star_harvester
-        remove_megastructure = event_target:star_injector
+    }
+}
+
+# Abort manipulation (Injection)
+situation_event = {
+    id = stellar_manip_utility.7
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        current_situation_approach = approach_abort_stellar_manipulation
+    }
+
+    immediate = {
+        target = {
+            set_variable = {
+                which = stellar_manip_injection_progress
+                value = prev.trigger:situation_progress
+            }
+            subtract_variable = { # You start at 100 so 100 is removed
+                which = stellar_manip_injection_progress
+                value = 100
+            }
+
+        }
+        abort_situation = this
     }
 }
 
 planet_event = {
-    id = stellar_manip_utility.9
+    id = stellar_manip_utility.8
     hide_window = yes
-
     is_triggered_only = yes
 
     immediate = {
@@ -610,7 +583,7 @@ planet_event = {
                 limit = {
                     has_technology = tech_gigas_stellar_manip_1
                 }
-                add_resource = { sr_stellar_plasma = 15000 }
+                add_resource = { sr_stellar_plasma = @supernovae_plasma_production }
             }
         }
     }

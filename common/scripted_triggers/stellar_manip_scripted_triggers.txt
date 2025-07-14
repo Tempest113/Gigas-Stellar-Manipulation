@@ -17,21 +17,16 @@ stellar_manip_is_valid_star = {
         giga_is_g_star_for_megas = yes
         giga_is_k_star_for_megas = yes
         giga_is_m_star_for_megas = yes
-        is_planet_class = pc_gigaignited_star
     }
 }
 
-stellar_manip_is_extraction_type_megastructure = {
-    #optimize_memory
+stellar_manip_is_stellar_mass_harvester = {
     OR = {
         is_megastructure_type = stellar_manipulator_2
         is_megastructure_type = stellar_manipulator_o_2
     }
 }
 
-stellar_manip_is_infusion_type_megastructure = {
-   #optimize_memory
-    OR = {
-        is_megastructure_type = stellar_manipulator_3
-    }
+stellar_manip_is_stellar_mass_injector = {
+    is_megastructure_type = stellar_manipulator_3
 }

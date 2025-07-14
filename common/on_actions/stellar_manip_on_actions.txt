@@ -6,6 +6,6 @@ on_game_start = {
 
 on_destroy_planet_with_PLANET_KILLER_STAR_CRACKER = {
     events = {
-        stellar_manip_utility.9
+        stellar_manip_utility.8
     }
 }

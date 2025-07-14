@@ -4,6 +4,9 @@ situation_stellar_extraction = {
 	complete_icon = GFX_situation_outcome_unknown
 	complete_icon_frame = GFX_situation_outcome_frame_green
 
+	start_value = 0
+	initial_progress = 100
+
 	on_start = {
 		situation_event = {
 			id = stellar_manip_utility.4
@@ -12,7 +15,7 @@ situation_stellar_extraction = {
 
 	on_monthly = {
 		events = {
-			stellar_manip_utility.8
+			stellar_manip_utility.6
 		}
 	}
 
@@ -22,11 +25,9 @@ situation_stellar_extraction = {
 				id = stellar_manip_utility.2
 			}
 		}
-		destroy_situation = this
 	}
 
 	on_abort = {
-		stellar_manip_set_extraction_abort_variables = yes
 		stellar_manip_clean_up_extraction_megas = yes
 	}
 
@@ -43,13 +44,12 @@ situation_stellar_extraction = {
 			}
 		}
 	}
-	start_value = 0
 
 	stages = {
 		stellarm_manip_stage = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
-			end = 100
+			end = 200
 		}
 	}
 
@@ -63,7 +63,7 @@ situation_stellar_extraction = {
 		}
 
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 		}
 
 		ai_weight = {
@@ -79,22 +79,22 @@ situation_stellar_extraction = {
 
 	approach = {
 		name = approach_stellar_manip_harvest_pause
-		icon = GFX_situation_approach_this_is_fine
+		icon = GFX_situation_approach_balance_sheet
 		icon_background = GFX_situation_approach_bg_yellow
 		on_select = {
 			custom_tooltip = situation_pause_harvest_approach_tooltip
 		}
 
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 			upkeep = { sr_stellar_plasma = 0 }
 		}
 	}
 
 	approach = {
 		name = approach_stellarm_standard
-		icon = GFX_situation_approach_this_is_fine
-		icon_background = GFX_situation_approach_bg_yellow
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
 		default = yes
 		allow = {
 			custom_tooltip = {
@@ -112,45 +112,45 @@ situation_stellar_extraction = {
 		}
 
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 
 			produces = {
 				trigger = { target = { giga_is_o_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_o_star
+				sr_stellar_plasma = @stellar_manip_manipulator_o_star
 			}
 			produces = {
 				trigger = { target = { giga_is_b_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_b_star
+				sr_stellar_plasma = @stellar_manip_manipulator_b_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_m_giant_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_m_giant_star
+				sr_stellar_plasma = @stellar_manip_manipulator_m_giant_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_a_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_a_star
+				sr_stellar_plasma = @stellar_manip_manipulator_a_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_f_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_f_star
+				sr_stellar_plasma = @stellar_manip_manipulator_f_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_g_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_g_star
+				sr_stellar_plasma = @stellar_manip_manipulator_g_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_k_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_k_star
+				sr_stellar_plasma = @stellar_manip_manipulator_k_star
 			}
 
 			produces = {
 				trigger = { target = { giga_is_m_star_for_megas = yes } }
-				sr_stellar_plasma = @harvester_plasma_production_m_star
+				sr_stellar_plasma = @stellar_manip_manipulator_m_star
 			}
 		}
 
@@ -162,7 +162,7 @@ situation_stellar_extraction = {
 	monthly_progress = {
 		base = 0
 		modifier = {
-			add = 2.05
+			add = 2.0
 			desc = STRING_APPROACH_STELLARM_STANDARD
 			current_situation_approach = approach_stellarm_standard
 		}
@@ -194,6 +194,9 @@ situation_stellar_infusion = {
 	complete_icon = GFX_situation_outcome_unknown
 	complete_icon_frame = GFX_situation_outcome_frame_green
 
+	start_value = 0
+	initial_progress = 100
+
 	on_start = {
 		situation_event = {
 			id = stellar_manip_utility.5
@@ -203,7 +206,6 @@ situation_stellar_infusion = {
 	on_monthly = {
 		events = {
 			stellar_manip_utility.7
-			stellar_manip_utility.8
 		}
 	}
 
@@ -213,13 +215,10 @@ situation_stellar_infusion = {
 				id = stellar_manip_utility.3
 			}
 		}
-		destroy_situation = this
 	}
 
 	on_abort = {
-		stellar_manip_set_injection_abort_variables = yes
 		stellar_manip_clean_up_infusion_megas = yes
-
 	}
 
 	abort_trigger = {
@@ -236,12 +235,11 @@ situation_stellar_infusion = {
 		}
 	}
 
-	start_value = 0
 	stages = {
 		stellarm_manip_stage = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
-			end = 100
+			end = 200
 		}
 	}
 	approach = {
@@ -252,7 +250,7 @@ situation_stellar_infusion = {
 			custom_tooltip = approach_abort_stellar_manipulation_tooltip
 		}
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 		}
 		ai_weight = {
 			base = 0
@@ -273,14 +271,14 @@ situation_stellar_infusion = {
 
 	approach = {
 		name = approach_stellarm_pause
-		icon = GFX_situation_approach_this_is_fine
+		icon = GFX_situation_approach_balance_sheet
 		icon_background = GFX_situation_approach_bg_yellow
 		on_select = {
 			custom_tooltip = situation_pause_infusion_approach_tooltip
 		}
 
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 			upkeep = { sr_stellar_plasma = 0 }
 		}
 	}
@@ -312,43 +310,39 @@ situation_stellar_infusion = {
 		}
 
 		resources = {
-			category = stellar_manip_situation
+			category = situations
 			upkeep = {
 				trigger = { target = { giga_is_b_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_b_star
+				sr_stellar_plasma = @stellar_manip_manipulator_b_star
 			}
 
 			upkeep = {
 				trigger = { target = { giga_is_m_giant_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_m_giant_star
+				sr_stellar_plasma = @stellar_manip_manipulator_m_giant_star
 			}
 
 			upkeep = {
 				trigger = { target = { giga_is_a_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_a_star
+				sr_stellar_plasma = @stellar_manip_manipulator_a_star
 			}
 
 			upkeep = {
 				trigger = { target = { giga_is_f_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_f_star
+				sr_stellar_plasma = @stellar_manip_manipulator_f_star
 			}
 
 			upkeep = {
 				trigger = { target = { giga_is_g_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_g_star
+				sr_stellar_plasma = @stellar_manip_manipulator_g_star
 			}
 
 			upkeep = {
 				trigger = { target = { giga_is_k_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_k_star
+				sr_stellar_plasma = @stellar_manip_manipulator_k_star
 			}
 			upkeep = {
 				trigger = { target = { giga_is_m_star_for_megas = yes } }
-				sr_stellar_plasma = @injector_plasma_m_star
-			}
-			upkeep = {
-				trigger = { target = { is_planet_class = pc_gigaignited_star } }
-				sr_stellar_plasma = @injector_plasma_ignited_star
+				sr_stellar_plasma = @stellar_manip_manipulator_m_star
 			}
 		}
 		ai_weight = {
@@ -359,7 +353,7 @@ situation_stellar_infusion = {
 	monthly_progress = {
 		base = 0
 		modifier = {
-			add = 2.05
+			add = 2.0
 			desc = STRING_APPROACH_STELLARM_STANDARD_INFUSION
 			current_situation_approach = approach_stellarm_standard_infusion
 		}

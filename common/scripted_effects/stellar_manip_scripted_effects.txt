@@ -76,35 +76,12 @@ stellar_manip_create_o_star = {
     }
 }
 
-stellar_manip_set_if_not_set = {
-    optimize_memory
-    if = {
-        limit = {
-            not = {
-                is_variable_set = $variable$
-            }
-        }
-        set_variable = {
-            which = $variable$
-            value = $value|0$
-        }
-    }
-    [[CHANGE]
-        else = {
-            change_variable = {
-                which = $variable$
-                value = $change_value|1$
-            }
-        }
-    ]
-}
-
 stellar_manip_remove_applicable_harvester_mega = {
     optimize_memory
     solar_system = {
         every_system_megastructure = {
             limit = {
-                stellar_manip_is_extraction_type_megastructure = yes
+                stellar_manip_is_stellar_mass_harvester = yes
                 planet = {
                     is_same_value = prevprevprev
                 }
@@ -119,7 +96,7 @@ stellar_manip_remove_applicable_injector_mega = {
     solar_system = {
         every_system_megastructure = {
             limit = {
-                stellar_manip_is_infusion_type_megastructure = yes
+                stellar_manip_is_stellar_mass_injector = yes
                 planet = {
                     is_same_value = prevprevprev
                 }
@@ -129,21 +106,11 @@ stellar_manip_remove_applicable_injector_mega = {
     }
 }
 
-stellar_manip_unset_if_set = {
-    optimize_memory
-    if = {
-        limit = {
-            is_variable_set = $variable$
-        }
-        clear_variable = $variable$
-    }
-}
-
 stellar_manip_set_extraction_abort_variables = {
     optimize_memory
     target = {
         set_variable = {
-            which = stellarm_harvester_progress
+            which = stellar_manip_harvesting_progress
             value = prev.trigger:situation_progress
         }
     }
@@ -153,7 +120,7 @@ stellar_manip_set_injection_abort_variables = {
     optimize_memory
     target = {
         set_variable = {
-            which = stellarm_injecter_progress
+            which = stellar_manip_injection_progress
             value = prev.trigger:situation_progress
         }
     }
@@ -161,54 +128,37 @@ stellar_manip_set_injection_abort_variables = {
 
 stellar_manip_clean_up_extraction_megas = {
     optimize_memory
-    if = {
-        limit = {
-            not = {
-                exists = target
-            }
-        }
-        every_megastructure = {
-            limit = {
-                stellar_manip_is_extraction_type_megastructure = yes
-                NOT = {
-                    exists = planet
+    target = {
+        solar_system = {
+            every_system_megastructure = {
+                limit = {
+                    stellar_manip_is_stellar_mass_harvester = yes
+                    planet = {
+                        is_same_value = prevprevprev
+                    }
                 }
+                remove_megastructure = this
             }
-            remove_megastructure = this
         }
-    }
-    else = {
-        target = {
-            stellar_manip_remove_applicable_harvester_mega = yes
-            remove_planet_flag = megastructure
-            remove_planet_flag = has_megastructure
-        }
+
+        remove_planet_flag = has_megastructure
     }
 }
 
 stellar_manip_clean_up_infusion_megas = {
     optimize_memory
-    if = {
-        limit = {
-            not = {
-                exists = target
-            }
-        }
-        every_megastructure = {
-            limit = {
-                stellar_manip_is_extraction_type_megastructure = yes
-                NOT = {
-                    exists = planet
+    target = {
+        solar_system = {
+            every_system_megastructure = {
+                limit = {
+                    stellar_manip_is_stellar_mass_injector = yes
+                    planet = {
+                        is_same_value = prevprevprev
+                    }
                 }
+                remove_megastructure = this
             }
-            remove_megastructure = this
         }
-    }
-    else = {
-        target = {
-            stellar_manip_remove_applicable_injector_mega = yes
-            remove_planet_flag = megastructure
-            remove_planet_flag = has_megastructure
-        }
+        remove_planet_flag = has_megastructure
     }
 }

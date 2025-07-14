@@ -15,6 +15,7 @@ giga_systemcraft_enabled = {
         custom_tooltip = "giga_menu_disabled"
         set_global_flag = systemcraft_disabled
         set_global_flag = stellar_manip_o_systemcraft_disabled
+        set_global_flag = stellar_manip_assembler_disabled
     }
 }
 

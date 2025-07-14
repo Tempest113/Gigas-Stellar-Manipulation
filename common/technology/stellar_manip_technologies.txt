@@ -1,4 +1,5 @@
-tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod also makes fusion suppressor explosions give plasma
+# Base tech, makes fusion suppressors give plasma, nearly all other techs require this one
+tech_gigas_stellar_manip_1 = {
     cost = @tier5cost1
     area = physics
     tier = 5
@@ -21,7 +22,8 @@ tech_gigas_stellar_manip_1 = { #Base, given by the AP, enables the whole mod als
     # I should probably make this do something :clueless:
 }
 
-tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
+# Allows the construction of the stellar manipulator
+tech_gigas_stellar_manip_2 = {
     cost = @giga_tier6cost1
     area = engineering
     tier = 5
@@ -52,7 +54,8 @@ tech_gigas_stellar_manip_2 = { #Enables Stellar Manip mega
     }
 }
 
-tech_stellar_assembler = { #systemcraft assembler
+# Allows the construction of the systemcraft assembler
+tech_stellar_assembler = {
     cost = @giga_tier8cost2
     area = engineering
     tier = 5
@@ -92,6 +95,7 @@ tech_stellar_assembler = { #systemcraft assembler
     }
 }
 
+# Allows the construction of the o class systemcraft
 tech_o_class_war_system = {
     cost = @giga_tier8cost2
     area = physics
@@ -101,7 +105,7 @@ tech_o_class_war_system = {
     weight = @giga_tier7weight3
 
     potential = {
-        # has_stellar_manip_ap = yes
+        has_ascension_perk = ap_celestial_printing
         NOR = {
             has_global_flag = stellar_manip_o_systemcraft_disabled
             has_global_flag = systemcraft_disabled

@@ -25,21 +25,10 @@ country_event = {
     is_triggered_only = yes
     hide_window = no
     show_sound = event_dyson_sphere_build_complete
-    location = event_target:star_manip_system
+    location = fromfrom.planet
 
     option = {
         name = "stellar_manip_dialogue.2.a"
-        allow = {
-            custom_tooltip = {
-                fail_text = stellar_manip_no_ignited_stars
-                fromfromfrom = {
-                    NOT = {
-                        is_planet_class = pc_gigaignited_star
-                    }
-                }
-            }
-        }
-
         hidden_effect = {
             fromfrom = {
                 if = {
@@ -58,7 +47,7 @@ country_event = {
         name = "stellar_manip_dialogue.2.b"
         allow = {
             custom_tooltip = {
-                fail_text = stellar_manip_no_o_stars
+                fail_text = stellar_manip_no_injecting_o_stars
                 fromfromfrom = {
                     NOT = {
                         giga_is_o_star_for_megas = yes
@@ -378,7 +367,7 @@ country_event = { #print regular
 }
 
 # O Class Systemcraft Assembled
-country_event = { #print o class
+country_event = {
     id = stellar_manip_dialogue.18
     title = "stellar_manip_dialogue.17.name"
     desc = "stellar_manip_dialogue.17.desc"
@@ -437,4 +426,3 @@ country_event = { #print o class
         name = "giga_printer.1000.a"
     }
 }
-
