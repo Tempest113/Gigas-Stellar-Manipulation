@@ -38,7 +38,7 @@
  allow_o_class_war_system_desc: "Allows for the construction of §Y$giga_o_systemcraft$§!, significantly more powerful than our regular Systemcraft"
 
 
-# Situations
+ # Situations
 
  situation_stellar_extraction: "Extraction from [This.Target.GetName]"
  situation_stellar_extraction_type: "Stellar Manipulation"
@@ -72,7 +72,6 @@
  STRING_APPROACH_STELLARM_STANDARD: "Standard Approach"
  STRING_STELLARM_IS_O_STAR: "Target is O Class Star"
  STRING_STELLARM_IS_B_STAR: "Target is B Class Star"
- #STRING_HAS_PLASMA_DEFICIT: "Stellar Plasma Deficit"
 
 
  # Strategic Resource
@@ -126,10 +125,7 @@
 
  requires_star_lifter: "$TRIGGER_FAIL$Requires the £engineering£ §Y$giga_tech_star_lifter$§! technology."
  requires_fusion_supressor: "$TRIGGER_FAIL$Requires the £physics£ §Y$giga_tech_fusion_suppressor$§! technology."
- stellar_manip_no_ignited_stars: "$pc_gigaignited_star$s are not massive enough to harvest a meaningful amount of $sr_stellar_plasma$."
- stellar_manip_no_o_stars: "$pc_giga_o_star$s are too massive to safely inject $sr_stellar_plasma$."
- # stellar_manip_no_ignited_stars: "$TRIGGER_FAIL$Due to being artificially compressed $pc_gas_giant$s, $pc_gigaignited_star$s do not have enough mass for us to be able to harvest a meaningful amount of $sr_stellar_plasma$."
-
+ stellar_manip_no_injecting_o_stars: "$pc_giga_o_star$s are too massive to safely inject £sr_stellar_plasma£ $sr_stellar_plasma$."
 
  # Megastructures
 
@@ -226,11 +222,6 @@
 
  #Construction
 
- # stellar_manip2.name: "$stellar_manip_dialogue.2.name$"
- # stellar_manip2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [From.System.GetName] system, we must now decide whether to specialize it towards harvesting $sr_stellar_plasma$ or injecting it."
- # stellar_manip.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
- # stellar_manip.2.b: "Specialize towards $sr_stellar_plasma$ injection."
-
  # REPLACED BY MESSAGE/TOAST
  stellar_manip_dialogue.1.name: "$stellar_manipulator_0$ Finished"
  stellar_manip_dialogue.1.desc: "We have completed the construction site for a $stellar_manipulator$, soon [From.GetName] will be born anew according to our vision."
@@ -239,8 +230,8 @@
  # REPLACED BY MESSAGE/TOAST
  stellar_manip_dialogue.2.name: "$stellar_manipulator_1$ Finished"
  stellar_manip_dialogue.2.desc: "We have successfully finalized the construction of an unspecialized $stellar_manipulator_1$ in the [FromFrom.System.GetName] system, we must now decide whether to specialize the structure towards harvesting $sr_stellar_plasma$ or injecting it."
- stellar_manip_dialogue.2.a: "Specialize towards $sr_stellar_plasma$ harvesting."
- stellar_manip_dialogue.2.b: "Specialize towards $sr_stellar_plasma$ injection."
+ stellar_manip_dialogue.2.a: "Specialize towards £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! harvesting."
+ stellar_manip_dialogue.2.b: "Specialize towards £sr_stellar_plasma£ §Y$sr_stellar_plasma$§! injection."
 
  # REPLACED BY MESSAGE/TOAST
  stellar_manip_dialogue.3.name: "$stellar_manipulator_2$ Finished"

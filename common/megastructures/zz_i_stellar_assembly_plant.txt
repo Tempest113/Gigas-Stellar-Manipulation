@@ -6,12 +6,13 @@ systemcraft_assembler_0 = {
 	prerequisites = {
 		tech_stellar_assembler
 	}
-	build_time = 2800
+
+	build_time = 1800
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			influence = 300
-			unity = @giga_tera_unity_cost
+			unity = @giga_tera_start_unity_cost
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
@@ -21,22 +22,25 @@ systemcraft_assembler_0 = {
 			energy = 5
 		}
 	}
+	potential = {
+		is_ai = no
+	}
+
 	possible = {
-		from = {
-			is_ai = no
-		}
 		custom_tooltip = { fail_text = "requires_inside_border"								is_inside_border = from }
 		custom_tooltip = { fail_text = "requires_surveyed_system"							giga_system_is_surveyed = yes }
 		custom_tooltip = { fail_text = "requires_no_colonized_planets"						NOT = { any_system_planet = { is_colony = yes } } }
 		custom_tooltip = { fail_text = "requires_no_existing_megastructure"					has_no_non_gate_megastructure = yes }
-		custom_tooltip = { fail_text = "requires_no_crisis_system"							NOT = { any_system_planet = { has_planet_flag = crisis_vital_planet } } }	}
+		custom_tooltip = { fail_text = "requires_no_crisis_system"							NOT = { any_system_planet = { has_planet_flag = crisis_vital_planet } } }
+	}
 
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "requires_no_existing_megastructure"		planet_has_no_megastructure = yes }
-			custom_tooltip = { fail_text = "must_build_around_star"					is_star = yes }
+			custom_tooltip = { fail_text = "must_build_around_star"							is_star = yes }
 			custom_tooltip = { fail_text = "requires_no_anomaly"					has_anomaly = no }
-			custom_tooltip = { fail_text = "requires_standard_planet_class" giga_is_standard_star = yes NOT = { giga_is_bitrinary = yes } }
+			custom_tooltip = { fail_text = "requires_standard_planet_class" 		giga_is_standard_star = yes }
+			custom_tooltip = { fail_text = "requires_no_binary_trinary"				giga_is_bitrinary = no }
 		}
 	}
 
@@ -48,7 +52,7 @@ systemcraft_assembler_0 = {
 		from = {
 			country_event = {
 				id = stellar_manip_dialogue.11
-			}			# Notification
+			}
 		}
 		fromfrom.planet = {
 			if = {
@@ -59,7 +63,7 @@ systemcraft_assembler_0 = {
 					dismantle = yes
 				}
 			}
-			set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+			set_planet_flag = megastructure			# Vanilla uses to check if a megastructure can be built here
 			set_planet_flag = has_megastructure			# Vanilla uses to check if an orbital station can be built here
 		}
 	}
@@ -69,33 +73,32 @@ systemcraft_assembler_1 = {
 	entity = "war_system_printer_1_entity"
 	construction_entity = "war_system_printer_1_entity"
 	portrait = "GFX_evt_binary_stars"
+	place_entity_on_planet_plane = no
+
 	upgrade_from = {
 		systemcraft_assembler_0
 	}
-	place_entity_on_planet_plane = no
-	build_time = 4200
+
+	build_time = 2400
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			unity = @giga_tera_unity_cost
-			rare_crystals = 2000
-			volatile_motes = 2000
-			exotic_gases = 2000
+			rare_crystals = 1500
+			volatile_motes = 1500
+			exotic_gases = 1500
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 50000
+			alloys = 80000
 		}
 
 		upkeep = {
-			energy = 400
-			alloys = 200
+			energy = 250
+			alloys = 125
 		}
 	}
-	#55k
-	ai_weight = {
-		factor = 10
-	}	# If we can build it, we will build it
+
 	on_build_complete = {
 		save_event_target_as = star_manip_system
 		fromfrom.planet = {
@@ -105,7 +108,7 @@ systemcraft_assembler_1 = {
 			country_event = {
 				id = stellar_manip_dialogue.12
 			}
-		}		# Notification
+		}
 	}
 }
 
@@ -117,27 +120,25 @@ systemcraft_assembler_2 = {
 		systemcraft_assembler_1
 	}
 	place_entity_on_planet_plane = no
-	build_time = 4200
+	build_time = 3600
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			unity = @giga_tera_unity_cost
-			rare_crystals = 2000
-			volatile_motes = 2000
-			exotic_gases = 2000
+			rare_crystals = 2500
+			volatile_motes = 2500
+			exotic_gases = 2500
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 115000
+			alloys = 160000
 		}
 
 		upkeep = {
-			energy = 800
-			alloys = 400
+			energy = 400
+			alloys = 200
 		}
 	}
-	#ai_weight = { factor = 10  }	# If we can build it, we will build it
-	ai_weight = { factor = value:giga_ai_base_continue } # If we can build it, we will build it
 
 	on_build_complete = {
 		giga_remove_system_planets = yes
@@ -145,26 +146,15 @@ systemcraft_assembler_2 = {
 		set_asteroid_belt = {
 			radius = 0
 		}
-		#delete the star
-		if = {
-			limit = {
-				NOT = {
-					any_system_planet = {
-						is_star = yes
-						NOT = {
-							is_planet_class = pc_giga_empty_space
-						}
-					}
-				}
-			}
-			set_star_class = sc_empty_space
-		}
+		set_star_class = sc_empty_space
+
 		fromfrom.planet = {
 			change_pc = pc_giga_empty_space
 		}
+
 		space_owner = {
 			add_resource = {
-				sr_stellar_plasma = 15000				#enough to print one plus a little extra
+				sr_stellar_plasma = 15000
 			}
 		}
 		save_event_target_as = star_manip_system
@@ -175,7 +165,7 @@ systemcraft_assembler_2 = {
 			country_event = {
 				id = stellar_manip_dialogue.13
 			}
-		}		# Notification
+		}
 	}
 }
 
@@ -192,13 +182,13 @@ systemcraft_assembler_3 = {
 		category = giga_gigastructures
 		cost = {
 			unity = @giga_tera_unity_cost
-			rare_crystals = 3000
-			volatile_motes = 3000
-			exotic_gases = 3000
+			rare_crystals = 4000
+			volatile_motes = 4000
+			exotic_gases = 4000
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 115000
+			alloys = 240000
 		}
 
 		upkeep = {
@@ -206,8 +196,6 @@ systemcraft_assembler_3 = {
 			alloys = 500
 		}
 	}
-	#ai_weight = { factor = 10 }	# If we can build it, we will build it
-	ai_weight = { factor = value:giga_ai_base_continue } # If we can build it, we will build it
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
@@ -218,7 +206,7 @@ systemcraft_assembler_3 = {
 			country_event = {
 				id = stellar_manip_dialogue.14
 			}
-		}		# Notification
+		}
 	}
 }
 
@@ -230,18 +218,18 @@ systemcraft_assembler_4 = {
 		systemcraft_assembler_3
 	}
 	place_entity_on_planet_plane = no
-	build_time = 5500
+	build_time = 5600
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			unity = @giga_tera_unity_cost
-			rare_crystals = 3000
-			volatile_motes = 3000
-			exotic_gases = 3000
+			rare_crystals = 6000
+			volatile_motes = 6000
+			exotic_gases = 6000
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 115000
+			alloys = 320000
 		}
 
 		upkeep = {
@@ -249,8 +237,6 @@ systemcraft_assembler_4 = {
 			alloys = 750
 		}
 	}
-	#ai_weight = { factor = 10 }	# If we can build it, we will build it
-	ai_weight = { factor = value:giga_ai_base_continue } # If we can build it, we will build it
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
@@ -261,11 +247,11 @@ systemcraft_assembler_4 = {
 			country_event = {
 				id = stellar_manip_dialogue.15
 			}
-		}		# Notification
+		}
 	}
 }
 
-systemcraft_assembler_5 = { #ready to print
+systemcraft_assembler_5 = {
 	entity = "war_system_printer_5_entity"
 	construction_entity = "war_system_printer_5_entity"
 	portrait = "GFX_evt_binary_stars"
@@ -273,18 +259,15 @@ systemcraft_assembler_5 = { #ready to print
 		systemcraft_assembler_4
 	}
 	place_entity_on_planet_plane = no
-	build_time = 5000
+	build_time = 7200
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			unity = @giga_tera_unity_cost
-			rare_crystals = 3000
-			volatile_motes = 3000
-			exotic_gases = 3000
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 9000
+			alloys = 400000
 		}
 
 		upkeep = {
@@ -296,8 +279,6 @@ systemcraft_assembler_5 = { #ready to print
 		country_resource_max_alloys_add = 1500000
 		country_resource_max_energy_add = 1500000
 	}
-	#ai_weight = { factor = 10 }	# If we can build it, we will build it
-	ai_weight = { factor = value:giga_ai_base_continue } # If we can build it, we will build it
 
 	on_build_complete = {
 		save_event_target_as = star_manip_system
@@ -313,7 +294,7 @@ systemcraft_assembler_5 = { #ready to print
 				}
 				country_event = {
 					id = stellar_manip_dialogue.16
-				}				# Notification
+				}
 			}
 			else_if = {
 				limit = {
@@ -325,8 +306,7 @@ systemcraft_assembler_5 = { #ready to print
 	}
 }
 
-#490k total
-systemcraft_assembler_make_system = { #print normal
+systemcraft_assembler_make_system = {
 	entity = "war_system_printer_printing_entity"
 	construction_entity = "war_system_printer_printing_entity"
 	portrait = "GFX_evt_binary_stars"
@@ -334,39 +314,34 @@ systemcraft_assembler_make_system = { #print normal
 		systemcraft_assembler_5
 	}
 	place_entity_on_planet_plane = no
-	build_time = 25000	#a full systemcraft takes 19800 not counting the planets and moons, but you can technically make them in parallel so i didn't add it
+	build_time = 18000 # How long it takes to build a regular systemcraft (not including constituent celestials and construction site)
+
+	# Cost Breakdown:
+	#	A systemcraft is made up of 5 attack moons + 4 planetcraft
+	#
+	#	Fabrication of 1 attack moon: 30,000 alloys, 20,000 energy, 7 bulk matter (x5= 150,000 alloys, 100,000 energy, 35 bulk matter)
+	#	Fabrication of 1 planetcraft: 250,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,000,000 alloys 4,000,000 energy, 104 bulk matter)
+	#	Systemcraft cost: 500,000 alloys (not including the 5 moons and 4 planets or the construction site)
+	#	Class 0 Systemcraft cost: 1,500,000 alloys (not including the 5 moons and 4 planets or the construction site)
+	#
+	#	Systemcraft total fabrication cost: 6,250,000 alloys, 4,500,000 energy, 139 bulk matter
+	#	Systemcraft total fabrication cost: 7,250,000 alloys, 4,500,000 energy, 139 bulk matter
+
 	resources = {
 		category = giga_gigastructures
-		# category = megastructures
 		cost = {
-			giga_sr_bulk_matter = 140			#planetary matter || 26 per planetcraft * 4 = 104 on planetcrafts + 7 per moon * 5 = 35 on moons for a total of 139
-			energy = 1000000				#just made it 1M, i'm not doing more math
-			sr_stellar_plasma = 2500		#Harvesting a g class star down to a brown dwarf gives 2060 stellar plasma, rounded it off to 2500
+			giga_sr_bulk_matter = 139
+			energy = 4500000
+			sr_stellar_plasma = 2500
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 1750000 #250k alloys per planet for 1M on planetcrafts + 30k per moon for 150k + 600k for the systemcraft (it costs 550k, so i added a bit more) for a total of 1.750.000
-
-		}
-
-		upkeep = {
-			energy = 3000
-			alloys = 1500
+			alloys = 6250000
 		}
 	}
 	potential = {
 		NOT = {
 			has_global_flag = systemcraft_disabled
-		}
-		OR = {
-			check_variable = {
-				which = giga_systemcraft_cap
-				value = 0
-			}			# No Cap
-			check_variable = {
-				which = giga_current_systemcraft
-				value < giga_systemcraft_cap
-			}
 		}
 	}
 	possible = {
@@ -380,7 +355,7 @@ systemcraft_assembler_make_system = { #print normal
 					check_variable = {
 						which = giga_systemcraft_cap
 						value = 0
-					}					# No Cap
+					}
 					check_variable = {
 						which = giga_current_systemcraft
 						value < giga_systemcraft_cap
@@ -414,7 +389,7 @@ systemcraft_assembler_make_system = { #print normal
 		}
 	}
 }
-systemcraft_assembler_make_o_system = { #print o class
+systemcraft_assembler_make_o_system = {
 	entity = "war_system_printer_printing_entity"
 	construction_entity = "war_system_printer_printing_entity"
 	portrait = "GFX_evt_binary_stars"
@@ -422,40 +397,38 @@ systemcraft_assembler_make_o_system = { #print o class
 		systemcraft_assembler_5
 	}
 	place_entity_on_planet_plane = no
-	build_time = 75000	#a full systemcraft takes 19800 not counting the planets and moons, but you can technically make them in parallel so i didn't add it
+	build_time = 54000 # How long it takes to build a class o systemcraft (not including constituent celestials and construction site)
+
+	# Cost Breakdown:
+	#	A systemcraft is made up of 5 attack moons + 4 planetcraft
+	#
+	#	Fabrication of 1 attack moon: 30,000 alloys, 20,000 energy, 7 bulk matter (x5= 150,000 alloys, 100,000 energy, 35 bulk matter)
+	#	Fabrication of 1 planetcraft: 250,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,000,000 alloys 4,000,000 energy, 104 bulk matter)
+	#	Systemcraft cost: 500,000 alloys (not including the 5 moons and 4 planets or the construction site)
+	#	Class 0 Systemcraft cost: 1,500,000 alloys (not including the 5 moons and 4 planets or the construction site)
+	#
+	#	Systemcraft total fabrication cost: 6,250,000 alloys, 4,500,000 energy, 139 bulk matter
+	#	Systemcraft total fabrication cost: 7,250,000 alloys, 4,500,000 energy, 139 bulk matter
+
 	resources = {
 		category = giga_gigastructures
-		# category = megastructures
 		cost = {
-			giga_sr_bulk_matter = 140
-			energy = 2000000
+			giga_sr_bulk_matter = 139
+			energy = 4500000
 			sr_stellar_plasma = 25000
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 4375000
-		}
-
-		upkeep = {
-			energy = 3000
-			alloys = 1500
+			alloys = 7250000
 		}
 	}
+
 	potential = {
 		NOT = {
-			has_global_flag = systemcraft_disabled
-		}
-		OR = {
-			check_variable = {
-				which = giga_systemcraft_cap
-				value = 0
-			}			# No Cap
-			check_variable = {
-				which = giga_current_systemcraft
-				value < giga_systemcraft_cap
-			}
+			has_global_flag = stellar_manip_o_systemcraft_disabled
 		}
 	}
+
 	possible = {
 		from = {
 			has_technology = tech_stellar_assembler
@@ -468,7 +441,7 @@ systemcraft_assembler_make_o_system = { #print o class
 					check_variable = {
 						which = giga_systemcraft_cap
 						value = 0
-					}					# No Cap
+					}
 					check_variable = {
 						which = giga_current_systemcraft
 						value < giga_systemcraft_cap

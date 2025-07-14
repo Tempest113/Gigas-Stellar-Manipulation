@@ -2,7 +2,13 @@ sr_stellar_plasma = {
     tradable = no
     max = 100000
     prerequisites = { "tech_gigas_stellar_manip_1" }
-    visibility_prerequisite = { always = yes }
-    ai_weight = { weight = 100 }
+    visibility_prerequisite = {
+        NAND = {
+            has_global_flag = stellar_manip_manipulator_disabled
+            has_global_flag = stellar_manip_o_systemcraft_disabled
+            has_global_flag = stellar_manip_assembler_disabled
+        }
+    }
+    ai_weight = { weight = 0 } # TODO: Add proper weights if/when allowing the AI to use stellar manipulators
     deficit_modifier = sr_stellar_plasma_deficit
 }

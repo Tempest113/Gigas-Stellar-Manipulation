@@ -1,1 +1,8 @@
-Revise mega csots
+- [DONE] Revise systemcraft assembler costs/build times/upkeeps
+- [DONE] Test stellar plasma visibility prereq
+- [DONE] Update code/loc comments
+- [DONE] Update UI overwrite (for asteroid industry)
+- [DONE] Check preset overwrites to see if they need updates
+- [NOT YET RELEVANT] Final revision of systemcraft assembly costs assuming cost consistency fix PR gets accepted
+- [DONE] Update non english loc
+- [DONE] Compare alloy construction cost of a planetcraft to the printing cost to see whether the systemcraft printer should have a partial discount - turns out that fabricated versions are actually more expensive, not going to apply that to systemcrafts for now

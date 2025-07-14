@@ -310,8 +310,7 @@ war_system_o_3 = {
 	}
 }
 
-
- war_system_o_4 = {
+war_system_o_4 = {
 	entity = "war_system_o_phase_04_entity"
 	construction_entity = "war_system_o_phase_04_construction_entity"
 	portrait = "GFX_megastructure_moon"
@@ -400,7 +399,7 @@ war_system_o_5 = {
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 100000
+			alloys = 300000
 		}
 
 		upkeep = {
