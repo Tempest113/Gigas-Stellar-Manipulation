@@ -319,24 +319,24 @@ systemcraft_assembler_make_system = {
 	# Cost Breakdown:
 	#	A systemcraft is made up of 5 attack moons + 4 planetcraft
 	#
-	#	Fabrication of 1 attack moon: 30,000 alloys, 20,000 energy, 7 bulk matter (x5= 150,000 alloys, 100,000 energy, 35 bulk matter)
-	#	Fabrication of 1 planetcraft: 250,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,000,000 alloys 4,000,000 energy, 104 bulk matter)
+	#	Fabrication of 1 attack moon: 24,500 alloys, 20,000 energy, 7 bulk matter (x5= 122,500 alloys, 100,000 energy, 35 bulk matter)
+	#	Fabrication of 1 planetcraft: 285,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,140,000 alloys 4,000,000 energy, 104 bulk matter)
 	#	Systemcraft cost: 500,000 alloys (not including the 5 moons and 4 planets or the construction site)
 	#	Class 0 Systemcraft cost: 1,500,000 alloys (not including the 5 moons and 4 planets or the construction site)
 	#
-	#	Systemcraft total fabrication cost: 6,250,000 alloys, 4,500,000 energy, 139 bulk matter
-	#	Systemcraft total fabrication cost: 7,250,000 alloys, 4,500,000 energy, 139 bulk matter
+	#	Systemcraft total fabrication cost: 1,762,500 alloys, 4,100,000 energy, 139 bulk matter (1,762,500 alloys before cost increase, 2,379,375 alloys after, rounded to 2,380,000)
+	#	Systemcraft total fabrication cost: 2,762,500 alloys, 4,100,000 energy, 139 bulk matter (2,762,500 alloys before cost increase, 3,729,375 alloys after, rounded to 3,730,000)
 
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			giga_sr_bulk_matter = 139
-			energy = 4500000
+			energy = 4100000
 			sr_stellar_plasma = 2500
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 6250000
+			alloys = 2380000 # ~35% more than building it normally
 		}
 	}
 	potential = {
@@ -402,24 +402,24 @@ systemcraft_assembler_make_o_system = {
 	# Cost Breakdown:
 	#	A systemcraft is made up of 5 attack moons + 4 planetcraft
 	#
-	#	Fabrication of 1 attack moon: 30,000 alloys, 20,000 energy, 7 bulk matter (x5= 150,000 alloys, 100,000 energy, 35 bulk matter)
-	#	Fabrication of 1 planetcraft: 250,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,000,000 alloys 4,000,000 energy, 104 bulk matter)
+	#	Fabrication of 1 attack moon: 24,500 alloys, 20,000 energy, 7 bulk matter (x5= 122,500 alloys, 100,000 energy, 35 bulk matter)
+	#	Fabrication of 1 planetcraft: 285,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,140,000 alloys 4,000,000 energy, 104 bulk matter)
 	#	Systemcraft cost: 500,000 alloys (not including the 5 moons and 4 planets or the construction site)
 	#	Class 0 Systemcraft cost: 1,500,000 alloys (not including the 5 moons and 4 planets or the construction site)
 	#
-	#	Systemcraft total fabrication cost: 6,250,000 alloys, 4,500,000 energy, 139 bulk matter
-	#	Systemcraft total fabrication cost: 7,250,000 alloys, 4,500,000 energy, 139 bulk matter
+	#	Systemcraft total fabrication cost: 1,762,500 alloys, 4,100,000 energy, 139 bulk matter (1,762,500 alloys before cost increase, 2,379,375 alloys after, rounded to 2,380,000)
+	#	Systemcraft total fabrication cost: 2,762,500 alloys, 4,100,000 energy, 139 bulk matter (2,762,500 alloys before cost increase, 3,729,375 alloys after, rounded to 3,730,000)
 
 	resources = {
 		category = giga_gigastructures
 		cost = {
 			giga_sr_bulk_matter = 139
-			energy = 4500000
+			energy = 4100000
 			sr_stellar_plasma = 25000
 		}
 		inline_script = {
 			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 7250000
+			alloys = 3730000 # ~35% more than building it normally
 		}
 	}
 
