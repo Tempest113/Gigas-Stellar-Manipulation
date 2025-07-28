@@ -55,4 +55,5 @@ giga_o_systemcraft = {
 			trade = 250
 		}
 	}
+	available_to_everyone = yes
 }
