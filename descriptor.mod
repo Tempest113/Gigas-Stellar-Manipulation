@@ -1,4 +1,4 @@
-version="4.0.9"
+version="4.0.10"
 tags={
 	"Balance"
 	"Utilities"
@@ -7,6 +7,6 @@ tags={
 	"Events"
 }
 name="[4.1] Stellar Manipulation Rewrite/Revival"
+picture="thumbnail.png"
 supported_version="v4.1.*"
-picture = "thumbnail.png"
 remote_file_id="3278963965"

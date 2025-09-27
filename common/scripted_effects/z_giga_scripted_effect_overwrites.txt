@@ -71,6 +71,7 @@ giga_preset_vanilla_plus = {
     set_global_flag = accelerator_disabled
     set_global_flag = storm_observatory_capped_1
     set_global_flag = supermassive_ehof_capped_1
+    set_global_flag = planetary_seeder_nexus_capped_u
     set_global_flag = giga_celestial_printing_moon_disabled
     set_global_flag = giga_celestial_printing_planet_disabled
     set_global_flag = giga_fe_pouchkinn_disabled
@@ -368,6 +369,7 @@ giga_preset_gigas_experience = {
     set_global_flag = accelerator_disabled
     set_global_flag = storm_observatory_capped_u
     set_global_flag = supermassive_ehof_capped_1
+    set_global_flag = planetary_seeder_nexus_capped_u
     set_global_flag = giga_celestial_printing_planet_disabled
     if = {
         limit = {
@@ -919,6 +921,7 @@ disable_menu_mega = {
     set_global_flag = giga_celestial_printing_planet_disabled
     set_global_flag = storm_observatory_disabled
     set_global_flag = supermassive_ehof_disabled
+    set_global_flag = planetary_seeder_nexus_disabled
 
     # Stellar Manipulation
     set_global_flag = stellar_manip_manipulator_disabled
@@ -1003,6 +1006,7 @@ remove_menu_mega_disable = { #Removes the disable flag for everything mega relat
     remove_global_flag = maginot_disabled
     remove_global_flag = planetshipyard_disabled
     remove_global_flag = supermassive_ehof_disabled
+    remove_global_flag = planetary_seeder_nexus_disabled
 
     # Stellar Manipulation
     remove_global_flag = stellar_manip_manipulator_disabled
