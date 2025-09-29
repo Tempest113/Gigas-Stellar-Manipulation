@@ -3,7 +3,7 @@ stellar_manip_manipulator_enabled = {
     potential = {
         exists = from
         from = {
-            has_country_flag = giga_menu_page_02
+            has_country_flag = giga_menu_page_03
             NOT = { has_global_flag = stellar_manip_manipulator_disabled }
         }
     }
@@ -33,7 +33,7 @@ stellar_manip_manipulator_disabled = {
     potential = {
         exists = from
         from = {
-            has_country_flag = giga_menu_page_02
+            has_country_flag = giga_menu_page_03
             has_global_flag = stellar_manip_manipulator_disabled}
     }
 
@@ -48,7 +48,7 @@ stellar_manip_manipulator_disabled = {
 }
 
 #Systemcraft Assembler
-stellar_manip_assember_enabled = {
+celestial_printing_system_x = {
     potential = {
         exists = from
         from = {
@@ -66,7 +66,7 @@ stellar_manip_assember_enabled = {
     }
 }
 
-stellar_manip_assember_disabled = {
+celestial_printing_system_x_disabled = {
     potential = {
         exists = from
         from = {
@@ -131,7 +131,7 @@ stellar_manip_o_systemcraft_disabled = {
 
 # Tooltips
 stellar_manip_stellar_manipulator_tt = {
-    potential = { exists = from from = { has_country_flag = giga_menu_page_02 } }
+    potential = { exists = from from = { has_country_flag = giga_menu_page_03 } }
     allow = { always = yes }
     effect = { custom_tooltip = stellar_manipulator_0_MEGASTRUCTURE_DETAILS }
 }

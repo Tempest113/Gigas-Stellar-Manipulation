@@ -1,163 +1,172 @@
 spriteTypes = {
+	### Ascension Perks
 	spriteType = {
 		name = "GFX_ap_stellar_manip"
 		texturefile = gfx/interface/icons/ascension_perks/ap_stellar_manip.dds
 		alwaystransparent = yes
 	}
-}
 
-spriteTypes = {
+	### Event Backgrounds
 	spriteType = {
 		name = "GFX_star_manip_01_background"
 		texturefile = "gfx/event_pictures/star_manip_01_background.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
-}
 
-spriteTypes = {
 	spriteType = {
 		name = "GFX_star_manip_02_background"
 		texturefile = "gfx/event_pictures/star_manip_02_background.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
-}
 
-spriteTypes = {
 	spriteType = {
 		name = "GFX_star_manip_03_background"
 		texturefile = "gfx/event_pictures/star_manip_03_background.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
-}
 
-spriteTypes = {
+	### Menu Icons
+
+	# Systemcraft Printer Enabled
+	spriteType = {
+		name = "GFX_giga_menu_systemcraft_printing_enabled"
+		texturefile = "gfx/interface/menu_ui/giga_menu_systemcraft_printing_enabled.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		animation = {
+			animationmaskfile = "gfx/interface/menu_ui/giga_menu_mask.dds"
+			animationtexturefile = "gfx/interface/icons/relics/crystal_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = yes
+			animationtime = 1
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "rotating"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	# Systemcraft Printer Disabled
+	spriteType = { name = "GFX_giga_menu_systemcraft_printing_disabled"					texturefile = "gfx/interface/menu_ui/giga_menu_systemcraft_printing_disabled.dds" }
+
+
+	### Components
+
+	# Captive O Class Star
 	spriteType = {
 		name = "GFX_ship_part_reactor_system_o"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_reactor_system_o.dds"
 	}
-}
-spriteTypes = {
-	spriteType = {
-		name = "GFX_war_system_o_0_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_war_system_o_1_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_war_system_o_2_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_war_system_o_3_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_war_system_o_4_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_war_system_o_5_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_starm_war_system_0_outliner_icon"
-		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
-		
-	}
-	######################
 
+	#### Outliner Icons
+
+	# Stellar Manipulator
 	spriteType = {
 		name = "GFX_stellar_manipulator_0_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
-
 	spriteType = {
 		name = "GFX_stellar_manipulator_1_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_stellar_manipulator_2_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_stellar_manipulator_3_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_stellar_manipulator_o_0_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 
 	spriteType = {
 		name = "GFX_stellar_manipulator_o_1_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_stellar_manipulator_o_2_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_stellar_manipulator_o_3_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/stellarmanipulator.dds"
-		
 	}
-#############################	
+
+	# Systemcraft Assembler
 	spriteType = {
 		name = "GFX_systemcraft_assembler_0_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_1_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_2_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_3_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_4_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_5_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_make_system_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
 	}
 	spriteType = {
 		name = "GFX_systemcraft_assembler_make_o_system_outliner_icon"
 		texturefile = "gfx/interface/icons/megastructures/systemcraft_printer.dds"
-		
+	}
+
+	# Class O Systemcraft
+	spriteType = {
+		name = "GFX_war_system_o_0_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_war_system_o_1_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_war_system_o_2_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_war_system_o_3_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_war_system_o_4_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_war_system_o_5_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
+	}
+	spriteType = {
+		name = "GFX_starm_war_system_0_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/systemcraft.dds"
+
 	}
 }

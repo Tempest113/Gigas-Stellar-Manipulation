@@ -699,19 +699,24 @@ guiTypes = {
 						no_clicksound = yes
 						borderSize = { x = 10 y = 0 }
 						font = "cg_16b"
-						text = "Celestial Warship Fabrication"
+						text = "Bulk Matter & Celestial Fabricators"
 						effect = "giga_page_00"
 					}
 
-					effectButtonType = { name = "celestial_printing_x"			spriteType = "GFX_giga_menu_disabled"	position = { x = 380 y = 5 } no_clicksound = yes		effect = "celestial_printing_x" }
-					effectButtonType = { name = "celestial_printing_x_disabled"	spriteType = "GFX_giga_menu_enabled"	position = { x = 380 y = 5 } clicksound = interface	effect = "celestial_printing_x_disabled" }
+					effectButtonType = { name = "planet_bulking_x"				spriteType = "GFX_giga_menu_planet_bulking_disabled"	position = { x = 260 y = 5 } no_clicksound = yes		effect = "planet_bulking_x" }
+					effectButtonType = { name = "planet_bulking_x_disabled"		spriteType = "GFX_giga_menu_planet_bulking_enabled"		position = { x = 260 y = 5 } clicksound = interface		effect = "planet_bulking_x_disabled" }
 
-					effectButtonType = { name = "celestial_printing_planet_x"			spriteType = "GFX_giga_menu_disabled"	position = { x = 350 y = 5 } no_clicksound = yes		effect = "celestial_printing_planet_x" }
-					effectButtonType = { name = "celestial_printing_planet_x_disabled"	spriteType = "GFX_giga_menu_enabled"	position = { x = 350 y = 5 } clicksound = interface		effect = "celestial_printing_planet_x_disabled" }
+					effectButtonType = { name = "bulk_matter_x"					spriteType = "GFX_giga_menu_bulk_matter_disabled"	position = { x = 290 y = 5 } no_clicksound = yes		effect = "bulk_matter_x" }
+					effectButtonType = { name = "bulk_matter_x_disabled"		spriteType = "GFX_giga_menu_bulk_matter_enabled"	position = { x = 290 y = 5 } clicksound = interface		effect = "bulk_matter_x_disabled" }
 
-					effectButtonType = { name = "stellar_manip_systemcraft_printer_enabled"		spriteType = "GFX_giga_menu_disabled"	position = { x = 320 y = 5 } no_clicksound = yes		effect = "stellar_manip_assember_enabled" }
-					effectButtonType = { name = "stellar_manip_systemcraft_printer_disabled"	spriteType = "GFX_giga_menu_enabled"	position = { x = 320 y = 5 } clicksound = interface	effect = "stellar_manip_assember_disabled" }
+					effectButtonType = { name = "celestial_printing_x"			spriteType = "GFX_giga_menu_moon_printing_disabled"	position = { x = 320 y = 5 } no_clicksound = yes		effect = "celestial_printing_x" }
+					effectButtonType = { name = "celestial_printing_x_disabled"	spriteType = "GFX_giga_menu_moon_printing_enabled"	position = { x = 320 y = 5 } clicksound = interface		effect = "celestial_printing_x_disabled" }
 
+					effectButtonType = { name = "celestial_printing_planet_x"			spriteType = "GFX_giga_menu_planet_printing_disabled"	position = { x = 350 y = 5 } no_clicksound = yes		effect = "celestial_printing_planet_x" }
+					effectButtonType = { name = "celestial_printing_planet_x_disabled"	spriteType = "GFX_giga_menu_planet_printing_enabled"	position = { x = 350 y = 5 } clicksound = interface		effect = "celestial_printing_planet_x_disabled" }
+
+					effectButtonType = { name = "stellar_manip_systemcraft_printer_enabled"		spriteType = "GFX_giga_menu_systemcraft_printing_disabled"	position = { x = 380 y = 5 } no_clicksound = yes		effect = "celestial_printing_system_x" }
+					effectButtonType = { name = "stellar_manip_systemcraft_printer_disabled"	spriteType = "GFX_giga_menu_systemcraft_printing_enabled"	position = { x = 380 y = 5 } clicksound = interface	effect = "celestial_printing_system_x_disabled" }
 				}
 
 				effectButtonType = {
@@ -5940,68 +5945,6 @@ guiTypes = {
 					effectButtonType = { name = "orchid_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_orchid_1_disabled" }
 				}
 
-				####################################
-				### planetshipyard #################
-				####################################
-				containerWindowType = {
-					name = "planetshipyard_options"
-					position = { x = 450 y = 145 }
-					size = { width = 410 height = 34 }
-					orientation = upper_left
-
-					effectButtonType = {
-						name = "background_planetshipyard"
-						spriteType = "GFX_giga_menu_button_bg"
-						position = { x = 0 y = 0 }
-						format = left
-						no_clicksound = yes
-						borderSize = { x = 10 y = 0 }
-						font = "cg_16b"
-						text = "name_planetshipyard"
-						effect = "giga_planetary_drive_yard_tt"
-					}
-
-					effectButtonType = { name = "planetshipyard_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_disabled" }
-					effectButtonType = { name = "planetshipyard_r" spriteType = "GFX_giga_menu_r" position = { x = 350 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_r" }
-					effectButtonType = { name = "planetshipyard_u" spriteType = "GFX_giga_menu_u" position = { x = 320 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_u" }
-					effectButtonType = { name = "planetshipyard_3" spriteType = "GFX_giga_menu_3" position = { x = 290 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_3" }
-					effectButtonType = { name = "planetshipyard_2" spriteType = "GFX_giga_menu_2" position = { x = 260 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_2" }
-					effectButtonType = { name = "planetshipyard_1" spriteType = "GFX_giga_menu_1" position = { x = 230 y = 5 } no_clicksound = yes effect = "giga_planetshipyard_1" }
-
-					effectButtonType = { name = "planetshipyard_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface effect = "giga_planetshipyard_enabled" }
-					effectButtonType = { name = "planetshipyard_r_disabled" spriteType = "GFX_giga_menu_r_disabled" position = { x = 350 y = 5 } clicksound = interface effect = "giga_planetshipyard_r_disabled" }
-					effectButtonType = { name = "planetshipyard_u_disabled" spriteType = "GFX_giga_menu_u_disabled" position = { x = 320 y = 5 } clicksound = interface effect = "giga_planetshipyard_u_disabled" }
-					effectButtonType = { name = "planetshipyard_3_disabled" spriteType = "GFX_giga_menu_3_disabled" position = { x = 290 y = 5 } clicksound = interface effect = "giga_planetshipyard_3_disabled" }
-					effectButtonType = { name = "planetshipyard_2_disabled" spriteType = "GFX_giga_menu_2_disabled" position = { x = 260 y = 5 } clicksound = interface effect = "giga_planetshipyard_2_disabled" }
-					effectButtonType = { name = "planetshipyard_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_planetshipyard_1_disabled" }
-				}
-
-				####################################
-				### stellar manipulator ############
-				####################################
-				containerWindowType = {
-					name = "giga_menu_stellar_manipulator"
-					position = { x = 450 y = 185 }
-					size = { width = 410 height = 34 }
-					orientation = upper_left
-
-					effectButtonType = {
-						name = "background_stellar_manipulator"
-						spriteType = "GFX_giga_menu_button_bg"
-						position = { x = 0 y = 0 }
-						format = left
-						no_clicksound = yes
-						borderSize = { x = 10 y = 0 }
-						font = "cg_16b"
-						text = "giga_menu_name_stellar_manipulator"
-						effect = "stellar_manip_stellar_manipulator_tt"
-					}
-
-					effectButtonType = { name = "stellar_manipulator_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "stellar_manip_manipulator_enabled" }
-					effectButtonType = { name = "stellar_manipulator_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } clicksound = interface effect = "stellar_manip_manipulator_disabled" }
-
-				}
-
 				###################################################################################################################################################################################
 				### Right #########################################################################################################################################################################
 				###################################################################################################################################################################################
@@ -6656,6 +6599,32 @@ guiTypes = {
 					effectButtonType = { name = "compressor_3_disabled" spriteType = "GFX_giga_menu_3_disabled" position = { x = 290 y = 5 } clicksound = interface effect = "giga_compressor_3_disabled" }
 					effectButtonType = { name = "compressor_2_disabled" spriteType = "GFX_giga_menu_2_disabled" position = { x = 260 y = 5 } clicksound = interface effect = "giga_compressor_2_disabled" }
 					effectButtonType = { name = "compressor_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_compressor_1_disabled" }
+				}
+
+				####################################
+				### stellar manipulator ############
+				####################################
+				containerWindowType = {
+					name = "giga_menu_stellar_manipulator"
+					position = { x = 450 y = 225 }
+					size = { width = 410 height = 34 }
+					orientation = upper_left
+
+					effectButtonType = {
+						name = "background_stellar_manipulator"
+						spriteType = "GFX_giga_menu_button_bg"
+						position = { x = 0 y = 0 }
+						format = left
+						no_clicksound = yes
+						borderSize = { x = 10 y = 0 }
+						font = "cg_16b"
+						text = "giga_menu_name_stellar_manipulator"
+						effect = "stellar_manip_stellar_manipulator_tt"
+					}
+
+					effectButtonType = { name = "stellar_manipulator_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "stellar_manip_manipulator_enabled" }
+					effectButtonType = { name = "stellar_manipulator_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } clicksound = interface effect = "stellar_manip_manipulator_disabled" }
+
 				}
 			}
 
