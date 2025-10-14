@@ -302,6 +302,8 @@
 
  giga_o_systemcraft: "Class O Stellar Systemcraft"
  giga_o_systemcraft_plural: "$giga_o_systemcraft$s"
+ giga_o_systemcraft_cap: "Class O Stellar Systemcraft"
+ giga_o_systemcraft_cap_plural: "$giga_o_systemcraft$s"
  systemcraft_ship_o_bowgun_01_key: "Primary Annihilator Lances"
  systemcraft_ship_o_bow_01_key: "Existence Removal Beams"
  systemcraft_ship_o_mid_01_key: "Nicoll-Dyson Capacitor Array"
