@@ -6,7 +6,7 @@ tags={
 	"Ships"
 	"Events"
 }
-name="[4.1] Stellar Manipulation Rewrite/Revival"
+name="[4.2] Stellar Manipulation Rewrite/Revival"
 picture="thumbnail.png"
-supported_version="v4.1.*"
+supported_version="v4.2.*"
 remote_file_id="3278963965"
