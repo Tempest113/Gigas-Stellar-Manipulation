@@ -3,7 +3,7 @@ stellar_manip_o_system_craft = {
         name = "The Stellar Systemcraft"
         settings = {
             spawn_debris = no
-            can_change_composition = no
+            can_change_composition = yes
             is_boss = yes
         }
         effect = {

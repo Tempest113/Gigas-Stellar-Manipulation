@@ -14,7 +14,7 @@ giga_o_systemcraft = {
 		ship_speed_mult = 2
 	}
 	max_hitpoints = 65000000
-	size_multiplier = 500
+	size_multiplier = 1250
 	fleet_slot_size = 512
 	section_slots = {
 		"o_bowgun" =			{ locator = "root" }
