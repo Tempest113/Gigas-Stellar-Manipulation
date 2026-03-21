@@ -29,7 +29,16 @@ weapon_component_template = {
 	size_restriction = { giga_planet_behemoth giga_systemcraft giga_o_systemcraft }
 	
 	prerequisites = { "giga_tech_blokkat_obliterator" }
-	
+
+    on_hit = {
+        inline_script = {
+            script = ship_components/collateral_damage
+            RANGE = @perdition_beam_collateral_range
+            DAMAGE = @planet_lance_blokkat_fleet_damage
+        }
+        custom_tooltip = "PLANET_LANCE_BLOKKAT_FLEET_EFFECT"
+    }
+
 	resources = {
 		category = ship_components
 		cost = {

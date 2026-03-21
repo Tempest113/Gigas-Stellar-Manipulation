@@ -334,7 +334,7 @@ country_event = { #print regular
                 settings = {
                     spawn_debris = no
                     can_change_composition = no
-                    is_boss = yes
+                    #is_boss = yes
                 }
                 effect = {
                     set_owner = prev
@@ -395,7 +395,7 @@ country_event = {
                 settings = {
                     spawn_debris = no
                     can_change_composition = no
-                    is_boss = yes
+                    #is_boss = yes
                 }
                 effect = {
                     set_owner = prev
