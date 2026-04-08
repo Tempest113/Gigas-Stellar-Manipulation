@@ -2005,6 +2005,7 @@ guiTypes = {
                     effectButtonType = { name = "blokkats_x_bismuth"	spriteType = "GFX_giga_menu_blokkats_b"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkats_x_bismuth" }
                     effectButtonType = { name = "blokkats_x_endtech" 	spriteType = "GFX_giga_menu_blokkats_i" 	position = { x = 290 y = 5 } no_clicksound = yes 	effect = "blokkats_x_endtech"}
                     effectButtonType = { name = "blokkats_x_deathmode"	spriteType = "GFX_giga_menu_blokkats_d"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkats_x_deathmode"}
+
                     #increase difficulty icon
                     effectButtonType = { name = "blokkats_increase_stop"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkats_increase_stop" }
                     effectButtonType = { name = "blokkats_increase_deathmode"	spriteType = "GFX_giga_menu_up_red_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkats_increase_deathmode" }
@@ -2020,6 +2021,7 @@ guiTypes = {
                     effectButtonType = { name = "blokkats_decrease_easy"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkats_decrease_easy" }
                     effectButtonType = { name = "blokkats_decrease_very_easy"	spriteType = "GFX_giga_menu_down_green_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkats_decrease_very_easy" }
                     effectButtonType = { name = "blokkats_decrease_stop"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkats_decrease_stop" }
+
                     #enabled,guaranteed,disabled
                     effectButtonType = { name = "blokkats_x_enabled"		spriteType = "GFX_giga_menu_wrecked_ships_reset"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkats_x" }
                     effectButtonType = { name = "blokkats_x_guaranteed"	    spriteType = "GFX_giga_menu_enabled"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkats_x_guaranteed" }
@@ -2560,6 +2562,7 @@ guiTypes = {
                         effect = "giga_presets_13"
                     }
                 }
+
                 ####################################
                 ### presets_18 #####################
                 ####################################
@@ -2568,6 +2571,7 @@ guiTypes = {
                     position = { x = -412 y = 185 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
+
                     effectButtonType = {
                         name = "background_presets_18"
                         spriteType = "GFX_giga_menu_button_bg"
@@ -2579,6 +2583,7 @@ guiTypes = {
                         text = "giga_menu_presets_18"
                         effect = "giga_page_presets"
                     }
+
                     effectButtonType = {
                         name = "presets_13_button"
                         spriteType = "GFX_button_116_24"
@@ -2589,6 +2594,7 @@ guiTypes = {
                         effect = "giga_presets_18"
                     }
                 }
+
                 ####################################
                 ### presets_20 #####################
                 ####################################
@@ -4120,7 +4126,7 @@ guiTypes = {
 
 
                 ####################################
-                ### presets_19 #####################
+                ### dev presets_19 #####################
                 ####################################
                 containerWindowType = {
                     name = "presets_19_options"
@@ -4152,11 +4158,43 @@ guiTypes = {
                 }
 
                 ####################################
+                ### dev presets_20 #####################
+                ####################################
+                containerWindowType = {
+                    name = "presets_20_options"
+                    position = { x = -412 y = -255 }
+                    size = { width = 410 height = 34 }
+                    orientation = upper_left
+
+                    effectButtonType = {
+                        name = "background_presets_20"
+                        spriteType = "GFX_giga_menu_button_bg"
+                        position = { x = 0 y = 0 }
+                        format = left
+                        no_clicksound = yes
+                        borderSize = { x = 10 y = 0 }
+                        font = "cg_16b"
+                        text = "giga_menu_presets_20"
+                        effect = "giga_page_presets_02"
+                    }
+
+                    effectButtonType = {
+                        name = "presets_19_button"
+                        spriteType = "GFX_button_116_24"
+                        position = { x = 277 y = -7 }
+                        font = "cg_16b"
+                        text = "Enable Preset"
+                        clicksound = interface
+                        effect = "giga_presets_20"
+                    }
+                }
+
+                ####################################
                 ### presets_42 #####################
                 ####################################
                 containerWindowType = {
                     name = "presets_patreon_42_options"
-                    position = { x = -412 y = -255 }
+                    position = { x = -412 y = -215 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
 
@@ -4188,7 +4226,7 @@ guiTypes = {
                 ####################################
                 containerWindowType = {
                     name = "presets_patreon_43_options"
-                    position = { x = -412 y = -215 }
+                    position = { x = -412 y = -175 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
 
@@ -4220,7 +4258,7 @@ guiTypes = {
                 ####################################
                 containerWindowType = {
                     name = "presets_patreon_44_options"
-                    position = { x = -412 y = -175 }
+                    position = { x = -412 y = -135 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
 
@@ -4252,9 +4290,10 @@ guiTypes = {
                 ####################################
                 containerWindowType = {
                     name = "presets_patreon_45_options"
-                    position = { x = -412 y = -135 }
+                    position = { x = -412 y = -95 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
+
                     effectButtonType = {
                         name = "background_presets_patreon_45"
                         spriteType = "GFX_giga_menu_button_bg"
@@ -4266,6 +4305,7 @@ guiTypes = {
                         text = "giga_menu_presets_patreon_45"
                         effect = "giga_page_presets_02"
                     }
+
                     effectButtonType = {
                         name = "presets_patreon_45_button"
                         spriteType = "GFX_button_116_24"
@@ -4276,14 +4316,16 @@ guiTypes = {
                         effect = "giga_presets_patreon_45"
                     }
                 }
+
                 ####################################
                 ### presets_46 #####################
                 ####################################
                 containerWindowType = {
                     name = "presets_patreon_46_options"
-                    position = { x = -412 y = -95 }
+                    position = { x = -412 y = -55 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
+
                     effectButtonType = {
                         name = "background_presets_patreon_46"
                         spriteType = "GFX_giga_menu_button_bg"
@@ -4295,6 +4337,7 @@ guiTypes = {
                         text = "giga_menu_presets_patreon_46"
                         effect = "giga_page_presets_02"
                     }
+
                     effectButtonType = {
                         name = "presets_patreon_46_button"
                         spriteType = "GFX_button_116_24"
@@ -4305,6 +4348,39 @@ guiTypes = {
                         effect = "giga_presets_patreon_46"
                     }
                 }
+
+                ####################################
+                ### presets_47 #####################
+                ####################################
+                containerWindowType = {
+                    name = "presets_patreon_47_options"
+                    position = { x = -412 y = -15 }
+                    size = { width = 410 height = 34 }
+                    orientation = upper_left
+
+                    effectButtonType = {
+                        name = "background_presets_patreon_47"
+                        spriteType = "GFX_giga_menu_button_bg"
+                        position = { x = 0 y = 0 }
+                        format = left
+                        no_clicksound = yes
+                        borderSize = { x = 10 y = 0 }
+                        font = "cg_16b"
+                        text = "giga_menu_presets_patreon_47"
+                        effect = "giga_page_presets_02"
+                    }
+
+                    effectButtonType = {
+                        name = "presets_patreon_47_button"
+                        spriteType = "GFX_button_116_24"
+                        position = { x = 277 y = -7 }
+                        font = "cg_16b"
+                        text = "Enable Preset"
+                        clicksound = interface
+                        effect = "giga_presets_patreon_47"
+                    }
+                }
+
                 effectButtonType = {
                     name = "all_the_vast_emptiness"
                     spriteType = "GFX_farnsworth"
@@ -5737,6 +5813,7 @@ guiTypes = {
                     effectButtonType = { name = "planetary_seeder_nexus_1_disabled" spriteType = "GFX_giga_menu_plus_0_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_planetary_seeder_nexus_1_disabled" }
                 }
 
+
                 ####################################
                 ### orbital naval logistics office #
                 ####################################
@@ -5745,6 +5822,7 @@ guiTypes = {
                     position = { x = 20 y = 145 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
+
                     effectButtonType = {
                         name = "background_orbital_naval_logistics"
                         spriteType = "GFX_giga_menu_button_bg"
@@ -5756,12 +5834,14 @@ guiTypes = {
                         text = "name_orb_naval_logistics"
                         effect = "giga_orbital_naval_logistics_tt"
                     }
+
                     effectButtonType = { name = "orbital_naval_logistics_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_disabled" }
                     effectButtonType = { name = "orbital_naval_logistics_r" spriteType = "GFX_giga_menu_r" position = { x = 350 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_r" }
                     effectButtonType = { name = "orbital_naval_logistics_u" spriteType = "GFX_giga_menu_u" position = { x = 320 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_u" }
                     effectButtonType = { name = "orbital_naval_logistics_3" spriteType = "GFX_giga_menu_plus_10" position = { x = 290 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_3" }
                     effectButtonType = { name = "orbital_naval_logistics_2" spriteType = "GFX_giga_menu_plus_5" position = { x = 260 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_2" }
                     effectButtonType = { name = "orbital_naval_logistics_1" spriteType = "GFX_giga_menu_plus_0" position = { x = 230 y = 5 } no_clicksound = yes effect = "giga_orbital_naval_logistics_1" }
+
                     effectButtonType = { name = "academy_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface effect = "giga_orbital_naval_logistics_enabled" }
                     effectButtonType = { name = "orbital_naval_logistics_r_disabled" spriteType = "GFX_giga_menu_r_disabled" position = { x = 350 y = 5 } clicksound = interface effect = "giga_orbital_naval_logistics_r_disabled" }
                     effectButtonType = { name = "orbital_naval_logistics_u_disabled" spriteType = "GFX_giga_menu_u_disabled" position = { x = 320 y = 5 } clicksound = interface effect = "giga_orbital_naval_logistics_u_disabled" }
@@ -5769,6 +5849,7 @@ guiTypes = {
                     effectButtonType = { name = "orbital_naval_logistics_2_disabled" spriteType = "GFX_giga_menu_plus_5_disabled" position = { x = 260 y = 5 } clicksound = interface effect = "giga_orbital_naval_logistics_2_disabled" }
                     effectButtonType = { name = "orbital_naval_logistics_1_disabled" spriteType = "GFX_giga_menu_plus_0_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_orbital_naval_logistics_1_disabled" }
                 }
+
                 effectButtonType = {
                     name = "header_megastructures"
                     position = { x = 450 y = -375 }
@@ -5778,6 +5859,7 @@ guiTypes = {
                     text = "header_megastructures"
                     effect = "giga_page_02"
                 }
+
 
                 ####################################
                 ### psychic_beacon #################
@@ -6303,13 +6385,16 @@ guiTypes = {
                         text = "name_quasistellar"
                         effect = "giga_quasistellar_tt"
                     }
+
                     # TEMPORARY, UNTIL QSO FED CAN BE REWORKED
                     # effectButtonType = { name = "galactic_fed_disabled"		spriteType = "GFX_giga_menu_disabled"	position = { x = 350 y = 5 } no_clicksound = yes		effect = "giga_galactic_fed_disabled" }
                     # effectButtonType = { name = "galactic_fed_a"			spriteType = "GFX_giga_menu_o"			position = { x = 350 y = 5 } no_clicksound = yes		effect = "giga_galactic_fed_a" }
                     # effectButtonType = { name = "galactic_fed_s"			spriteType = "GFX_giga_menu_s"			position = { x = 350 y = 5 } no_clicksound = yes		effect = "giga_galactic_fed_s" }
+
                     effectButtonType = { name = "quasistellar_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "giga_quasistellar_disabled" }
                     effectButtonType = { name = "quasistellar_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface effect = "giga_quasistellar_enabled" }
                 }
+
                 ####################################
                 ### penrose_sphere #################
                 ####################################
