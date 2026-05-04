@@ -261,6 +261,7 @@ def apply_changes(text: str) -> str:
 # Main
 # ─────────────────────────────────────────────────────────────────────────────
 
+# run this from the repo root
 def main():
     gigas_folder = Path.cwd().parent / "Gigastructures-Live-Branch"
     gigas_ui = gigas_folder / "interface" / "giga_gui_main_menu.gui"
