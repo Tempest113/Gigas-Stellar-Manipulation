@@ -263,7 +263,7 @@ def apply_changes(text: str) -> str:
 
 # run this from the repo root
 def main():
-    gigas_folder = Path.cwd().parent / "Gigastructures-Live-Branch"
+    gigas_folder = Path.cwd().parent / "Gigastructures"
     gigas_ui = gigas_folder / "interface" / "giga_gui_main_menu.gui"
     stellar_manip_ui = Path.cwd() / "Gigas-Stellar-Manipulation" / "interface" / "z_giga_gui_main_menu.gui"
 
