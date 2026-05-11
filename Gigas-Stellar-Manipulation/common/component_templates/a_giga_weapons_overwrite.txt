@@ -49,60 +49,6 @@ weapon_component_template = {
 }
 
 weapon_component_template = {
-    key = "SYSTEMCRAFT_RAY_OF_DOOM_1"
-    size = titanic
-    entity = "invisible_turret_entity"
-    type = instant
-    icon = "GFX_ship_part_planet_lance_white"
-    icon_frame = 1
-    power = -300000.00
-    component_set = "SYSTEMCRAFT_RAY_OF_DOOM_1"
-    projectile_gfx = "paluush_planetcraft_lance"
-    tags = { weapon_type_energy }
-		size_restriction = {
-		giga_systemcraft
-		giga_o_systemcraft
-	}
-    prerequisites = { "giga_tech_war_system_5" }
-    ai_tag_weight = 0
-
-    firing_arc = 10
-    min_range = 75
-	use_ship_kill_target = no
-
-    damage = { min = 5000000 max = 10000000 }
-    windup = { min = 125 max = 125 }
-    range = 250
-    tracking = 0.10
-    accuracy = 1
-    total_fire_time = 125
-    shield_penetration = 1.00
-    armor_penetration = 1.00
-    ship_limit = 3
-
-    on_hit = {
-        inline_script = {
-            script = ship_components/collateral_damage
-            RANGE = @ion_cannon_collateral_range
-            DAMAGE = @giga_super_omega_lance_1_fleet_damage
-        }
-        custom_tooltip = "SYSTEMCRAFT_RAY_OF_DOOM_1_FLEET_EFFECT"
-    }
-
-    resources = {
-        category = ship_components
-        cost = {
-            alloys = @titanic_t7_cost
-            rare_crystals = @titanic_t7_rare
-        }
-        upkeep = {
-            alloys = @titanic_t7_upkeep_alloys
-            energy = @titanic_t7_upkeep_energy
-        }
-    }
-}
-
-weapon_component_template = {
     key = "SYSTEMCRAFT_KATZENLAND_LANCE_1"
     size = titanic
     entity = "invisible_turret_entity"
@@ -122,7 +68,7 @@ weapon_component_template = {
 
     firing_arc = 20
     min_range = 75
-	use_ship_kill_target = no
+	use_ship_main_target = no
 
     damage = { min = 10000 max = 15000 }
     windup = { min = 25 max = 25 }

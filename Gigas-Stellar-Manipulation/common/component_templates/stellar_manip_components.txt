@@ -1,0 +1,80 @@
+utility_component_template = {
+	key = "REACTOR_SYSTEM_O"
+	size = small
+	icon = "GFX_ship_part_reactor_system_o"
+	icon_frame = 1
+	power = 5000000 #5 times more powerful than regular one
+	component_set = "power_core"
+	size_restriction = { giga_o_systemcraft }
+	ai_weight = { weight = 10000 } # fix 'normal' reactors being potentially autopicked if they are somehow valid for the o class systemcraft
+}
+
+utility_component_template = {
+	key = "GIGA_MAGINOT_O_STAR_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_system_o"
+	icon_frame = 1
+	power = 5000000
+	component_set = "power_core"
+	prerequisites = { giga_tech_maginot_systemcraft_upgrade tech_o_class_war_system }
+	size_restriction = { strategic_defence_command_platform }
+	modifier = { ship_shield_mult = 0.40 }
+
+	ftl_inhibitor = yes
+
+	ai_weight = {
+		factor = 6000
+	}
+}
+
+### Erasure Beam Duplicate - Increased cap
+
+weapon_component_template = {
+	key = "SYSTEMCRAFT_RAY_OF_DOOM_1_O_CLASS"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_planet_lance_white"
+	icon_frame = 1
+	power = -300000.00
+	component_set = "SYSTEMCRAFT_RAY_OF_DOOM_1"
+	projectile_gfx = "paluush_planetcraft_lance"
+	tags = { weapon_type_energy }
+	size_restriction = { giga_o_systemcraft }
+	prerequisites = { "tech_o_class_war_system" }
+	ai_tag_weight = 0
+
+	firing_arc = 10
+	min_range = 75
+
+	damage = { min = 625000 max = 1250000 }
+	windup = { min = 125 max = 125 }
+	range = 250
+	tracking = 0.10
+	accuracy = 1
+	total_fire_time = 125
+	shield_penetration = 1.00
+	armor_penetration = 1.00
+	ship_limit = 10
+
+	on_hit = {
+		inline_script = {
+			script = ship_components/collateral_damage
+			RANGE = @ion_cannon_collateral_range
+			DAMAGE = @systemcraft_ray_of_doom_1_fleet_damage
+		}
+		custom_tooltip = "SYSTEMCRAFT_RAY_OF_DOOM_1_FLEET_EFFECT"
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			rare_crystals = @titanic_t7_rare
+		}
+		upkeep = {
+			alloys = @titanic_t7_upkeep_alloys
+			energy = @titanic_t7_upkeep_energy
+		}
+	}
+}
