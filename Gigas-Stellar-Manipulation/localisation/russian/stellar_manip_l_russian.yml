@@ -314,6 +314,9 @@
   REACTOR_SYSTEM_O:99 "Captive Class O Star"
   REACTOR_SYSTEM_O_DESC:99 "A entire Class O star is held within this gargantuan vessel providing massive levels of power"
   
+  SYSTEMCRAFT_RAY_OF_DOOM_1_O_CLASS:99 "$SYSTEMCRAFT_RAY_OF_DOOM_1$"
+  SYSTEMCRAFT_RAY_OF_DOOM_1_O_CLASS_DESC:99 "$SYSTEMCRAFT_RAY_OF_DOOM_1_DESC$"
+  
   # Maginot
   
   GIGA_MAGINOT_O_STAR_REACTOR:99 "Upgraded $GIGA_MAGINOT_STAR_REACTOR$"
