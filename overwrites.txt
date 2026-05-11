@@ -1,0 +1,49 @@
+this file lists all the overwrites in stellar manipulation, and their purposes:
+
+common/button_effects/
+    giga_systemcraft_enabled
+    giga_warplanet_enabled
+    giga_warmoon_enabled
+        added effects to disable the o-class
+common/component_templates/
+    SHIP_MOBILE_SYSTEM
+    PLANET_LANCE_BLOKKAT
+    GIGA_SYSTEM_COMPUTER
+    GIGA_PLANET_MISSILE_1
+    SYSTEMCRAFT_RAY_OF_DOOM_1
+    SYSTEMCRAFT_KATZENLAND_LANCE_1
+    SYSTEMCRAFT_ALLOY_FOUNDRIES
+    SYSTEMCRAFT_DYSON_CAPACITOR
+    SYSTEMCRAFT_FARMS
+    SYSTEMCRAFT_WEAPONS_PLANT
+    SYSTEMCRAFT_STABILITY
+    SYSTEMCRAFT_SHIELD
+    PLANET_KILLER_CRACKER_SYSTEMCRAFT
+    PLANET_KILLER_SHIELDER_SYSTEMCRAFT
+    PLANET_KILLER_NEUTRON_SYSTEMCRAFT
+    PLANET_KILLER_GODRAY_SYSTEMCRAFT
+    PLANET_KILLER_NANOBOTS_SYSTEMCRAFT
+    PLANET_KILLER_DELUGE_SYSTEMCRAFT
+    PLANET_KILLER_DEVOLUTION_SYSTEMCRAFT
+        all added O class capability
+    GIGA_MAGINOT_STAR_REACTOR
+        added the ability to upgrade it
+common/decisions/
+    decision_systemcraft_crew
+        adds the ability for the oclass mega to trigger it
+common/scripted_effects/
+    giga_preset_vanilla_plus
+    giga_preset_gigas_experience
+    disable_menu_mega
+    remove_menu_mega_disable
+        add stellar manip stuff to it
+
+events/
+    giga_dialog.3409
+        make fusion suppressor explosions create stellar plasma
+    giga_mega.711
+        add o_class systemcraft to the event trigger
+
+interface/
+    giga_gui_main_menu.gui
+        adds all the ui options for start of game
