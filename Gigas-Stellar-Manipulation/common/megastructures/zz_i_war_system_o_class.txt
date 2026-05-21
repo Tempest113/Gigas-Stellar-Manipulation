@@ -174,7 +174,7 @@ war_system_o_2 = {
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_2"
 			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth fleet = { is_leased = no } }	count >= 1 }
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } }		count >= 2 }
+			count_ship_in_system = { limit = { is_ship_size = giga_war_moon fleet = { is_leased = no } }		count >= 2 }
 		}
 	}
 
@@ -201,7 +201,7 @@ war_system_o_2 = {
 			count = 2
 			random_fleet_in_system = {
 				limit = {
-					any_owned_ship = { is_ship_size = giga_massive_planet }
+					any_owned_ship = { is_ship_size = giga_war_moon }
 					exists = owner
 					owner = { is_same_value = root.from }
 				}
@@ -212,7 +212,7 @@ war_system_o_2 = {
 				}
 
 				random_owned_ship = {
-					limit = { is_ship_size = giga_massive_planet }
+					limit = { is_ship_size = giga_war_moon }
 					delete_ship = this
 					root.from = { subtract_variable = { which = giga_current_warmoon value = 1 } }
 				}
@@ -269,7 +269,7 @@ war_system_o_3 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_moon_2"
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } } count >= 2 }
+			count_ship_in_system = { limit = { is_ship_size = giga_war_moon fleet = { is_leased = no } } count >= 2 }
 		}
 	}
 
@@ -278,7 +278,7 @@ war_system_o_3 = {
 			count = 2
 			random_fleet_in_system = {
 				limit = {
-					any_owned_ship = { is_ship_size = giga_massive_planet }
+					any_owned_ship = { is_ship_size = giga_war_moon }
 					exists = owner
 					owner = { is_same_value = root.from }
 				}
@@ -289,7 +289,7 @@ war_system_o_3 = {
 				}
 
 				random_owned_ship = {
-					limit = { is_ship_size = giga_massive_planet }
+					limit = { is_ship_size = giga_war_moon }
 					delete_ship = this
 					root.from = { subtract_variable = { which = giga_current_warmoon value = 1 } }
 				}
@@ -424,7 +424,7 @@ war_system_o_5 = {
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_1"
 			count_ship_in_system = { limit = { is_ship_size = giga_planet_behemoth fleet = { is_leased = no } }	count >= 1 }
-			count_ship_in_system = { limit = { is_ship_size = giga_massive_planet fleet = { is_leased = no } }	count >= 1 }
+			count_ship_in_system = { limit = { is_ship_size = giga_war_moon fleet = { is_leased = no } }	count >= 1 }
 		}
 	}
 
@@ -433,7 +433,7 @@ war_system_o_5 = {
 
 		random_fleet_in_system = {
 			limit = {
-				any_owned_ship = { is_ship_size = giga_massive_planet }
+				any_owned_ship = { is_ship_size = giga_war_moon }
 				exists = owner
 				owner = { is_same_value = root.from }
 			}
@@ -444,7 +444,7 @@ war_system_o_5 = {
 			}
 
 			random_owned_ship = {
-				limit = { is_ship_size = giga_massive_planet }
+				limit = { is_ship_size = giga_war_moon }
 				delete_ship = this
 				root.from = { subtract_variable = { which = giga_current_warmoon value = 1 } }
 			}

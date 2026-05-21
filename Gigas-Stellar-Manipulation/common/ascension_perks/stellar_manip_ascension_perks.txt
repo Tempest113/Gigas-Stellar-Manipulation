@@ -13,7 +13,6 @@ ap_stellar_manip = {
     }
 
     potential = {
-        host_has_dlc = "Utopia"
         is_ai = no
         NOT = {
             has_stellar_manip_ap = yes
