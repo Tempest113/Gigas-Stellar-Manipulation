@@ -53,17 +53,20 @@ from pathlib import Path
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
+def detect_line_ending(text: str) -> str:
+    """Detect the dominant line ending in the file."""
+    crlf = text.count('\r\n')
+    lf   = text.count('\n') - crlf
+    return '\r\n' if crlf >= lf else '\n'
+
+
 def expand_leading_whitespace(line: str, tab_width: int = 4) -> str:
-    """Expand leading tabs to spaces (tab_width spaces per tab) and strip
-    trailing whitespace.  Lines that consist entirely of whitespace become
-    empty strings.  Internal (non-leading) tabs are left untouched."""
     stripped = line.lstrip('\t')
     n_tabs = len(line) - len(stripped)
     return (' ' * (n_tabs * tab_width) + stripped).rstrip()
 
 
 def convert_leading_tabs(text: str) -> str:
-    """Process every line: expand leading tabs and strip trailing whitespace."""
     out = []
     for part in re.split(r'(\r\n|\r|\n)', text):
         if re.fullmatch(r'\r\n|\r|\n', part):
@@ -74,7 +77,6 @@ def convert_leading_tabs(text: str) -> str:
 
 
 def safe_replace(text: str, old: str, new: str, label: str) -> str:
-    """Apply str.replace and warn if the anchor wasn't found."""
     count = text.count(old)
     if count == 0:
         print(f"  WARNING: anchor not found for change '{label}' – skipping.")
@@ -90,51 +92,42 @@ def safe_replace(text: str, old: str, new: str, label: str) -> str:
 # All hardcoded changes
 # ─────────────────────────────────────────────────────────────────────────────
 
-def apply_changes(text: str) -> str:
-    NL = '\r\n'     # file uses Windows line-endings
+def apply_changes(text: str, NL: str) -> str:
 
     # ── Change 2 ─────────────────────────────────────────────────────────────
-    # Shift printer button x-positions and append two new systemcraft entries.
-    # The whole block is replaced as a unit so only one str.replace() call is
-    # needed and the anchor is unambiguous (planet_bulking_x is unique).
     old_printer_block = (
-            '                    effectButtonType = { name = "planet_bulking_x"\t\t\t\tspriteType = "GFX_giga_menu_planet_bulking_disabled"\tposition = { x = 290 y = 5 } no_clicksound = yes\t\teffect = "planet_bulking_x" }' + NL
-            + '                    effectButtonType = { name = "planet_bulking_x_disabled"\t\tspriteType = "GFX_giga_menu_planet_bulking_enabled"\t\tposition = { x = 290 y = 5 } clicksound = interface\t\teffect = "planet_bulking_x_disabled" }' + NL
+            '                    effectButtonType = { name = "planet_bulking_x"                     spriteType = "GFX_giga_menu_planet_bulking_disabled"  position = { x = 290 y = 5 } no_clicksound = yes      effect = "planet_bulking_x" }' + NL
+            + '                    effectButtonType = { name = "planet_bulking_x_disabled"          spriteType = "GFX_giga_menu_planet_bulking_enabled"   position = { x = 290 y = 5 } clicksound = interface     effect = "planet_bulking_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "bulk_matter_x"\t\t\t\t\tspriteType = "GFX_giga_menu_bulk_matter_disabled"\tposition = { x = 320 y = 5 } no_clicksound = yes\t\teffect = "bulk_matter_x" }' + NL
-            + '                    effectButtonType = { name = "bulk_matter_x_disabled"\t\tspriteType = "GFX_giga_menu_bulk_matter_enabled"\tposition = { x = 320 y = 5 } clicksound = interface\t\teffect = "bulk_matter_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "bulk_matter_x"                      spriteType = "GFX_giga_menu_bulk_matter_disabled"     position = { x = 320 y = 5 } no_clicksound = yes      effect = "bulk_matter_x" }' + NL
+            + '                    effectButtonType = { name = "bulk_matter_x_disabled"             spriteType = "GFX_giga_menu_bulk_matter_enabled"      position = { x = 320 y = 5 } clicksound = interface     effect = "bulk_matter_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "celestial_printing_x"\t\t\tspriteType = "GFX_giga_menu_moon_printing_disabled"\tposition = { x = 350 y = 5 } no_clicksound = yes\t\teffect = "celestial_printing_x" }' + NL
-            + '                    effectButtonType = { name = "celestial_printing_x_disabled"\tspriteType = "GFX_giga_menu_moon_printing_enabled"\tposition = { x = 350 y = 5 } clicksound = interface\t\teffect = "celestial_printing_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_x"               spriteType = "GFX_giga_menu_moon_printing_disabled"   position = { x = 350 y = 5 } no_clicksound = yes      effect = "celestial_printing_x" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_x_disabled"      spriteType = "GFX_giga_menu_moon_printing_enabled"    position = { x = 350 y = 5 } clicksound = interface     effect = "celestial_printing_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "celestial_printing_planet_x"\t\t\tspriteType = "GFX_giga_menu_planet_printing_disabled"\tposition = { x = 380 y = 5 } no_clicksound = yes\t\teffect = "celestial_printing_planet_x" }' + NL
-            + '                    effectButtonType = { name = "celestial_printing_planet_x_disabled"\tspriteType = "GFX_giga_menu_planet_printing_enabled"\tposition = { x = 380 y = 5 } clicksound = interface\t\teffect = "celestial_printing_planet_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_planet_x"            spriteType = "GFX_giga_menu_planet_printing_disabled" position = { x = 380 y = 5 } no_clicksound = yes  effect = "celestial_printing_planet_x" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_planet_x_disabled"   spriteType = "GFX_giga_menu_planet_printing_enabled"  position = { x = 380 y = 5 } clicksound = interface effect = "celestial_printing_planet_x_disabled" }' + NL
             + '                }'
     )
     new_printer_block = (
-            '                    effectButtonType = { name = "planet_bulking_x"\t\t\t\tspriteType = "GFX_giga_menu_planet_bulking_disabled"\tposition = { x = 260 y = 5 } no_clicksound = yes\t\teffect = "planet_bulking_x" }' + NL
-            + '                    effectButtonType = { name = "planet_bulking_x_disabled"\t\tspriteType = "GFX_giga_menu_planet_bulking_enabled"\t\tposition = { x = 260 y = 5 } clicksound = interface\t\teffect = "planet_bulking_x_disabled" }' + NL
+            '                    effectButtonType = { name = "planet_bulking_x"                     spriteType = "GFX_giga_menu_planet_bulking_disabled"  position = { x = 260 y = 5 } no_clicksound = yes      effect = "planet_bulking_x" }' + NL
+            + '                    effectButtonType = { name = "planet_bulking_x_disabled"          spriteType = "GFX_giga_menu_planet_bulking_enabled"   position = { x = 260 y = 5 } clicksound = interface     effect = "planet_bulking_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "bulk_matter_x"\t\t\t\t\tspriteType = "GFX_giga_menu_bulk_matter_disabled"\tposition = { x = 290 y = 5 } no_clicksound = yes\t\teffect = "bulk_matter_x" }' + NL
-            + '                    effectButtonType = { name = "bulk_matter_x_disabled"\t\tspriteType = "GFX_giga_menu_bulk_matter_enabled"\tposition = { x = 290 y = 5 } clicksound = interface\t\teffect = "bulk_matter_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "bulk_matter_x"                      spriteType = "GFX_giga_menu_bulk_matter_disabled"     position = { x = 290 y = 5 } no_clicksound = yes      effect = "bulk_matter_x" }' + NL
+            + '                    effectButtonType = { name = "bulk_matter_x_disabled"             spriteType = "GFX_giga_menu_bulk_matter_enabled"      position = { x = 290 y = 5 } clicksound = interface     effect = "bulk_matter_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "celestial_printing_x"\t\t\tspriteType = "GFX_giga_menu_moon_printing_disabled"\tposition = { x = 320 y = 5 } no_clicksound = yes\t\teffect = "celestial_printing_x" }' + NL
-            + '                    effectButtonType = { name = "celestial_printing_x_disabled"\tspriteType = "GFX_giga_menu_moon_printing_enabled"\tposition = { x = 320 y = 5 } clicksound = interface\t\teffect = "celestial_printing_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_x"               spriteType = "GFX_giga_menu_moon_printing_disabled"   position = { x = 320 y = 5 } no_clicksound = yes      effect = "celestial_printing_x" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_x_disabled"      spriteType = "GFX_giga_menu_moon_printing_enabled"    position = { x = 320 y = 5 } clicksound = interface     effect = "celestial_printing_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "celestial_printing_planet_x"\t\t\tspriteType = "GFX_giga_menu_planet_printing_disabled"\tposition = { x = 350 y = 5 } no_clicksound = yes\t\teffect = "celestial_printing_planet_x" }' + NL
-            + '                    effectButtonType = { name = "celestial_printing_planet_x_disabled"\tspriteType = "GFX_giga_menu_planet_printing_enabled"\tposition = { x = 350 y = 5 } clicksound = interface\t\teffect = "celestial_printing_planet_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_planet_x"            spriteType = "GFX_giga_menu_planet_printing_disabled" position = { x = 350 y = 5 } no_clicksound = yes  effect = "celestial_printing_planet_x" }' + NL
+            + '                    effectButtonType = { name = "celestial_printing_planet_x_disabled"   spriteType = "GFX_giga_menu_planet_printing_enabled"  position = { x = 350 y = 5 } clicksound = interface effect = "celestial_printing_planet_x_disabled" }' + NL
             + NL
-            + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_enabled"\t\tspriteType = "GFX_giga_menu_systemcraft_printing_disabled"\tposition = { x = 380 y = 5 } no_clicksound = yes\t\teffect = "celestial_printing_system_x" }' + NL
-            + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_disabled"\tspriteType = "GFX_giga_menu_systemcraft_printing_enabled"\tposition = { x = 380 y = 5 } clicksound = interface\teffect = "celestial_printing_system_x_disabled" }' + NL
+            + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_enabled"  spriteType = "GFX_giga_menu_systemcraft_printing_disabled" position = { x = 380 y = 5 } no_clicksound = yes  effect = "celestial_printing_system_x" }' + NL
+            + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_disabled" spriteType = "GFX_giga_menu_systemcraft_printing_enabled"  position = { x = 380 y = 5 } clicksound = interface effect = "celestial_printing_system_x_disabled" }' + NL
             + '                }'
     )
-    text = safe_replace(text, old_printer_block, new_printer_block,
-                        'printer button x-positions + new systemcraft entries')
 
     # ── Change 3 ─────────────────────────────────────────────────────────────
-    # Insert the "o_systemcraft_options" containerWindowType block.
-    # Anchor: the closing "}" of the systemcraft_1/_2 button container,
-    # followed by the blank line before "effectButtonType { name = header_terraformers".
     o_systemcraft_block = (
             NL
             + '                ####################################' + NL
@@ -159,53 +152,14 @@ def apply_changes(text: str) -> str:
             + '                        effect = "stellar_manip_o_systemcraft_tt"' + NL
             + '                    }' + NL
             + NL
-            + '                    effectButtonType = { name = "stellar_manip_o_systemcraft_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "stellar_manip_o_systemcraft_enabled" }' + NL
+            + '                    effectButtonType = { name = "stellar_manip_o_systemcraft_enabled"  spriteType = "GFX_giga_menu_enabled"  position = { x = 380 y = 5 } no_clicksound = yes  effect = "stellar_manip_o_systemcraft_enabled" }' + NL
             + '                    effectButtonType = { name = "stellar_manip_o_systemcraft_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } clicksound = interface effect = "stellar_manip_o_systemcraft_disabled" }' + NL
             + NL
             + '                }' + NL
             + NL
     )
 
-    # Anchor: unique pair of lines at the end of the systemcraft button container
-    systemcraft_anchor_old = (
-            '                    effectButtonType = { name = "systemcraft_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_systemcraft_1_disabled" }' + NL
-            + '                }' + NL
-            + NL
-            + '                effectButtonType = {'
-    )
-    systemcraft_anchor_new = (
-            '                    effectButtonType = { name = "systemcraft_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_systemcraft_1_disabled" }' + NL
-            + '                }' + NL
-            + o_systemcraft_block
-            + '                effectButtonType = {'
-    )
-    text = safe_replace(text, systemcraft_anchor_old, systemcraft_anchor_new,
-                        'insert o_systemcraft_options block')
-
-    # ── Change 4 ─────────────────────────────────────────────────────────────
-    # Shift y-positions of the six containers that follow the new insertion
-    # by +80 px.  Each is identified by its unique "name" line.
-
-    y_shifts = [
-        # (unique name in file,  old y,   new y,   type)
-        ('header_terraformers',         -175,   -95,  'effectButtonType',     432),
-        ('terraform_toxic_options',      -55,    25,  'containerWindowType',  450),
-        ('terraform_barren_options',     -15,    65,  'containerWindowType',  450),
-        ('geothermal_options',            25,   105,  'containerWindowType',  450),
-        ('glue_options',                  65,   145,  'containerWindowType',  450),
-        ('terraform_gasgiant_options',   105,   185,  'containerWindowType',  450),
-        ('compressor_options',           145,   225,  'containerWindowType',  450),
-    ]
-
-    for name, old_y, new_y, _, x in y_shifts:
-        old_pos = f'name = "{name}"' + NL + f'                    position = {{ x = {x} y = {old_y} }}'
-        new_pos = f'name = "{name}"' + NL + f'                    position = {{ x = {x} y = {new_y} }}'
-        text = safe_replace(text, old_pos, new_pos,
-                            f'y-shift for {name} ({old_y} → {new_y})')
-
     # ── Change 5 ─────────────────────────────────────────────────────────────
-    # Insert the "giga_menu_stellar_manipulator" containerWindowType block
-    # after the closing "}" of the compressor_options container.
     stellar_manip_block = (
             NL
             + '                ####################################' + NL
@@ -229,30 +183,109 @@ def apply_changes(text: str) -> str:
             + '                        effect = "stellar_manip_stellar_manipulator_tt"' + NL
             + '                    }' + NL
             + NL
-            + '                    effectButtonType = { name = "stellar_manipulator_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "stellar_manip_manipulator_enabled" }' + NL
+            + '                    effectButtonType = { name = "stellar_manipulator_enabled"  spriteType = "GFX_giga_menu_enabled"  position = { x = 380 y = 5 } no_clicksound = yes  effect = "stellar_manip_manipulator_enabled" }' + NL
             + '                    effectButtonType = { name = "stellar_manipulator_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } clicksound = interface effect = "stellar_manip_manipulator_disabled" }' + NL
             + NL
             + '                }' + NL
     )
 
-    # Anchor: unique closing sequence of the compressor_options container
-    compressor_anchor_old = (
-            '                    effectButtonType = { name = "compressor_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_compressor_1_disabled" }' + NL
-            + '                }' + NL
-            + '            }' + NL
-            + NL
-            + '            instantTextBoxType={'
+    # ── Apply Change 2 ───────────────────────────────────────────────────────
+    # We use a regex approach here so we don't need to match exact whitespace
+    # between tokens on each effectButtonType line — only the name= and x= values matter.
+
+    def replace_printer_buttons(t):
+        # Match the block of 8 effectButtonType lines for the printer buttons
+        # by anchoring on the unique name strings and capturing the x= values to replace.
+        pattern = re.compile(
+            r'([ \t]+effectButtonType\s*=\s*\{[^}]*name\s*=\s*"planet_bulking_x"[^}]*x\s*=\s*)290(\s[^}]*\}' + NL + r')'
+                                                                                                                    r'([ \t]+effectButtonType\s*=\s*\{[^}]*name\s*=\s*"planet_bulking_x_disabled"[^}]*x\s*=\s*)290(\s[^}]*\}' + NL + r')'
+        )
+        # Rather than a complex regex across 8 lines, do targeted per-name replacements:
+        replacements = [
+            ('"planet_bulking_x"',              'x = 290', 'x = 260'),
+            ('"planet_bulking_x_disabled"',      'x = 290', 'x = 260'),
+            ('"bulk_matter_x"',                  'x = 320', 'x = 290'),
+            ('"bulk_matter_x_disabled"',         'x = 320', 'x = 290'),
+            ('"celestial_printing_x"',           'x = 350', 'x = 320'),
+            ('"celestial_printing_x_disabled"',  'x = 350', 'x = 320'),
+            ('"celestial_printing_planet_x"',         'x = 380', 'x = 350'),
+            ('"celestial_printing_planet_x_disabled"','x = 380', 'x = 350'),
+        ]
+        for name, old_x, new_x in replacements:
+            # Find the line containing this name and replace only the first x= on that line
+            line_pat = re.compile(r'([ \t]+effectButtonType\s*=\s*\{[^' + '\n' + r']*' + re.escape(name) + r'[^' + '\n' + r']*?)' + re.escape(old_x) + r'([^' + '\n' + r']*\})')
+            new_t, n = line_pat.subn(r'\g<1>' + new_x + r'\g<2>', t, count=1)
+            if n == 0:
+                print(f"  WARNING: could not shift x for {name}")
+            else:
+                t = new_t
+
+        # Now append the two new systemcraft printer buttons after celestial_printing_planet_x_disabled line
+        insert_after = re.compile(
+            r'([ \t]+effectButtonType\s*=\s*\{[^' + '\n' + r']*"celestial_printing_planet_x_disabled"[^' + '\n' + r']*\})'
+        )
+        new_buttons = (
+                NL
+                + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_enabled"  spriteType = "GFX_giga_menu_systemcraft_printing_disabled" position = { x = 380 y = 5 } no_clicksound = yes  effect = "celestial_printing_system_x" }'
+                + NL
+                + '                    effectButtonType = { name = "stellar_manip_systemcraft_printer_disabled" spriteType = "GFX_giga_menu_systemcraft_printing_enabled"  position = { x = 380 y = 5 } clicksound = interface effect = "celestial_printing_system_x_disabled" }'
+        )
+        new_t, n = insert_after.subn(r'\g<1>' + new_buttons, t, count=1)
+        if n == 0:
+            print("  WARNING: could not insert new systemcraft printer buttons")
+        else:
+            t = new_t
+        return t
+
+    text = replace_printer_buttons(text)
+
+    # ── Apply Change 3 ───────────────────────────────────────────────────────
+    # Insert o_systemcraft_options after the line containing "giga_systemcraft_1_disabled"
+    # followed by the container closing brace.
+    systemcraft_pat = re.compile(
+        r'([ \t]+effectButtonType\s*=\s*\{[^' + '\n' + r']*"systemcraft_1_disabled"[^' + '\n' + r']*\}' + NL
+        + r'[ \t]*\}' + NL + r')'
     )
-    compressor_anchor_new = (
-            '                    effectButtonType = { name = "compressor_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_compressor_1_disabled" }' + NL
-            + '                }' + NL
-            + stellar_manip_block
-            + '            }' + NL
-            + NL
-            + '            instantTextBoxType={'
+    new_t, n = systemcraft_pat.subn(r'\g<1>' + o_systemcraft_block, text, count=1)
+    if n == 0:
+        print("  WARNING: anchor not found for 'insert o_systemcraft_options block' – skipping.")
+    else:
+        text = new_t
+        print("  OK: inserted o_systemcraft_options block")
+
+    # ── Apply Change 4 ───────────────────────────────────────────────────────
+    y_shifts = [
+        ('header_terraformers',         -175,  -95),
+        ('terraform_toxic_options',      -55,   25),
+        ('terraform_barren_options',     -15,   65),
+        ('geothermal_options',            25,  105),
+        ('glue_options',                  65,  145),
+        ('terraform_gasgiant_options',   105,  185),
+        ('compressor_options',           145,  225),
+    ]
+    for name, old_y, new_y in y_shifts:
+        pat = re.compile(
+            r'(name\s*=\s*"' + re.escape(name) + r'"[^' + '\n' + r']*' + NL
+            + r'[^' + '\n' + r']*?y\s*=\s*)' + str(old_y) + r'(\s*\})'
+        )
+        new_t, n = pat.subn(r'\g<1>' + str(new_y) + r'\g<2>', text, count=1)
+        if n == 0:
+            print(f"  WARNING: anchor not found for y-shift '{name}' ({old_y} → {new_y}) – skipping.")
+        else:
+            text = new_t
+            print(f"  OK: y-shift {name} ({old_y} → {new_y})")
+
+    # ── Apply Change 5 ───────────────────────────────────────────────────────
+    compressor_pat = re.compile(
+        r'([ \t]+effectButtonType\s*=\s*\{[^' + '\n' + r']*"compressor_1_disabled"[^' + '\n' + r']*\}' + NL
+        + r'[ \t]*\}' + NL + r')'
     )
-    text = safe_replace(text, compressor_anchor_old, compressor_anchor_new,
-                        'insert giga_menu_stellar_manipulator block')
+    new_t, n = compressor_pat.subn(r'\g<1>' + stellar_manip_block, text, count=1)
+    if n == 0:
+        print("  WARNING: anchor not found for 'insert giga_menu_stellar_manipulator block' – skipping.")
+    else:
+        text = new_t
+        print("  OK: inserted giga_menu_stellar_manipulator block")
 
     return text
 
@@ -261,26 +294,29 @@ def apply_changes(text: str) -> str:
 # Main
 # ─────────────────────────────────────────────────────────────────────────────
 
-# run this from the repo root
 def main():
-    gigas_folder = Path.cwd().parent / "Gigastructures"
+    gigas_folder = Path("/home/Tempest1273/.local/share/Paradox Interactive/Stellaris/mod/Gigastructures Dev/Gigastructures")
     gigas_ui = gigas_folder / "interface" / "giga_gui_main_menu.gui"
-    stellar_manip_ui = Path.cwd() / "Gigas-Stellar-Manipulation" / "interface" / "z_giga_gui_main_menu.gui"
+    stellar_manip_ui = Path.cwd().parent / "Gigas-Stellar-Manipulation" / "interface" / "z_giga_gui_main_menu.gui"
 
-    src = sys.argv[1] if len(sys.argv) > 1 else gigas_ui
-    dst = sys.argv[2] if len(sys.argv) > 2 else stellar_manip_ui
+    src = Path(sys.argv[1]) if len(sys.argv) > 1 else gigas_ui
+    dst = Path(sys.argv[2]) if len(sys.argv) > 2 else stellar_manip_ui
 
     print(f"Reading source: {src}")
     with open(src, 'r', newline='', encoding='utf-8') as f:
         text = f.read()
 
+    NL = detect_line_ending(text)
+    print(f"Detected line endings: {'CRLF' if NL == chr(13)+chr(10) else 'LF'}")
+
     print("Converting leading tabs to spaces ...")
     text = convert_leading_tabs(text)
 
     print("Applying changes ...")
-    text = apply_changes(text)
+    text = apply_changes(text, NL)
 
     print(f"Writing output: {dst}")
+    dst.parent.mkdir(parents=True, exist_ok=True)
     with open(dst, 'w', newline='', encoding='utf-8') as f:
         f.write(text)
 

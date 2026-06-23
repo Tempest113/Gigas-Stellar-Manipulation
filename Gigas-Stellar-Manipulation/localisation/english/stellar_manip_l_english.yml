@@ -304,18 +304,22 @@
  giga_o_systemcraft_plural: "$giga_o_systemcraft$s"
  giga_o_systemcraft_cap: "Class O Stellar Systemcraft"
  giga_o_systemcraft_cap_plural: "$giga_o_systemcraft$s"
- systemcraft_ship_o_bowgun_01_key: "Primary Annihilator Lances"
- systemcraft_ship_o_bow_01_key: "Existence Removal Beams"
- systemcraft_ship_o_mid_01_key: "Nicoll-Dyson Capacitor Array"
- systemcraft_ship_o_stern_01_key: "Secondary Armament"
- systemcraft_ship_o_sternthrusters_01_key: "Grand Stellar Hangars"
- systemcraft_ship_o_kugel_01_key: "Omega Kugelblitz Protectors"
+ systemcraft_ship_o_bowgun_01_key: "$systemcraft_ship_bowgun_01_key$"
+ systemcraft_ship_o_bowgun_02_key: "$systemcraft_ship_bowgun_02_key$"
+ systemcraft_ship_o_bow_01_key: "$systemcraft_ship_bow_01_key$"
+ systemcraft_ship_o_mid_01_key: "$systemcraft_ship_mid_01_key$"
+ systemcraft_ship_o_stern_01_key: "$systemcraft_ship_stern_01_key$"
+ systemcraft_ship_o_sternthrusters_01_key: "$systemcraft_ship_sternthrusters_01_key$"
+ systemcraft_ship_o_kugel_01_key: "$systemcraft_ship_kugel_01_key$"
 
- REACTOR_SYSTEM_O: "Captive Class O Star"
+ REACTOR_SYSTEM_O: "Captive $sc_giga_o_star$"
  REACTOR_SYSTEM_O_DESC: "A entire Class O star is held within this gargantuan vessel providing massive levels of power"
 
  SYSTEMCRAFT_RAY_OF_DOOM_1_O_CLASS: "$SYSTEMCRAFT_RAY_OF_DOOM_1$"
  SYSTEMCRAFT_RAY_OF_DOOM_1_O_CLASS_DESC: "$SYSTEMCRAFT_RAY_OF_DOOM_1_DESC$"
+
+ GIGA_STELLAR_HYPERCANNON_O_CLASS: "$GIGA_STELLAR_HYPERCANNON$"
+ GIGA_STELLAR_HYPERCANNON_O_CLASS_DESC: "$GIGA_STELLAR_HYPERCANNON_DESC$"
 
  # Maginot
 

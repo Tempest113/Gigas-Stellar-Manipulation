@@ -103,7 +103,7 @@ country_event = { #It splits lol
 							count = 5
 							create_ship = {
 								name = "Attack Moon"
-								random_existing_design = giga_massive_planet
+								random_existing_design = giga_war_moon
 								effect = {
 									reduce_hp = 150000
 								}
