@@ -55,22 +55,59 @@ weapon_component_template = {
 	total_fire_time = 125
 	shield_penetration = 1.00
 	armor_penetration = 1.00
-	ship_limit = 10
+	ship_limit = 5
 
-	on_hit = {
-		inline_script = {
-			script = ship_components/collateral_damage
-			RANGE = @ion_cannon_collateral_range
-			DAMAGE = @systemcraft_ray_of_doom_1_fleet_damage
-		}
-		custom_tooltip = "SYSTEMCRAFT_RAY_OF_DOOM_1_FLEET_EFFECT"
-	}
+	collateral_damage = @ion_cannon_collateral_range
+	collateral_range = @systemcraft_ray_of_doom_1_fleet_damage
 
 	resources = {
 		category = ship_components
 		cost = {
 			alloys = @titanic_t7_cost
 			rare_crystals = @titanic_t7_rare
+		}
+		upkeep = {
+			alloys = @titanic_t7_upkeep_alloys
+			energy = @titanic_t7_upkeep_energy
+		}
+	}
+}
+
+### Hypercannon Duplicate - Increased cap
+weapon_component_template = {
+	key = "GIGA_STELLAR_HYPERCANNON_O_CLASS"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_stellar_hypercannon"
+	icon_frame = 1
+	power = -300000.00
+	component_set = "GIGA_STELLAR_HYPERCANNON"
+	projectile_gfx = "giga_celestial_railgun"
+	tags = { weapon_type_kinetic weapon_role_artillery t_slot }
+	ai_tags = { artillery weapon_role_artillery }
+	size_restriction = { giga_o_systemcraft }
+	prerequisites = { "tech_o_class_war_system" }
+	ai_tag_weight = 0
+
+	firing_arc = 10
+	min_range = 75
+
+	damage = { min = 455000 max = 1300000 }
+	windup = { min = 110 max = 120 }
+	range = 250
+	tracking = 0.0
+	accuracy = 0.75
+	total_fire_time = 60
+	shield_damage = 1.50
+	armor_damage = 0.75
+	ship_limit = 5
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			volatile_motes = @titanic_t7_rare
 		}
 		upkeep = {
 			alloys = @titanic_t7_upkeep_alloys

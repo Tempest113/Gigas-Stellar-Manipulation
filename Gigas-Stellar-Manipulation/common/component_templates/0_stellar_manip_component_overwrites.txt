@@ -1,0 +1,19 @@
+utility_component_template = {
+    key = "GIGA_MAGINOT_STAR_REACTOR"
+    size = small
+    icon = "GFX_ship_part_reactor_system"
+    icon_frame = 1
+    power = 1000000
+    component_set = "power_core"
+    prerequisites = { giga_tech_maginot_systemcraft_upgrade }
+    size_restriction = { strategic_defence_command_platform }
+    modifier = { ship_shield_mult = 0.20 }
+
+    upgrades_to = GIGA_MAGINOT_O_STAR_REACTOR
+
+    ftl_inhibitor = yes
+
+    ai_weight = {
+        factor = 3000
+    }
+}

@@ -6,31 +6,11 @@ common/button_effects/
     giga_warmoon_enabled
         added effects to disable the o-class
 common/component_templates/
-    SHIP_MOBILE_SYSTEM
-    PLANET_LANCE_BLOKKAT
-    GIGA_SYSTEM_COMPUTER
-    GIGA_PLANET_MISSILE_1
-    SYSTEMCRAFT_RAY_OF_DOOM_1
-    SYSTEMCRAFT_KATZENLAND_LANCE_1
-    SYSTEMCRAFT_ALLOY_FOUNDRIES
-    SYSTEMCRAFT_DYSON_CAPACITOR
-    SYSTEMCRAFT_FARMS
-    SYSTEMCRAFT_WEAPONS_PLANT
-    SYSTEMCRAFT_STABILITY
-    SYSTEMCRAFT_SHIELD
-    PLANET_KILLER_CRACKER_SYSTEMCRAFT
-    PLANET_KILLER_SHIELDER_SYSTEMCRAFT
-    PLANET_KILLER_NEUTRON_SYSTEMCRAFT
-    PLANET_KILLER_GODRAY_SYSTEMCRAFT
-    PLANET_KILLER_NANOBOTS_SYSTEMCRAFT
-    PLANET_KILLER_DELUGE_SYSTEMCRAFT
-    PLANET_KILLER_DEVOLUTION_SYSTEMCRAFT
-        all added O class capability
     GIGA_MAGINOT_STAR_REACTOR
         added the ability to upgrade it
 common/decisions/
     decision_systemcraft_crew
-        adds the ability for the oclass mega to trigger it
+        adds the ability for the o-class mega to trigger it
 common/scripted_effects/
     giga_preset_vanilla_plus
     giga_preset_gigas_experience
