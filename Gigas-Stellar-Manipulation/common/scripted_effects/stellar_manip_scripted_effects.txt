@@ -141,7 +141,7 @@ stellar_manip_clean_up_extraction_megas = {
             }
         }
 
-        remove_planet_flag = has_megastructure
+        remove_carrier_flag = has_megastructure
     }
 }
 
@@ -159,6 +159,6 @@ stellar_manip_clean_up_infusion_megas = {
                 remove_megastructure = this
             }
         }
-        remove_planet_flag = has_megastructure
+        remove_carrier_flag = has_megastructure
     }
 }

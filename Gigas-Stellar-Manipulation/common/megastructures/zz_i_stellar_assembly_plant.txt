@@ -63,8 +63,8 @@ systemcraft_assembler_0 = {
 					dismantle = yes
 				}
 			}
-			set_planet_flag = megastructure			# Vanilla uses to check if a megastructure can be built here
-			set_planet_flag = has_megastructure			# Vanilla uses to check if an orbital station can be built here
+			set_carrier_flag = megastructure			# Vanilla uses to check if a megastructure can be built here
+			set_carrier_flag = has_megastructure			# Vanilla uses to check if an orbital station can be built here
 		}
 	}
 }

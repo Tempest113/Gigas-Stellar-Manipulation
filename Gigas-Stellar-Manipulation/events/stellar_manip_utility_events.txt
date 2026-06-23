@@ -25,8 +25,8 @@ planet_event = {
     }
 
     immediate = {
-        remove_planet_flag = has_megastructure
-        remove_planet_flag = megastructure
+        remove_carrier_flag = has_megastructure
+        remove_carrier_flag = megastructure
         switch = {
             trigger = is_planet_class
             pc_o_star = {
@@ -280,8 +280,8 @@ planet_event = {
         is_scope_valid = yes
     }
     immediate = {
-        remove_planet_flag = has_megastructure
-        remove_planet_flag = megastructure
+        remove_carrier_flag = has_megastructure
+        remove_carrier_flag = megastructure
         save_event_target_as = star_manip_planet
 
         #Star class change
