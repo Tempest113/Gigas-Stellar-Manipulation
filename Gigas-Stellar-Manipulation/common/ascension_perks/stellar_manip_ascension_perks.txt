@@ -14,9 +14,8 @@ ap_stellar_manip = {
 
     potential = {
         is_ai = no
-        NOT = {
-            has_stellar_manip_ap = yes
-        }
+        is_nomadic = no
+        NOT = { has_stellar_manip_ap = yes }
         NAND = {
             has_global_flag = stellar_manip_manipulator_disabled
             has_global_flag = stellar_manip_assembler_disabled
