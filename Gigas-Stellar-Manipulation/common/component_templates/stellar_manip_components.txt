@@ -39,22 +39,24 @@ weapon_component_template = {
 	power = -300000.00
 	component_set = "SYSTEMCRAFT_RAY_OF_DOOM_1"
 	projectile_gfx = "paluush_planetcraft_lance"
-	tags = { weapon_type_energy }
-	size_restriction = { giga_o_systemcraft }
-	prerequisites = { "tech_o_class_war_system" }
+	tags = { weapon_type_energy weapon_role_artillery t_slot }
+	ai_tags = { artillery weapon_role_artillery }
+	potential = { giga_ship_uses_war_system_components = yes NOT = { is_ship_size = giga_o_systemcraft } }
+	prerequisites = { "giga_tech_war_system_5" }
 	ai_tag_weight = 0
 
 	firing_arc = 10
 	min_range = 75
 
 	damage = { min = 625000 max = 1250000 }
-	windup = { min = 125 max = 125 }
+	windup = { min = 145 max = 150 }
 	range = 250
-	tracking = 0.10
-	accuracy = 1
+	tracking = 0
+	accuracy = 0.85
 	total_fire_time = 125
-	shield_penetration = 1.00
-	armor_penetration = 1.00
+	shield_damage = 0.75
+	armor_damage = 1.50
+	hull_damage = 1.25
 	ship_limit = 5
 
 	collateral_damage = @systemcraft_ray_of_doom_1_fleet_damage
