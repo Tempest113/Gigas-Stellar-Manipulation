@@ -329,15 +329,7 @@ systemcraft_assembler_make_system = {
 
 	resources = {
 		category = giga_gigastructures
-		cost = {
-			giga_sr_bulk_matter = 139
-			energy = 4100000
-			sr_stellar_plasma = 2500
-		}
-		inline_script = {
-			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 2380000 # ~35% more than building it normally
-		}
+		z
 	}
 	potential = {
 		NOT = {
@@ -371,92 +363,6 @@ systemcraft_assembler_make_system = {
 			set_country_flag = just_assembled_systemcraft
 			country_event = {
 				id = stellar_manip_dialogue.17
-			}
-			if = {
-				limit = {
-					NOR = {
-						has_global_flag = giga_achievements_disabled
-						has_country_flag = giga_achievement_91
-					}
-				}
-				set_country_flag = giga_achievement_91
-				set_timed_country_flag = {
-					flag = giga_achievement_91_notification
-					days = 30
-				}
-				giga_achievement_sound = yes
-			}
-		}
-	}
-}
-systemcraft_assembler_make_o_system = {
-	entity = "war_system_printer_printing_entity"
-	construction_entity = "war_system_printer_printing_entity"
-	portrait = "GFX_evt_binary_stars"
-	upgrade_from = {
-		systemcraft_assembler_5
-	}
-	place_entity_on_planet_plane = no
-	build_time = 54000 # How long it takes to build a class o systemcraft (not including constituent celestials and construction site)
-
-	# Cost Breakdown:
-	#	A systemcraft is made up of 5 attack moons + 4 planetcraft
-	#
-	#	Fabrication of 1 attack moon: 24,500 alloys, 20,000 energy, 7 bulk matter (x5= 122,500 alloys, 100,000 energy, 35 bulk matter)
-	#	Fabrication of 1 planetcraft: 285,000 alloys, 1,000,000 energy, 26 bulk matter (x4= 1,140,000 alloys 4,000,000 energy, 104 bulk matter)
-	#	Systemcraft cost: 500,000 alloys (not including the 5 moons and 4 planets or the construction site)
-	#	Class 0 Systemcraft cost: 1,500,000 alloys (not including the 5 moons and 4 planets or the construction site)
-	#
-	#	Systemcraft total fabrication cost: 1,762,500 alloys, 4,100,000 energy, 139 bulk matter (1,762,500 alloys before cost increase, 2,379,375 alloys after, rounded to 2,380,000)
-	#	Systemcraft total fabrication cost: 2,762,500 alloys, 4,100,000 energy, 139 bulk matter (2,762,500 alloys before cost increase, 3,729,375 alloys after, rounded to 3,730,000)
-
-	resources = {
-		category = giga_gigastructures
-		cost = {
-			giga_sr_bulk_matter = 139
-			energy = 4100000
-			sr_stellar_plasma = 25000
-		}
-		inline_script = {
-			script = megastructures/generic_parts/giga_mega_alloy_cost
-			alloys = 3730000 # ~35% more than building it normally
-		}
-	}
-
-	potential = {
-		NOT = {
-			has_global_flag = stellar_manip_o_systemcraft_disabled
-		}
-	}
-
-	possible = {
-		from = {
-			has_technology = tech_stellar_assembler
-			has_technology = tech_o_class_war_system
-		}
-		custom_tooltip = {
-			fail_text = "requires_not_capped"
-			from = {
-				OR = {
-					check_variable = {
-						which = giga_systemcraft_cap
-						value = 0
-					}
-					check_variable = {
-						which = giga_current_systemcraft
-						value < giga_systemcraft_cap
-					}
-				}
-			}
-		}
-	}
-
-	on_build_complete = {
-		save_event_target_as = giga_systemcraft_print
-		from = {
-			set_country_flag = just_assembled_systemcraft
-			country_event = {
-				id = stellar_manip_dialogue.18
 			}
 			if = {
 				limit = {

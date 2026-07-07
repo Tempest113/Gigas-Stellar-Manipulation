@@ -175,9 +175,6 @@
  systemcraft_assembler_make_system: "Assemble Stellar Systemcraft"
  systemcraft_assembler_make_system_DESC: "Builds a Stellar Systemcraft"
 
- systemcraft_assembler_make_o_system: "Assemble Class O Systemcraft"
- systemcraft_assembler_make_o_system_DESC: "Builds a massively powerful Class O Stellar Systemcraft"
-
  # O war system
  requires_standard_o_star_planet_class: "$TRIGGER_FAIL$Must build around an O Class Star."
 
