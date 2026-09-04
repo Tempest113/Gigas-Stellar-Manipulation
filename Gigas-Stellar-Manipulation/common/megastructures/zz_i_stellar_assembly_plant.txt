@@ -329,7 +329,6 @@ systemcraft_assembler_make_system = {
 
 	resources = {
 		category = giga_gigastructures
-		z
 	}
 	potential = {
 		NOT = {
