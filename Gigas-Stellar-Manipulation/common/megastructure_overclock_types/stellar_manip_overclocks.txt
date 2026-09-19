@@ -1,0 +1,33 @@
+# these overclocks are for selecting the mode for branching megas
+stellar_manip_overclock_system_assembler_normal = {
+	icon = GFX_overclock_gc_default
+	custom_tooltip = stellar_manip_overclock_system_assembler_normal_effect
+	on_overclock_start = {
+		remove_megastructure_flag = sm_o_class_assemble
+	}
+	on_overclock_end = {
+		set_megastructure_flag = sm_o_class_assemble
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @arc_furnace_overclock_switch_cost
+		}
+	}
+}
+stellar_manip_overclock_system_assembler_o_class = {
+	icon = GFX_overclock_gc_high
+	custom_tooltip = stellar_manip_overclock_system_assembler_o_class_effect
+	on_overclock_start = {
+		set_megastructure_flag = sm_o_class_assemble
+	}
+	on_overclock_end = {
+		remove_megastructure_flag = sm_o_class_assemble
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			energy = @arc_furnace_overclock_switch_cost
+		}
+	}
+}
