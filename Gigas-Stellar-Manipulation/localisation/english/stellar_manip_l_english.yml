@@ -155,7 +155,7 @@
  # Star Printer
  systemcraft_assembler_0: "$gc_giga$Systemcraft Assembler Construction Site"
  systemcraft_assembler_0_DESC: "This is the construction site upon which Systemcraft Assembler will be constructed"
- systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §Y$sr_solar_energy$§! and £alloys£ §Y$alloys$§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
+ systemcraft_assembler_0_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £sr_stellar_plasma£ §Y$sr_stellar_plasma$§!, £sr_solar_energy£ §Y$giga_sr_bulk_matter$§! and £alloys£ §Y$alloys$§! to fabricate §YSystemcrafts§!. \n$giga_list_removes_system_planets$\n§LAn enormous stellar construct capable of assembling the mightiest crafts.§!"
 
  systemcraft_assembler_1: "Systemcraft Assembler Stellar Ignitor"
  systemcraft_assembler_1_DESC: "The heart of the structure, a, for now non-functioning, stellar ignitor that will soon create new stars for a systemcraft"
@@ -174,6 +174,16 @@
 
  systemcraft_assembler_make_system: "Assemble Stellar Systemcraft"
  systemcraft_assembler_make_system_DESC: "Builds a Stellar Systemcraft"
+
+ systemcraft_assembler_make_o_system: "Assemble Class O Systemcraft"
+ systemcraft_assembler_make_o_system_DESC: "Builds a massively powerful Class O Stellar Systemcraft"
+
+ stellar_manip_overclock_system_assembler_normal:0 "§dStandard Stellar Systemcraft§!"
+ stellar_manip_overclock_system_assembler_normal_desc:0 "Assemble a §dstandard Stellar Systemcraft§!, or whatever can be considered standard for these massive warships."
+ stellar_manip_overclock_system_assembler_normal_effect: "$stellar_manip_overclock_system_assembler_normal_desc$"
+ stellar_manip_overclock_system_assembler_o_class:0 "§IO-Class Stellar Systemcraft§!"
+ stellar_manip_overclock_system_assembler_o_class_desc:0 "Assemble an §IO-Class Stellar Systemcraft§!, a colossal behemoth amongst behemoths."
+ stellar_manip_overclock_system_assembler_o_class_effect: "$stellar_manip_overclock_system_assembler_o_class_desc$"
 
  # O war system
  requires_standard_o_star_planet_class: "$TRIGGER_FAIL$Must build around an O Class Star."
