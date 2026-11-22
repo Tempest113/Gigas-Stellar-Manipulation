@@ -588,3 +588,25 @@ planet_event = {
         }
     }
 }
+
+# Fired by giga_preset_vanillaplus_selected / giga_preset_gigaexp_selected
+event = {
+    id = stellar_manip_utility.9
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        set_global_flag = stellar_manip_assembler_disabled
+        set_global_flag = stellar_manip_o_systemcraft_disabled
+    }
+}
+event = {
+	id = stellar_manip_utility.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = stellar_manip_assembler_disabled
+		set_global_flag = stellar_manip_o_systemcraft_disabled
+	}
+}

@@ -9,3 +9,16 @@ on_destroy_planet_with_PLANET_KILLER_STAR_CRACKER = {
         stellar_manip_utility.8
     }
 }
+
+# Gigastructures preset hooks
+giga_preset_vanillaplus_selected = {
+    events = {
+        stellar_manip_utility.9
+    }
+}
+
+giga_preset_gigaexp_selected = {
+    events = {
+        stellar_manip_utility.10
+    }
+}

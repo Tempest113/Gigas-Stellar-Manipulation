@@ -12,8 +12,6 @@ common/decisions/
     decision_systemcraft_crew
         adds the ability for the o-class mega to trigger it
 common/scripted_effects/
-    giga_preset_vanilla_plus
-    giga_preset_gigas_experience
     disable_menu_mega
     remove_menu_mega_disable
         add stellar manip stuff to it
@@ -27,3 +25,6 @@ events/
 interface/
     giga_gui_main_menu.gui
         adds all the ui options for start of game
+	resource_groups/
+		topbar_other_resource_groups.txt
+			adds sr_stellar_plasma to the topbar
