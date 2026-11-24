@@ -6,8 +6,8 @@
   
   #Systemcraft Assembler
   giga_menu_name_systemcraft_assembler:99 "Systemcraft Fabrication"
-  stellar_manip_systemcraft_assmbler_enabled_tt:99 "£menu_enabled£Systemcraft Fabricators\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not."
-  stellar_manip_systemcraft_assmbler_disabled_tt:99 "£menu_disabled£Systemcraft Fabricators\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not."
+  stellar_manip_systemcraft_assmbler_enabled_tt:99 "£menu_enabled£Systemcraft Fabricators\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not. Requires §YBehemoth Planetcraft Fabricators§! to be enabled."
+  stellar_manip_systemcraft_assmbler_disabled_tt:99 "£menu_disabled£Systemcraft Fabricators\nDetermines whether $giga_systemcraft_plural$ should be able to be \"printed\" out with the $systemcraft_assembler_5$ or not. Requires §YBehemoth Planetcraft Fabricators§! to be enabled."
   
   # Stellar Manipulator
   giga_menu_name_stellar_manipulator:99 "Stellar Manipulator"
