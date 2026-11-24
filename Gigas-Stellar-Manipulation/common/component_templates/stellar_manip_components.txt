@@ -5,7 +5,9 @@ utility_component_template = {
 	icon_frame = 1
 	power = 5000000 #5 times more powerful than regular one
 	component_set = "power_core"
-	size_restriction = { giga_o_systemcraft }
+	potential = {
+		is_ship_size = giga_o_systemcraft
+	}
 	ai_weight = { weight = 10000 } # fix 'normal' reactors being potentially autopicked if they are somehow valid for the o class systemcraft
 }
 
@@ -17,7 +19,9 @@ utility_component_template = {
 	power = 5000000
 	component_set = "power_core"
 	prerequisites = { giga_tech_maginot_systemcraft_upgrade tech_o_class_war_system }
-	size_restriction = { strategic_defence_command_platform }
+	potential = {
+		is_ship_size = strategic_defence_command_platform
+	}
 	modifier = { ship_shield_mult = 0.40 }
 
 	ftl_inhibitor = yes
@@ -41,7 +45,9 @@ weapon_component_template = {
 	projectile_gfx = "paluush_planetcraft_lance"
 	tags = { weapon_type_energy weapon_role_artillery t_slot }
 	ai_tags = { artillery weapon_role_artillery }
-	size_restriction = { giga_o_systemcraft }
+	potential = {
+		is_ship_size = giga_o_systemcraft
+	}
 	prerequisites = { "giga_tech_war_system_5" }
 	ai_tag_weight = 0
 
@@ -88,7 +94,9 @@ weapon_component_template = {
 	projectile_gfx = "giga_celestial_railgun"
 	tags = { weapon_type_kinetic weapon_role_artillery t_slot }
 	ai_tags = { artillery weapon_role_artillery }
-	size_restriction = { giga_o_systemcraft }
+	potential = {
+		is_ship_size = giga_o_systemcraft
+	}
 	prerequisites = { "tech_o_class_war_system" }
 	ai_tag_weight = 0
 

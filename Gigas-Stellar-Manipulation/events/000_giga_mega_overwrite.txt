@@ -11,7 +11,6 @@ country_event = { #It splits lol
 				is_ship_size = giga_systemcraft
 				is_ship_size = giga_o_systemcraft
 			}
-
 		}
 	}
 
@@ -47,26 +46,26 @@ country_event = { #It splits lol
 			remove_country_flag = giga_has_active_hyperweapon
 		}
 		create_message = {
-			type = WAR_SYSTEM_DESTROYED
-			localization = MESSAGE_WAR_SYSTEM_DESTROYED_DESC
-			days = 30
-			target = fromfrom
+            type = WAR_SYSTEM_DESTROYED
+            localization = MESSAGE_WAR_SYSTEM_DESTROYED_DESC
+            days = 30
+            target = fromfrom
+            variable = {
+                type = name
+                localization = ENEMY_NAME
+                scope = from
+            }
+            variable = {
+                type = name
+                localization = CELESTIAL_WARSHIP_NAME
+                scope = fromfrom
+            }
 			variable = {
-				type = name
-				localization = ENEMY_NAME
-				scope = from
-			}
-			variable = {
-				type = name
-				localization = CELESTIAL_WARSHIP_NAME
-				scope = fromfrom
-			}
-			variable = {
-				type = name
-				localization = SYSTEM_NAME
-				scope = fromfrom.solar_system
-			}
-		}
+                type = name
+                localization = SYSTEM_NAME
+                scope = fromfrom.solar_system
+            }
+        }
 		fromfrom = {
 			solar_system = {
 				save_event_target_as = giga_debris_system
@@ -83,7 +82,7 @@ country_event = { #It splits lol
 					settings = {
 						spawn_debris = no
 						can_change_composition = yes
-                        is_boss = no
+						is_boss = no
 					}
 					effect = {
 						set_owner = ROOT
@@ -95,7 +94,7 @@ country_event = { #It splits lol
 								random_existing_design = giga_planet_behemoth
 								effect = {
 									set_ship_flag = giga_planet
-									reduce_hp = 3000000
+									reduce_hp = 1500000
 								}
 							}
 						}

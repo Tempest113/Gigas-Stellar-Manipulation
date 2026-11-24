@@ -346,10 +346,6 @@ country_event = { #print regular
                         random_existing_design = giga_systemcraft
                         effect = {
                             set_ship_flag = random
-                            add_modifier = {
-                                modifier = printed_celestial_warship
-                                days = -1
-                            }
                         }
                     }
                     set_formation_scale = 10
@@ -410,10 +406,6 @@ country_event = {
 						random_existing_design = giga_o_systemcraft
 						effect = {
 							set_ship_flag = random
-							add_modifier = {
-								modifier = printed_celestial_warship
-								days = -1
-							}
 						}
 					}
 					set_formation_scale = 10

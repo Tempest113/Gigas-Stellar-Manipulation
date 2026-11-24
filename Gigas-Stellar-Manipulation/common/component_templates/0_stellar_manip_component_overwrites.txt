@@ -1,19 +1,33 @@
+# added upgrades_to = GIGA_MAGINOT_O_STAR_REACTOR
 utility_component_template = {
-    key = "GIGA_MAGINOT_STAR_REACTOR"
-    size = small
-    icon = "GFX_ship_part_reactor_system"
-    icon_frame = 1
-    power = 1000000
-    component_set = "power_core"
-    prerequisites = { giga_tech_maginot_systemcraft_upgrade }
-    size_restriction = { strategic_defence_command_platform }
-    modifier = { ship_shield_mult = 0.20 }
+	key = "GIGA_MAGINOT_STAR_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_system"
+	icon_frame = 1
+	power = 1000000
+	component_set = "power_core"
+	prerequisites = { giga_tech_maginot_systemcraft_upgrade }
+	potential = {
+		is_ship_size = strategic_defence_command_platform
+	}
+	modifier = { ship_shield_mult = 0.20 }
 
-    upgrades_to = GIGA_MAGINOT_O_STAR_REACTOR
+	upgrades_to = GIGA_MAGINOT_O_STAR_REACTOR
 
-    ftl_inhibitor = yes
+	ftl_inhibitor = yes
 
-    ai_weight = {
-        factor = 3000
-    }
+	ai_weight = {
+		factor = 3000
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5467
+		}
+		upkeep = {
+			energy = 27.027
+			alloys = 2.7027
+		}
+	}
 }
