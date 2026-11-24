@@ -4,7 +4,10 @@ common/button_effects/
     giga_systemcraft_enabled
     giga_warplanet_enabled
     giga_warmoon_enabled
-        added effects to disable the o-class
+        added effects to disable the o-class and the systemcraft assembler
+    celestial_printing_moon_x_disabled
+    celestial_printing_planet_x_disabled
+        disabling moon/planet printing also disables the systemcraft assembler (it requires planet printing)
 common/component_templates/
     GIGA_MAGINOT_STAR_REACTOR
         added the ability to upgrade it

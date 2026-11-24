@@ -63,6 +63,10 @@ celestial_printing_system_x = {
     effect = {
         custom_tooltip = "stellar_manip_systemcraft_assmbler_disabled_tt"
         remove_global_flag = stellar_manip_assembler_disabled remove_global_flag = stellar_manip_manipulator_disabled # (This needs manipulators to be enabled)
+        remove_global_flag = giga_celestial_printing_planet_disabled
+        remove_global_flag = warplanet_disabled
+        remove_global_flag = giga_celestial_printing_moon_disabled
+        remove_global_flag = warmoon_disabled
     }
 }
 

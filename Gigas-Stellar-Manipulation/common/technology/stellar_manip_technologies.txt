@@ -105,7 +105,6 @@ tech_o_class_war_system = {
     weight = @giga_tier7weight3
 
     potential = {
-        has_ascension_perk = ap_celestial_printing
         NOR = {
             has_global_flag = stellar_manip_o_systemcraft_disabled
             has_global_flag = systemcraft_disabled

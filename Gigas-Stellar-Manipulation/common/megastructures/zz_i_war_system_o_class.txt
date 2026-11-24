@@ -24,7 +24,6 @@ war_system_o_0 = {
 	potential = {
 		is_ai = no
 		has_technology = tech_o_class_war_system
-		has_ascension_perk = ap_celestial_printing
 		NOT = { has_global_flag = systemcraft_disabled }
 		OR = {
 			has_global_flag = systemcraft_capped_u
@@ -118,7 +117,6 @@ war_system_o_1 = {
 			has_technology = tech_o_class_war_system
 			has_technology = giga_tech_war_system_1
 			has_technology = giga_tech_war_system_2
-			has_ascension_perk = ap_celestial_printing
 		}
 	}
 
@@ -169,7 +167,6 @@ war_system_o_2 = {
 			has_technology = giga_tech_war_system_1
 			has_technology = giga_tech_war_system_2
 			has_technology = giga_tech_war_system_3
-			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_1_moon_2"
@@ -265,7 +262,6 @@ war_system_o_3 = {
 			has_technology = giga_tech_war_system_2
 			has_technology = giga_tech_war_system_3
 			has_technology = giga_tech_war_system_4
-			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_moon_2"
@@ -342,7 +338,6 @@ war_system_o_4 = {
 			has_technology = giga_tech_war_system_3
 			has_technology = giga_tech_war_system_4
 			has_technology = giga_tech_war_system_5
-			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_behemoth_planetcraft_2"
@@ -418,7 +413,6 @@ war_system_o_5 = {
 			has_technology = giga_tech_war_system_4
 			has_technology = giga_tech_war_system_5
 			has_technology = giga_tech_war_system_6
-			has_ascension_perk = ap_celestial_printing
 		}
 		custom_tooltip = {
 			fail_text = "requires_systemcraft_crew"
